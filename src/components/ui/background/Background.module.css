@@ -1,0 +1,29 @@
+.asBackground {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.asBackground svg {
+  user-select: none;
+  pointer-events: none;
+}
+
+.background {
+  background-size: 100%;
+  background-position: center;
+}
+
+.no-repeat {
+  background-repeat: no-repeat;
+}
+
+.repeat {
+  background-repeat: repeat;
+}

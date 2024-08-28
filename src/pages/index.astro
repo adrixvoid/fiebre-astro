@@ -1,50 +1,397 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import Background from "~/components/ui/background/Background.astro";
+import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
+import Button from "~/components/ui/button/Button.astro";
+import Card, {
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardImage,
+  CardTitle,
+} from "~/components/ui/card";
+import Center from "~/components/ui/center/Center.astro";
+import Container from "~/components/ui/container/Container.astro";
+import Flex from "~/components/ui/flex/Flex.astro";
+import Grid from "~/components/ui/grid/Grid.astro";
+import Section from "~/components/ui/section/Section.astro";
+import Text from "~/components/ui/text/Text.astro";
+import Title from "~/components/ui/text/Title.astro";
+import Viewport from "~/components/ui/viewport/Viewport.astro";
+import MainHero from "~/components/MainHero.astro";
+
+import styles from "~/components/home/Home.module.css";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <Section>
+      <MainHero />
+      <div class={styles.portfolio}>
+        <Background
+          url="/assets/estrellas3.svg"
+          style={{ backgroundSize: "contain", position: "relative" }}
+          repeat
+        >
+          <Background
+            url="/assets/estrellas4.svg"
+            style={{ backgroundSize: "contain", position: "relative" }}
+            repeat
+          >
+            <ElementAsBackground aria-hidden style={{ overflow: "hidden" }}>
+              <!--
+              <PlanetaSVG6 class={styles.planeta6} />
+              <PlanetaSVG7 class={styles.planeta7} />
+              <PlanetaSVG8 class={styles.planeta8} />
+              <PlanetaSVG9 class={styles.planeta9} />
+              -->
+              <img src="/assets/planeta6.svg" aria-hidden />
+              <img src="/assets/planeta7.svg" aria-hidden />
+              <img src="/assets/planeta8.svg" aria-hidden />
+              <img src="/assets/planeta9.svg" aria-hidden />
+            </ElementAsBackground>
+            <div id="services">
+              <Container variant="narrow" style={{ position: "relative" }}>
+                <div>
+                  <Center id="design" class={styles["services-article"]}>
+                    <Flex
+                      class={styles["services-column1"]}
+                      mobile="direction-column"
+                    >
+                      <div>
+                        <Title
+                          element="h3"
+                          variant="primary"
+                          size="sm"
+                          id="illustration">Diseño</Title
+                        >
+                        <Viewport
+                          variant="desktop-hidden"
+                          style={{
+                            flexShrink: 0,
+                            width: "100%",
+                            maxWidth: "430px",
+                            height: "auto",
+                          }}
+                        >
+                          <img src="/home/diseno.png" />
+                        </Viewport>
+                        <p>
+                          <strong>Diseñamos marcas</strong> con alma propia y creamos
+                          <strong>ilustraciones</strong> para lograr identidades
+                          únicas.
+                        </p>
+                        <Button
+                          variant="outline"
+                          href="https://www.behance.net/fiebre_creativa"
+                          no-referrer="true"
+                          target="_blank"
+                        >
+                          Ver proyectos
+                        </Button>
+                      </div>
+                      <Viewport
+                        variant="desktop"
+                        style={{
+                          flexShrink: 0,
+                          width: "100%",
+                          maxWidth: "430px",
+                          height: "auto",
+                        }}
+                      >
+                        <img src="/home/diseno.png" />
+                      </Viewport>
+                    </Flex>
+                  </Center>
+                  <Center id="course" class={styles["services-article"]}>
+                    <Flex
+                      class={styles["services-column2"]}
+                      mobile="direction-column"
+                    >
+                      <Viewport
+                        variant="desktop"
+                        style={{
+                          flexShrink: 0,
+                          width: "100%",
+                          maxWidth: "430px",
+                          height: "auto",
+                        }}
+                      >
+                        <img src="/home/curso.png" />
+                      </Viewport>
+                      <div>
+                        <Title
+                          element="h3"
+                          variant="primary"
+                          size="sm"
+                          id="course">Curso</Title
+                        >
+                        <Viewport
+                          variant="desktop-hidden"
+                          style={{
+                            flexShrink: 0,
+                            width: "100%",
+                            maxWidth: "430px",
+                            height: "auto",
+                          }}
+                        >
+                          <img src="/home/curso.png" />
+                        </Viewport>
+                        <p>
+                          Aprende a crear el <strong>diseño</strong>, las <strong
+                            >redes sociales</strong
+                          > y la página <strong>web</strong> de tu negocio y haz
+                          que tu negocio despegue!
+                        </p>
+                        <Flex mobile="direction-column">
+                          <Button
+                            variant="outline"
+                            href="https://www.instagram.com/p/C5ZXbkYJjSH/?img_index=1"
+                            no-referrer="true"
+                            target="_blank">Información del curso</Button
+                          >
+                          <Button
+                            variant="primary"
+                            href="https://forms.gle/rSzpkWwvkKDRUkuo6"
+                            no-referrer="true"
+                            target="_blank">Inscribirme</Button
+                          >
+                        </Flex>
+                      </div>
+                    </Flex>
+                  </Center>
+                </div>
+                <div id="consultancies" class={styles["services-article"]}>
+                  <Flex
+                    class={styles["services-column3"]}
+                    mobile="direction-column"
+                  >
+                    <div>
+                      <Title
+                        element="h3"
+                        variant="primary"
+                        size="sm"
+                        id="consultants">Asesorías</Title
+                      >
+                      <Viewport
+                        variant="desktop-hidden"
+                        style={{
+                          flexShrink: 0,
+                          width: "100%",
+                          maxWidth: "430px",
+                          height: "auto",
+                        }}
+                      >
+                        <img src="/home/asesorias.png" />
+                      </Viewport>
+                      <p>
+                        Dos horas en las que vamos a trabajar sobre tu proyecto
+                        y te vas a llevar <strong
+                          >la estrategia y el material</strong
+                        > para lograrlo.
+                      </p>
+                      <Button
+                        variant="outline"
+                        href="https://forms.gle/ay2Z6FnmTHDjmVFp8"
+                        no-referrer="true"
+                        target="_blank">Quiero asesorarme</Button
+                      >
+                    </div>
+                    <Viewport
+                      variant="desktop"
+                      style={{
+                        flexShrink: 0,
+                        width: "100%",
+                        maxWidth: "430px",
+                        height: "auto",
+                      }}
+                    >
+                      <img src="/home/asesorias.png" />
+                    </Viewport>
+                  </Flex>
+                </div>
+              </Container>
+            </div>
+          </Background>
+        </Background>
+      </div>
+      <div id="about" class={styles.sobremi}>
+        <img class={styles.nubes} src="assets/nubes.svg" />
+        <!-- <SunSVG class={styles.sun} /> -->
+        <Background
+          url="/assets/estrellas3.svg"
+          style={{ backgroundSize: "100% auto", position: "relative" }}
+        >
+          <Background
+            url="/assets/estrellas4.svg"
+            style={{ backgroundSize: "100% auto", position: "relative" }}
+          >
+            <Background
+              url="/assets/nubes2.svg"
+              style={{
+                backgroundSize: "100% auto",
+                position: "relative",
+                backgroundPosition: "top",
+              }}
+            >
+              <Container variant="narrow" style={{ position: "relative" }}>
+                <Title
+                  variant="primary"
+                  size="sm"
+                  align="center"
+                  fontStyle="italic">Sobre Fiebre</Title
+                >
+                <Center>
+                  <div
+                    style={{
+                      flexShrink: 0,
+                      width: "100%",
+                      maxWidth: "430px",
+                      height: "auto",
+                    }}
+                  >
+                    <img src="/home/sobre-fiebre.png" />
+                  </div>
+                </Center>
+                <Center class={styles["about-text"]} variant="text">
+                  <Text size="lg"
+                    >Soy Desirée, diseñadora gráfica recibida en la Universidad
+                    de Buenos Aires (UBA).
+                  </Text>
+                  <Text size="lg"
+                    >Fui docente en esta universidad y también en la Universidad
+                    Argentina de la Empresa (UADE).
+                  </Text>
+                  <Text size="lg"
+                    >Fiebre es mi proyecto desde 2017 donde hago trabajos de
+                    ilustración y desarrollo de marcas.</Text
+                  >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    style={{ margin: "2rem auto 0 auto" }}
+                    href="https://forms.gle/6bbvAgRPGFkqofDx7"
+                    no-referrer="true"
+                    target="_blank"
+                  >
+                    Hablemos
+                  </Button>
+                </Center>
+              </Container>
+            </Background>
+          </Background>
+        </Background>
+        <!-- <MountainsSVG class={styles.mountains} /> -->
+      </div>
+      <div id="resources" class={styles.descargables}>
+        <img class={styles["palm-grid"]} src="assets/palm-grid.svg" />
+        <Container>
+          <Center variant="all">
+            <Title
+              class={styles.title}
+              element="h3"
+              variant="primary"
+              align="center">Descargables Gratis</Title
+            >
+          </Center>
+          <Grid>
+            <Card class={styles.card}>
+              <CardHeader>
+                <Center>
+                  <CardImage src="/home/descargable-planner-para-feed.png" />
+                </Center>
+              </CardHeader>
+              <CardContent>
+                <CardTitle>Planner para feed</CardTitle>
+                <CardDescription
+                  >Planifica el diseño de tu perfil y tu feed de Instagram en
+                  Canva.</CardDescription
+                >
+              </CardContent>
+              <CardFooter>
+                <Center>
+                  <Button
+                    href="https://www.canva.com/design/DAF2N-X_lG4/-lb4UI4eotzmP-xbAEOBGw/view?utm_content=DAF2N-X_lG4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
+                    no-referrer="true"
+                    target="_blank"
+                    width="full-width"
+                    size="lg"
+                  >
+                    Abrir plantilla
+                  </Button>
+                </Center>
+              </CardFooter>
+            </Card>
+            <Card class={styles.card}>
+              <CardHeader>
+                <Center>
+                  <CardImage src="/home/descargable-planner-anual.png" />
+                </Center>
+              </CardHeader>
+              <CardContent>
+                <CardTitle>Planner anual</CardTitle>
+                <CardDescription
+                  >Organiza tu negocio y olvídate de los dolores de cabeza.</CardDescription
+                >
+              </CardContent>
+              <CardFooter>
+                <Center>
+                  <Button
+                    href="https://fiebrediseno.gumroad.com/l/plannersgratis?layout=profile"
+                    no-referrer="true"
+                    target="_blank"
+                    width="full-width"
+                    size="lg"
+                  >
+                    Descargar plantilla
+                  </Button>
+                </Center>
+              </CardFooter>
+            </Card>
+            <Card class={styles.card}>
+              <CardHeader>
+                <Center>
+                  <CardImage
+                    src="/home/descargable-el-color-en-nuestro-proyecto.png"
+                  />
+                </Center>
+              </CardHeader>
+              <CardContent>
+                <CardTitle>Guía de color</CardTitle>
+                <CardDescription
+                  >Si te cuesta elegir los colores ideales para tu negocio, es
+                  aquí!</CardDescription
+                >
+              </CardContent>
+              <CardFooter>
+                <Center>
+                  <Button
+                    href="https://drive.google.com/file/d/1PNN2jx30QAqugTwk-wQEG9Njl4fIPVsa/view?usp=sharing"
+                    no-referrer="true"
+                    target="_blank"
+                    width="full-width"
+                    size="lg"
+                  >
+                    Descargar guía
+                  </Button>
+                </Center>
+              </CardFooter>
+            </Card>
+          </Grid>
+        </Container>
+      </div>
+    </Section>
+    <Footer />
+  </body>
 </html>

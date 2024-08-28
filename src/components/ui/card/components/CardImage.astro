@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import styles from "../Card.module.css";
+
+export type BackgroundProps = HTMLAttributes<"div"> & {
+  src: string;
+  asCover: boolean;
+};
+
+const {
+  asCover,
+  src,
+  class: className = "",
+  style = {},
+  ...props
+} = Astro.props as BackgroundProps;
+
+const inlineStyle = typeof style === "object" ? style : {};
+const styleExtended = { backgroundImage: `url(${src})`, ...inlineStyle };
+---
+
+{
+  asCover ? (
+    <div
+      class:list={[styles.image, className]}
+      style={styleExtended}
+      {...props}
+      aria-hidden="true"
+    >
+      <slot />
+    </div>
+  ) : (
+    <img
+      src={src}
+      class:list={[styles.image, className]}
+      style={style}
+      {...props}
+      aria-hidden="true"
+    />
+  )
+}

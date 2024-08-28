@@ -1,0 +1,55 @@
+---
+import { atom } from "nanostores";
+import type { HTMLAttributes } from "astro/types";
+import styles from "./Drawer.module.css";
+
+type Props = HTMLAttributes<"dialog"> & {
+  id: string;
+};
+
+const { id = "drawer", class: className = "", ...props } = Astro.props as Props;
+const openButtonId = `${id}-open`;
+const closeButtonId = `${id}-close`;
+export const isOpen = atom(false);
+---
+
+<button id={openButtonId} onclick="openModal">{open}</button>
+<dialog id={id} class={styles.dialog} {...props} onkeydown="trapFocus">
+  <form method="dialog">
+    <slot name="close" />
+  </form>
+  <div class={styles.backdrop} onclick="closeModal"></div>
+  <div class={styles.content}>
+    <slot />
+  </div>
+</dialog>
+
+<script>
+  const { id = "drawer", class: className = "", ...props } = Astro.props;
+  const openButtonId = `${id}-open`;
+  const dialogElement = document.getElementById(id);
+
+  const openModal = () => {
+    disableScroll();
+    dialogElement?.showModal();
+    dialogElement?.setAttribute("aria-modal", true);
+  };
+
+  const closeModal = () => {
+    enableScroll();
+    dialogElement.setAttribute("aria-modal", false);
+  };
+
+  const disableScroll = () => {
+    document.body.style.overflow = "hidden";
+  };
+
+  const enableScroll = () => {
+    document.body.style.overflow = "";
+  };
+
+  const openButtonElement = document.getElementById(openButtonId);
+  if (openButtonElement) {
+    openButtonElement.addEventListener("click", openModal);
+  }
+</script>

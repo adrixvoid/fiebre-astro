@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-BoldItalic.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-LightItalic.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-SemiBold.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-Medium.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-Light.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-MediumItalic.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-MediumItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-SemiBoldItalic.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-ExtraBold.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-ExtraBoldItalic.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite/Morganite-Bold.woff2') format('woff2'),
+    url('/fonts/Morganite/Morganite-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

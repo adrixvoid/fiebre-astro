@@ -1,0 +1,21 @@
+---
+import { cvaVariants, type PropsParagraph } from "./Text.cva.ts";
+
+const {
+  class: className = "",
+  align,
+  variant,
+  size,
+  element = "p",
+  fontStyle,
+  style,
+  ...props
+} = Astro.props as PropsParagraph;
+---
+
+<p
+  class={cvaVariants({ variant, size, align, fontStyle, className })}
+  {...props}
+>
+  <slot />
+</p>

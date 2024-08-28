@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import styles from '../Card.module.css';
+
+type TitleProps = HTMLAttributes<'div'>;
+
+const {class: className = '', ...props} = Astro.props as TitleProps;
+---
+
+<div class:list={[styles.title, className]} {...props}>
+  <slot />
+</div>

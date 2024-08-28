@@ -1,0 +1,256 @@
+.hero {
+  height: 100vh;
+  min-height: 500px;
+  background-size: auto 115%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  user-select: none;
+  position: relative;
+
+  container-type: inline-size;
+  container-name: hero;
+}
+
+.backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(0deg 0% 0% / 45%);
+  background: linear-gradient(180deg, rgba(20, 0, 47, 0.4) 20%, rgba(102, 102, 102, 0) 100%);
+}
+
+.content {
+  position: relative;
+}
+
+.title {
+  transition: font 0.3s ease;
+  will-change: font;
+  font-size: 3cqw;
+}
+
+.text-0 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.15em;
+
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+
+  display: block;
+  margin-bottom: 1em;
+}
+
+.headline {
+  font-family: 'Morganite';
+  line-height: 1;
+  text-transform: uppercase;
+
+  /* magia suceda */
+
+  font-family: 'Morganite';
+  font-weight: 700;
+  line-height: 0.8;
+
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.text-1 {
+  font-size: 10.6em;
+}
+
+.text-2 {
+  font-size: 9em;
+}
+
+.rainbowSVG {
+  vertical-align: baseline;
+}
+
+@media screen and (width <960px) {
+  .title {
+    font-size: min(max(3cqw, 1.8rem), 2.5cqh);
+  }
+
+  .rainbowSVG {
+    width: auto;
+    height: 19cqh;
+  }
+
+  .headline {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.8;
+  }
+}
+
+@media screen and (width >=960px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .rainbowSVG {
+    height: 1.17cap;
+    width: auto;
+    transform: translateY(1px);
+  }
+
+  .headline {
+    font-size: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-0 {
+    font-size: 0.8em;
+    letter-spacing: 0.5em;
+  }
+
+  .text-1 {
+    font-size: 16em;
+  }
+
+  .text-2 {
+    font-size: 9.5em;
+  }
+}
+
+@media screen and (width >=1280px) {
+  .headline {
+    font-size: 10em;
+    font-size: 11.45em;
+  }
+}
+
+.svg {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planeta1 {
+  position: absolute;
+  max-width: 202px;
+  max-height: 202px;
+  width: 20vh;
+  height: 20vh;
+  left: 25vw;
+  top: 0;
+  transform: translateY(-12vh);
+}
+
+.planeta2 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 18%;
+  top: 20%;
+}
+
+.planeta3 {
+  position: absolute;
+  width: 56.38px;
+  height: 36.35px;
+  right: 20%;
+  top: 30%;
+  transform: rotate(-19.19deg);
+}
+
+.planeta4 {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  right: 24vw;
+  bottom: 10vh;
+}
+
+.planeta5 {
+  position: absolute;
+  width: 163.88px;
+  height: 95.17px;
+  left: 15cqw;
+  bottom: 0;
+  transform: rotate(21.47deg);
+}
+
+.ondaEstelar1 {
+  width: 100%;
+  /* transform: scale3d(1.2, 1.2, 1.5); */
+  animation: spin 60s linear infinite;
+  transform: scale(2);
+  width: 100vw;
+  height: 100vw;
+  min-width: 100vh;
+  min-height: 100vh;
+}
+
+.ondaEstelar2 {
+  animation: spin-reverse 90s linear infinite;
+  width: 90vw;
+  height: 90vw;
+  min-width: 90vh;
+  min-height: 90vh;
+}
+
+.ondaEstelar3 {
+  animation: spin 60s linear infinite;
+  width: 50vw;
+  height: 50vw;
+  min-width: 50vh;
+  min-height: 50vh;
+}
+
+@media screen and (min-width: 1280px) {
+  .ondaEstelar1 {
+    transform: scale(1.5);
+  }
+
+  .ondaEstelar2 {
+    width: 85vw;
+    height: 85vw;
+    min-width: 85vh;
+    min-height: 85vh;
+  }
+
+  .ondaEstelar3 {
+    animation: spin 60s linear infinite;
+    width: 70vw;
+    height: 70vh;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  100% {
+    transform: rotate(-360deg);
+  }
+}

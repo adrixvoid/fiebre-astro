@@ -1,0 +1,21 @@
+---
+import Link from "../link/Link.astro";
+import styles from "./Nav.module.css";
+
+const { class: className = "", ...props } = Astro.props;
+
+// @hardcoded
+const isPending = false;
+const isActive = false;
+---
+
+<Link
+  {...props}
+  class:list={[
+    styles.nav,
+    { pending: isPending, [styles.primary]: isActive },
+    className,
+  ]}
+>
+  <slot />
+</Link>

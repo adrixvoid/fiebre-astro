@@ -1,0 +1,36 @@
+---
+import { cva, type VariantProps } from "class-variance-authority";
+import type { HTMLAttributes } from "astro/types";
+import styles from "./Skeleton.module.css";
+
+const cvaVariants = cva(styles.skeleton, {
+  variants: {
+    variant: {
+      radius: styles.radius,
+      circle: styles.circle,
+    },
+  },
+});
+
+type Props = HTMLAttributes<"div"> &
+  VariantProps<typeof cvaVariants> & {
+    width?: string | number;
+    height?: string | number;
+  };
+
+const {
+  class: className = "",
+  width,
+  height,
+  style,
+  variant,
+  ...props
+} = Astro.props as Props;
+
+const customStyle = typeof style === "object" ? { ...style } : null;
+const inlineStyle = { width, height, ...customStyle };
+---
+
+<div class={cvaVariants({ variant, className })} style={inlineStyle} {...props}>
+  <slot />
+</div>

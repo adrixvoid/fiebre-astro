@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import styles from "./Section.module.css";
+
+type Props = HTMLAttributes<"div"> & {
+  marginBottom?: boolean;
+};
+
+const {
+  class: className = "",
+  marginBottom = false,
+  ...props
+} = Astro.props as Props;
+---
+
+<section
+  {...props}
+  class:list={[
+    styles.section,
+    className,
+    {
+      [styles["margin-bottom"]]: marginBottom,
+    },
+  ]}
+>
+  <slot />
+</section>

@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import styles from './Card.module.css';
+
+export type BackgroundProps = HTMLAttributes<'div'>;
+
+const { class: className = '', style = {}, ...props } = Astro.props as BackgroundProps;
+---
+
+<div class:list={[styles.card, className]}>
+  <slot />
+</div>

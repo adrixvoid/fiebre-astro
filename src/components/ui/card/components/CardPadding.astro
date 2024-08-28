@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import styles from '../Card.module.css';
+
+type BaseProps = HTMLAttributes<'div'>;
+
+const {class: className = '', ...props} = Astro.props as BaseProps;
+---
+
+<div class:list={[styles.padding, className]} {...props}>
+  <slot />
+</div>

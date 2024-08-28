@@ -1,0 +1,10 @@
+.nav {
+  display: flex;
+  font-size: 0.8rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.primary {
+  color: hsl(var(--primary))
+}

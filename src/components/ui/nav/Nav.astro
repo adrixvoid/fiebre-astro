@@ -1,0 +1,9 @@
+---
+import styles from "./Nav.module.css";
+
+const { class: className = "", ...props } = Astro.props;
+---
+
+<nav {...props} class:list={[styles.nav, className]}>
+  <slot />
+</nav>

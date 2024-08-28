@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import styles from "./Background.module.css";
+
+export type BackgroundProps = HTMLAttributes<"div"> & {
+  url: string;
+  repeat?: boolean;
+};
+
+const {
+  repeat,
+  url,
+  class: className = "",
+  style = {},
+  ...props
+} = Astro.props as BackgroundProps;
+
+const bgClassName = [
+  styles.background,
+  { [styles.repeat]: repeat, [styles["no-repeat"]]: !repeat },
+];
+
+const inlineStyle = typeof style === "object" ? style : null;
+---
+
+<div
+  class:list={bgClassName}
+  style={{ ...inlineStyle, backgroundImage: `url(${url})` }}
+  {...props}
+>
+  <slot />
+</div>

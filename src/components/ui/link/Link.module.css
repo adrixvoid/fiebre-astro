@@ -1,0 +1,17 @@
+.link {
+  color: inherit;
+  text-underline-offset: .2rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 4px solid hsl(var(--ring));
+  outline-offset: 5px;
+}
+
+.primary {
+  color: hsl(var(--primary))
+}

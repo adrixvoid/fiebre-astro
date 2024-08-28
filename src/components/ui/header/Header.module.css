@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  top: 0;
+}
+
+.static {
+  position: static;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
