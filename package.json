@@ -4,17 +4,19 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:host": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.3",
     "@astrojs/mdx": "^3.1.4",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.14.5",
-    "@astrojs/check": "^0.9.3",
+    "class-variance-authority": "^0.7.0",
     "typescript": "^5.5.4"
   }
 }
