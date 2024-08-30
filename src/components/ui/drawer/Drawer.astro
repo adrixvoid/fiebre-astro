@@ -1,5 +1,4 @@
 ---
-import { atom } from "nanostores";
 import type { HTMLAttributes } from "astro/types";
 import styles from "./Drawer.module.css";
 
@@ -8,48 +7,136 @@ type Props = HTMLAttributes<"dialog"> & {
 };
 
 const { id = "drawer", class: className = "", ...props } = Astro.props as Props;
-const openButtonId = `${id}-open`;
-const closeButtonId = `${id}-close`;
-export const isOpen = atom(false);
 ---
 
-<button id={openButtonId} onclick="openModal">{open}</button>
-<dialog id={id} class={styles.dialog} {...props} onkeydown="trapFocus">
-  <form method="dialog">
-    <slot name="close" />
-  </form>
-  <div class={styles.backdrop} onclick="closeModal"></div>
-  <div class={styles.content}>
-    <slot />
-  </div>
-</dialog>
+<custom-drawer>
+  <dialog id={id} class:list={[styles.dialog, className]} {...props}>
+    <div class:list={["backdrop", styles.backdrop]}></div>
+    <content>
+      <div class={styles.content}>
+        <slot />
+      </div>
+    </content>
+  </dialog>
+  <open-button>
+    <slot name="button" />
+  </open-button>
+</custom-drawer>
 
 <script>
-  const { id = "drawer", class: className = "", ...props } = Astro.props;
-  const openButtonId = `${id}-open`;
-  const dialogElement = document.getElementById(id);
+  class TrapFocus {
+    baseElement;
+    focusableElements: NodeListOf<HTMLElement | HTMLDivElement> | null = null;
 
-  const openModal = () => {
-    disableScroll();
-    dialogElement?.showModal();
-    dialogElement?.setAttribute("aria-modal", true);
-  };
+    constructor(element?: HTMLElement) {
+      this.baseElement = element || document.querySelector("body");
+    }
 
-  const closeModal = () => {
-    enableScroll();
-    dialogElement.setAttribute("aria-modal", false);
-  };
+    enable = () => {
+      this.baseElement?.addEventListener("keydown", this.trapFocus);
+      this.focusableElements = this.baseElement
+        ? this.baseElement?.querySelectorAll(
+            'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+          )
+        : null;
+    };
 
-  const disableScroll = () => {
-    document.body.style.overflow = "hidden";
-  };
+    disable = () => {
+      this.baseElement?.removeEventListener("keydown", this.trapFocus);
+    };
 
-  const enableScroll = () => {
-    document.body.style.overflow = "";
-  };
+    trapFocus = (event: KeyboardEvent) => {
+      const firstElement = this.focusableElements?.[0];
+      const lastElement =
+        this.focusableElements?.[this.focusableElements.length - 1];
 
-  const openButtonElement = document.getElementById(openButtonId);
-  if (openButtonElement) {
-    openButtonElement.addEventListener("click", openModal);
+      if (event.key === "Tab") {
+        const tabForwards =
+          !event.shiftKey && document?.activeElement === lastElement;
+        const tabBackwards =
+          event.shiftKey && document?.activeElement === firstElement;
+
+        if (tabForwards) {
+          // only TAB is pressed, not SHIFT simultaneously
+          // Prevent default behavior of keydown on TAB (i.e. focus next element)
+          event.preventDefault();
+          (firstElement as HTMLElement).focus();
+        } else if (tabBackwards) {
+          // TAB and SHIFT are pressed simultaneously
+          event.preventDefault();
+          (lastElement as HTMLElement).focus();
+        }
+      }
+    };
   }
+
+  class CustomDrawer extends HTMLElement {
+    dialogElement: HTMLDialogElement | null;
+    openButtonElement: HTMLButtonElement | null;
+    closeButtonElements?: NodeListOf<HTMLButtonElement> | null;
+    backdropElement?: HTMLDivElement | null;
+    trapFocus?: TrapFocus;
+
+    constructor() {
+      super();
+
+      this.openButtonElement = this.querySelector("open-button > *");
+      this.dialogElement = this.querySelector("dialog");
+      this.openButtonElement?.addEventListener("click", this.openModal);
+      this.setAccessibility(false);
+    }
+
+    openModal = () => {
+      this.dialogElement?.showModal();
+      this.disableScroll();
+
+      this.setAccessibility(true);
+
+      this.trapFocus = new TrapFocus(this.dialogElement as HTMLElement);
+      this.trapFocus.enable();
+
+      this.closeButtonElements = this.querySelectorAll(
+        "button[data-action='close-drawer']"
+      );
+      this.closeButtonElements.forEach((element) => {
+        element.addEventListener("click", this.closeModal);
+      });
+
+      this.backdropElement = this.querySelector(".backdrop");
+      this.backdropElement?.addEventListener("click", this.closeModal);
+
+      addEventListener("resize", this.closeModal);
+    };
+
+    closeModal = () => {
+      this.setAccessibility(false);
+      this.trapFocus?.disable();
+      this.dialogElement?.close();
+
+      this.enableScroll();
+      this.closeButtonElements?.forEach((element) => {
+        element.removeEventListener("click", this.closeModal);
+      });
+      this.backdropElement?.removeEventListener("click", this.closeModal);
+      this.removeEventListener("resize", this.closeModal);
+    };
+
+    setAccessibility = (isActive: boolean = false) => {
+      this.dialogElement?.setAttribute("aria-modal", JSON.stringify(isActive));
+      this.openButtonElement?.setAttribute(
+        "aria-expanded",
+        JSON.stringify(isActive)
+      );
+    };
+
+    disableScroll = () => {
+      document.body.style.overflow = "hidden";
+    };
+
+    enableScroll = () => {
+      document.body.style.overflow = "";
+    };
+  }
+
+  customElements.define("custom-drawer", CustomDrawer);
 </script>

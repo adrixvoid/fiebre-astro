@@ -1,0 +1,48 @@
+{
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/bower_components/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/coverage/**": true,
+    "**/.next/**": true,
+    "**/.vercel/**": true,
+    "**/.cache/**": true,
+    "**/.git/**": true,
+    "package-lock.json": true,
+    "yarn-lock.json": true,
+    "pnpm-lock.json": true
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "cSpell.words": [
+    "Behance",
+    "Canva",
+    "clss",
+    "clsx",
+    "Contactame",
+    "datetime",
+    "descargables",
+    "isbot",
+    "Linkedin",
+    "lucide",
+    "markdoc",
+    "Markdoc",
+    "Pinterest",
+    "Renderable",
+    "Subcategoría",
+    "subcategorías",
+    "subheadline",
+    "svgr",
+    "tailwind",
+    "tailwindcss",
+    "tanstack",
+    "typecheck",
+    "vaporwave",
+    "virtuals",
+    "zustand"
+  ],
+  "editor.fontSize": 12
+}

@@ -6,8 +6,8 @@
 .logo {
   aspect-ratio: 2 / 1;
   height: 2.5rem;
-  color: hsl(var(--foreground));
-  fill: hsl(var(--foreground));
+  color: hsl(var(--primary));
+  fill: hsl(var(--primary));
   will-change: filter;
   transition: filter 300ms;
 }

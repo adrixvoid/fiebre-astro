@@ -4,6 +4,7 @@ import Center from "~/components/ui/center/Center.astro";
 import Viewport from "~/components/ui/viewport/Viewport.astro";
 
 import styles from "./home/MainHero.module.css";
+import Rainbow from "./ui/svg/Rainbow.astro";
 ---
 
 <div class={styles.hero}>
@@ -62,7 +63,7 @@ import styles from "./home/MainHero.module.css";
           <span class={styles.headline}>
             <span>magia</span>
             <span aria-hidden>
-              <img
+              <Rainbow
                 src="/assets/rainbow.svg"
                 aria-hidden
                 class={styles.rainbowSVG}
@@ -74,7 +75,7 @@ import styles from "./home/MainHero.module.css";
       </Viewport>
       <Viewport variant="desktop-hidden">
         <span aria-hidden>
-          <img
+          <Rainbow
             src="/assets/rainbow.svg"
             aria-hidden
             class={styles.rainbowSVG}

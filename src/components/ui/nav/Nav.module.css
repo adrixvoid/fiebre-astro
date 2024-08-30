@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  font-size: 0.8rem;
+  font-size: inherit;
   align-items: center;
   gap: 1.5rem;
 }

@@ -5,6 +5,12 @@
   color: hsl(var(--foreground));
 }
 
+.dialog:modal {
+  max-width: 100vw;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
 .dialog {
   width: 100dvw;
   height: 100dvh;
@@ -26,8 +32,9 @@
   top: 0;
   left: 0;
   /* box-shadow: var(--shadow-2xl); */
-  box-shadow: 0 1px 1px 11px hsl(258.11deg 100% 91.28% / 51%);
+  box-shadow: 4px 0 1px 12px hsl(296.36deg 100% 66% / 51%), 1px 1px 0 32px hsl(275.59deg 100% 63.91% / 27.9%);
   animation: slideOut 250ms;
+  overflow: auto;
 }
 
 .dialog[open] .content {

@@ -6,19 +6,11 @@
   .mobile {
     display: none;
   }
-
-  .base {
-    outline: 1px solid green;
-  }
 }
 
 @media screen and (width <=640px) {
   .mobile-hidden {
     display: none;
-  }
-
-  .base {
-    outline: 1px solid red;
   }
 }
 
@@ -26,18 +18,10 @@
   .desktop {
     display: none;
   }
-
-  .base {
-    outline: 1px solid blue;
-  }
 }
 
 @media screen and (width >=960px) {
   .desktop-hidden {
     display: none;
-  }
-
-  .base {
-    outline: 1px solid orange;
   }
 }

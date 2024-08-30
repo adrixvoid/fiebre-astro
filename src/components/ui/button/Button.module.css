@@ -28,7 +28,6 @@
 }
 
 .button:active {
-    /* transform: scale(1.1) */
     box-shadow: none;
 }
 
@@ -42,7 +41,6 @@
     outline-style: solid;
     outline-width: 2px;
     outline-offset: -2px;
-    /* box-shadow: var(--tw-ring-shadow-0); */
 }
 
 .button:disabled,
@@ -79,7 +77,6 @@
 
 .primary:hover {
     background-color: hsl(var(--primary) / 0.8);
-    /* box-shadow: 2px 2px 0 2px hsl(var(--primary) / 0.4); */
     transform: translate(2px, 2px) scaleX(1) scaleY(1);
     box-shadow: none;
 }
@@ -92,7 +89,6 @@
 
 .secondary:hover {
     background-color: hsl(var(--secondary) / .8);
-    /* box-shadow: 0 2px 4px hsl(var(--shadow-color)); */
     box-shadow: none;
     transform: translate(2px, 2px) scaleX(1) scaleY(1);
 }
@@ -149,7 +145,7 @@
 .ghost:focus,
 .ghost:focus-within {
     color: hsl(var(--button-foreground));
-    box-shadow: var(--tw-ring-shadow-0);
+    fill: currentColor;
 }
 
 .link {
