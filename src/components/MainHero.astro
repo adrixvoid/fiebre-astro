@@ -9,50 +9,56 @@ import Rainbow from "./ui/svg/Rainbow.astro";
 
 <div class={styles.hero}>
   <div aria-hidden>
-    <ElementAsBackground>
-      <Center variant="all">
-        <img src="/assets/estrellas.svg" aria-hidden />
-      </Center>
-    </ElementAsBackground>
-    <ElementAsBackground>
-      <Center variant="all">
-        <img src="/assets/estrellas2.svg" aria-hidden />
-      </Center>
-    </ElementAsBackground>
-    <ElementAsBackground>
-      <Center variant="all">
-        <img
-          src="/assets/onda-estelar-1.svg"
-          aria-hidden
-          class={styles.ondaEstelar1}
-        />
-      </Center>
-    </ElementAsBackground>
-    <ElementAsBackground>
-      <Center variant="all">
-        <img
-          src="/assets/onda-estelar-2.svg"
-          aria-hidden
-          class={styles.ondaEstelar2}
-        />
-      </Center>
-    </ElementAsBackground>
-    <ElementAsBackground>
-      <Center variant="all">
-        <img
-          src="/assets/onda-estelar-3.svg"
-          aria-hidden
-          class={styles.ondaEstelar3}
-        />
-      </Center>
-    </ElementAsBackground>
-    <ElementAsBackground>
-      <img src="/assets/planeta1.svg" aria-hidden class={styles.planeta1} />
-      <img src="/assets/planeta2.svg" aria-hidden class={styles.planeta2} />
-      <img src="/assets/planeta3.svg" aria-hidden class={styles.planeta3} />
-      <img src="/assets/planeta4.svg" aria-hidden class={styles.planeta4} />
-      <img src="/assets/planeta5.svg" aria-hidden class={styles.planeta5} />
-    </ElementAsBackground>
+    <div class={styles.orbit}>
+      <ElementAsBackground>
+        <Center variant="all">
+          <img
+            class={styles.estrella1}
+            src="/assets/estrellas.svg"
+            aria-hidden
+          />
+        </Center>
+      </ElementAsBackground>
+      <ElementAsBackground>
+        <Center variant="all">
+          <img src="/assets/estrellas2.svg" aria-hidden />
+        </Center>
+      </ElementAsBackground>
+      <ElementAsBackground>
+        <Center variant="all">
+          <img
+            src="/assets/onda-estelar-1.svg"
+            aria-hidden
+            class={styles.ondaEstelar1}
+          />
+        </Center>
+      </ElementAsBackground>
+      <ElementAsBackground>
+        <Center variant="all">
+          <img
+            src="/assets/onda-estelar-2.svg"
+            aria-hidden
+            class={styles.ondaEstelar2}
+          />
+        </Center>
+      </ElementAsBackground>
+      <ElementAsBackground>
+        <Center variant="all">
+          <img
+            src="/assets/onda-estelar-3.svg"
+            aria-hidden
+            class={styles.ondaEstelar3}
+          />
+        </Center>
+      </ElementAsBackground>
+      <ElementAsBackground>
+        <img src="/assets/planeta1.svg" aria-hidden class={styles.planeta1} />
+        <img src="/assets/planeta2.svg" aria-hidden class={styles.planeta2} />
+        <img src="/assets/planeta3.svg" aria-hidden class={styles.planeta3} />
+        <img src="/assets/planeta4.svg" aria-hidden class={styles.planeta4} />
+        <img src="/assets/planeta5.svg" aria-hidden class={styles.planeta5} />
+      </ElementAsBackground>
+    </div>
   </div>
   {/* <div class={styles.backdrop} /> */}
   <div class={styles.content}>

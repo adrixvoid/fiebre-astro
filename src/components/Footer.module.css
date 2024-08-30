@@ -1,0 +1,34 @@
+.footer {
+  height: 20dvh;
+  min-height: 152px;
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .label {
+    display: none;
+  }
+}

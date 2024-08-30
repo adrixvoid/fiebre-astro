@@ -149,13 +149,18 @@
   justify-content: center;
 }
 
+.estrella1 {
+  animation: spin 180s linear infinite;
+  transform-origin: center;
+}
+
 .planeta1 {
   position: absolute;
   max-width: 202px;
   max-height: 202px;
   width: 20vh;
   height: 20vh;
-  left: 25vw;
+  right: 10vw;
   top: 0;
   transform: translateY(-12vh);
 }
@@ -183,6 +188,8 @@
   height: 33px;
   right: 24vw;
   bottom: 10vh;
+  animation: spin-reverse 180s linear infinite;
+  transform-origin: center;
 }
 
 .planeta5 {
@@ -192,13 +199,16 @@
   left: 15cqw;
   bottom: 0;
   transform: rotate(21.47deg);
+  animation: spin-reverse 360s linear infinite;
+  transform-origin: center;
 }
 
 .ondaEstelar1 {
   width: 100%;
   /* transform: scale3d(1.2, 1.2, 1.5); */
-  animation: spin 60s linear infinite;
-  transform: scale(2);
+  animation: spin 90s linear infinite;
+  transform-origin: center;
+  scale: 1.7;
   width: 100vw;
   height: 100vw;
   min-width: 100vh;
@@ -206,7 +216,8 @@
 }
 
 .ondaEstelar2 {
-  animation: spin-reverse 90s linear infinite;
+  animation: spin-reverse 60s linear infinite;
+  transform-origin: center;
   width: 90vw;
   height: 90vw;
   min-width: 90vh;
@@ -214,11 +225,22 @@
 }
 
 .ondaEstelar3 {
-  animation: spin 60s linear infinite;
+  animation: spin 30s linear infinite;
+  transform-origin: center;
   width: 50vw;
   height: 50vw;
   min-width: 50vh;
   min-height: 50vh;
+}
+
+.orbit {
+  animation: spin-reverse 360s linear infinite;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
 
 @media screen and (min-width: 1280px) {

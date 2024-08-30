@@ -1,10 +1,11 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
-import Background from "~/components/ui/background/Background.astro";
+import MainHero from "~/components/MainHero.astro";
 import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
+import Background from "~/components/ui/background/Background.astro";
 import Button from "~/components/ui/button/Button.astro";
 import Card, {
   CardContent,
@@ -22,11 +23,10 @@ import Section from "~/components/ui/section/Section.astro";
 import Text from "~/components/ui/text/Text.astro";
 import Title from "~/components/ui/text/Title.astro";
 import Viewport from "~/components/ui/viewport/Viewport.astro";
-import MainHero from "~/components/MainHero.astro";
 
 import styles from "~/components/home/Home.module.css";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!doctype html>
@@ -228,6 +228,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </div>
       <div id="about" class={styles.sobremi}>
         <img class={styles.nubes} src="assets/nubes.svg" />
+        <img class={styles.sun} src="assets/sun.svg" />
         <!-- <SunSVG class={styles.sun} /> -->
         <Background
           url="/assets/estrellas3.svg"
@@ -292,6 +293,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             </Background>
           </Background>
         </Background>
+        <img class={styles.mountains} src="assets/mountains.svg" />
         <!-- <MountainsSVG class={styles.mountains} /> -->
       </div>
       <div id="resources" class={styles.descargables}>

@@ -2,7 +2,7 @@
   --color-brand: 318.52deg 100% 70.16%;
   --color-brand-secondary: hsl(269, 100%, 38%);
   --color-brand-light: #bd9af4;
-  --color-brand-highlight: #b5fc00;
+  --color-brand-highlight: 77, 100%, 49%;
   --color-brand-a90: #ff55cb;
 
   --accent-bg: var(--color-brand);

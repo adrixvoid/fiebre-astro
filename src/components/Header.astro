@@ -61,31 +61,23 @@ const iconLinks: {
             variant="ghost"
             class:list={[styles.button, "menu-button"]}
           >
-            <!-- <MenuIcon /> -->
-            <Icon icon="list" />
+            <Icon icon="hamburger" size="24px" />
             <span class="sr-only">Menu</span>
           </Button>
           <div id="menu-content">
-            <MobileMenu textLinks={textLinks} iconLinks={iconLinks}>
-              <Link
-                slot="mobile-menu-head"
-                href="/"
-                class="logo-link"
-                title="Home Page"
-              >
-                <Logo aria-hidden class={styles.logo} />
-              </Link>
-            </MobileMenu>
+            <MobileMenu textLinks={textLinks} iconLinks={iconLinks} />
           </div>
         </Drawer>
-        <Logo aria-hidden class={styles.logo} />
+        <Link href="/" class="logo-link" title="Home Page">
+          <Logo />
+        </Link>
       </div>
     </Viewport>
     <Viewport variant="mobile-hidden">
       <Flex justify="between" align="center">
         <Link href="/" class="logo-link" title="Home Page">
           <span class="sr-only">{SITE_TITLE}</span>
-          <Logo aria-hidden class={styles.logo} />
+          <Logo />
         </Link>
         <Nav class:list={[styles.navigation, "internal-links"]}>
           <NavLink href="#services">Servicios</NavLink>

@@ -1,13 +1,13 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import styles from "./MobileMenu.module.css";
 import Button from "../ui/button/Button.astro";
 import Icon from "../ui/icon/Icon.astro";
+import type { iconPaths } from "../ui/icon/IconPaths";
 import Link from "../ui/link/Link.astro";
-import Logo from "../ui/svg/Logo.astro";
 import Nav from "../ui/nav/Nav.astro";
 import NavLink from "../ui/nav/NavLink.astro";
-import type { iconPaths } from "../ui/icon/IconPaths";
+import Logo from "../ui/svg/Logo.astro";
+import styles from "./MobileMenu.module.css";
 
 type Props = HTMLAttributes<"div"> & {
   textLinks: { label: string; href: string }[];
@@ -28,14 +28,20 @@ const inlineStyle = typeof style === "object" ? style : null;
 <div class={styles.menu} style={{ ...inlineStyle }} {...props}>
   <header class={styles.header}>
     <div class={styles.padding}>
-      <slot name="mobile-menu-head" />
+      <Link
+        slot="mobile-menu-head"
+        href="/"
+        class="logo-link"
+        title="Home Page"
+      >
+        <Logo />
+      </Link>
       <Button
         data-action="close-drawer"
         class:list={styles.close}
         variant="ghost"
-        size="sm"
       >
-        <Icon icon="x" />
+        <Icon icon="x" size="24px" />
         <span class="sr-only">Close Menu</span>
       </Button>
     </div>
