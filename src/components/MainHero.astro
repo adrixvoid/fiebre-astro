@@ -5,58 +5,99 @@ import Viewport from "~/components/ui/viewport/Viewport.astro";
 
 import styles from "./home/MainHero.module.css";
 import Rainbow from "./ui/svg/Rainbow.astro";
+
+import { Image } from "astro:assets";
+import localEstrella1 from "../../public/assets/estrellas.svg";
+import localEstrella2 from "../../public/assets/estrellas2.svg";
+import localOndaEstelar1 from "../../public/assets/onda-estelar-1.svg";
+import localOndaEstelar2 from "../../public/assets/onda-estelar-2.svg";
+import localOndaEstelar3 from "../../public/assets/onda-estelar-3.svg";
+import localPlaneta1 from "../../public/assets/planeta1.svg";
+import localPlaneta2 from "../../public/assets/planeta2.svg";
+import localPlaneta3 from "../../public/assets/planeta3.svg";
+import localPlaneta4 from "../../public/assets/planeta4.svg";
+import localPlaneta5 from "../../public/assets/planeta5.svg";
 ---
 
 <div class={styles.hero}>
-  <div aria-hidden>
+  <div>
     <div class={styles.orbit}>
       <ElementAsBackground>
         <Center variant="all">
-          <img
+          <Image
             class={styles.estrella1}
-            src="/assets/estrellas.svg"
-            aria-hidden
+            src={localEstrella1}
+            aria-hidden="true"
+            alt="estrella"
           />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <img src="/assets/estrellas2.svg" aria-hidden />
+          <Image src={localEstrella2} aria-hidden="true" alt="estrella" />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <img
-            src="/assets/onda-estelar-1.svg"
-            aria-hidden
+          <Image
+            src={localOndaEstelar1}
+            aria-hidden="true"
             class={styles.ondaEstelar1}
+            alt="onda estelar"
           />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <img
-            src="/assets/onda-estelar-2.svg"
-            aria-hidden
+          <Image
+            src={localOndaEstelar2}
+            aria-hidden="true"
             class={styles.ondaEstelar2}
+            alt="onda estelar"
           />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <img
-            src="/assets/onda-estelar-3.svg"
-            aria-hidden
+          <Image
+            src={localOndaEstelar3}
+            aria-hidden="true"
             class={styles.ondaEstelar3}
+            alt="onda estelar"
           />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
-        <img src="/assets/planeta1.svg" aria-hidden class={styles.planeta1} />
-        <img src="/assets/planeta2.svg" aria-hidden class={styles.planeta2} />
-        <img src="/assets/planeta3.svg" aria-hidden class={styles.planeta3} />
-        <img src="/assets/planeta4.svg" aria-hidden class={styles.planeta4} />
-        <img src="/assets/planeta5.svg" aria-hidden class={styles.planeta5} />
+        <Image
+          src={localPlaneta1}
+          aria-hidden="true"
+          class={styles.planeta1}
+          alt="planeta"
+        />
+        <Image
+          src={localPlaneta2}
+          aria-hidden="true"
+          class={styles.planeta2}
+          alt="planeta"
+        />
+        <Image
+          src={localPlaneta3}
+          aria-hidden="true"
+          class={styles.planeta3}
+          alt="planeta"
+        />
+        <Image
+          src={localPlaneta4}
+          aria-hidden="true"
+          class={styles.planeta4}
+          alt="planeta"
+        />
+        <Image
+          src={localPlaneta5}
+          aria-hidden="true"
+          class={styles.planeta5}
+          alt="planeta"
+        />
       </ElementAsBackground>
     </div>
   </div>
@@ -68,10 +109,10 @@ import Rainbow from "./ui/svg/Rainbow.astro";
           <span class={styles["text-0"]}>Hagamos que la</span>
           <span class={styles.headline}>
             <span>magia</span>
-            <span aria-hidden>
+            <span>
               <Rainbow
                 src="/assets/rainbow.svg"
-                aria-hidden
+                aria-hidden="true"
                 class={styles.rainbowSVG}
               />
             </span>
@@ -80,10 +121,10 @@ import Rainbow from "./ui/svg/Rainbow.astro";
         </h1>
       </Viewport>
       <Viewport variant="desktop-hidden">
-        <span aria-hidden>
+        <span>
           <Rainbow
             src="/assets/rainbow.svg"
-            aria-hidden
+            aria-hidden="true"
             class={styles.rainbowSVG}
           />
         </span>

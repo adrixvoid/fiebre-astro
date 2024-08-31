@@ -1,9 +1,9 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import "../styles/morganite.css";
 import "../styles/reset.css";
 import "../styles/tailwind.css";
-import "../styles/morganite.css";
 // import '../styles/global.css';
 import "../styles/styles.css";
 
@@ -26,9 +26,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 
 <!-- Font preloads -->
 <link
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
   rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-  media="all"
 />
 
 <!-- Canonical URL -->

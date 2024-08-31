@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+
+import Background from "~/components/ui/background/Background.astro";
+import Button from "~/components/ui/button/Button.astro";
+import Center from "~/components/ui/center/Center.astro";
+import Container from "~/components/ui/container/Container.astro";
+import Text from "~/components/ui/text/Text.astro";
+import Title from "~/components/ui/text/Title.astro";
+
+import styles from "./About.module.css";
+
+import localSobreGrilla from "../../../public/home/sobre-grilla.svg";
+import localSobreMouse from "../../../public/home/sobre-mouse.svg";
+
+import localSobreFoto from "../../../public/home/sobre-foto.png";
+import localSobreGustos from "../../../public/home/sobre-gustos.png";
+import localSobreHerramientas from "../../../public/home/sobre-herramientas.png";
+import localSobreIdiomas from "../../../public/home/sobre-idiomas.png";
+import localSobrePaint from "../../../public/home/sobre-paint.png";
+import localSobreSkillset from "../../../public/home/sobre-skillset.png";
+---
+
+<div id="about" class={styles.sobremi}>
+  <img class={styles.nubes} src="assets/nubes.svg" aria-hidden="true" />
+  <img class={styles.sun} src="assets/sun.svg" aria-hidden="true" />
+  <div class={styles.mask}>
+    <!-- <SunSVG class={styles.sun} /> -->
+    <Background
+      url="/assets/estrellas3.svg"
+      style={{ backgroundSize: "100% auto", position: "relative" }}
+    >
+      <Background
+        url="/assets/estrellas4.svg"
+        style={{ backgroundSize: "100% auto", position: "relative" }}
+      >
+        <Background
+          url="/assets/nubes2.svg"
+          style={{
+            backgroundSize: "100% auto",
+            position: "relative",
+            backgroundPosition: "top",
+          }}
+        >
+          <Container variant="narrow" style={{ position: "relative" }}>
+            <Title variant="primary" size="sm" align="center" fontStyle="italic"
+              >Sobre Fiebre</Title
+            >
+          </Container>
+          <div style={{ position: "relative" }}>
+            <Center>
+              <div class={styles.images}>
+                <Image
+                  class:list={[styles.absolute, styles.imgGrilla]}
+                  src={localSobreGrilla}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[
+                    styles.absolute,
+                    styles.imgFoto,
+                    styles.imgFoto3,
+                  ]}
+                  src={localSobreFoto}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[
+                    styles.absolute,
+                    styles.imgFoto,
+                    styles.imgFoto2,
+                  ]}
+                  src={localSobreFoto}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[
+                    styles.absolute,
+                    styles.imgFoto,
+                    styles.imgFoto1,
+                  ]}
+                  src={localSobreFoto}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[
+                    styles.absolute,
+                    styles.imgFoto,
+                    styles.imgPaint,
+                  ]}
+                  src={localSobrePaint}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[styles.absolute, styles.imgSkillset]}
+                  src={localSobreSkillset}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[styles.absolute, styles.imgGustos]}
+                  src={localSobreGustos}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[styles.absolute, styles.imgHerramientas]}
+                  src={localSobreHerramientas}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[styles.absolute, styles.imgIdiomas]}
+                  src={localSobreIdiomas}
+                  aria-hidden="true"
+                  alt="about"
+                />
+                <Image
+                  class:list={[styles.absolute, styles.imgMouse]}
+                  src={localSobreMouse}
+                  aria-hidden="true"
+                  alt="about"
+                />
+              </div>
+            </Center>
+          </div>
+          <Container variant="narrow" style={{ position: "relative" }}>
+            <Center class={styles["about-text"]} variant="text">
+              <Text size="lg">
+                Soy Desirée, diseñadora gráfica graduada en la Universidad de
+                Buenos Aires (UBA).
+              </Text>
+              <Text size="lg">
+                Desde 2017 ayudo a empresas y emprendedores a desarrollar sus
+                proyectos en mi estudio Fiebre<small><sup>Ⓡ</sup></small>
+              </Text>
+              <Text size="lg">
+                Fui docente en la UBA y en la UADE en materias de diseño y
+                gestión de proyectos. Me apasiona la investigación y la
+                educación <strong aria-label="heart icon">♡</strong>
+              </Text>
+
+              <Button
+                variant="outline"
+                size="xl"
+                style={{ margin: "2rem auto 0 auto" }}
+                href="https://forms.gle/6bbvAgRPGFkqofDx7"
+                no-referrer="true"
+                target="_blank"
+              >
+                Hablemos
+              </Button>
+            </Center>
+          </Container>
+        </Background>
+      </Background>
+    </Background>
+  </div>
+  <img class={styles.mountains} src="assets/mountains.svg" aria-hidden="true" />
+  <!-- <MountainsSVG class={styles.mountains} /> -->
+</div>

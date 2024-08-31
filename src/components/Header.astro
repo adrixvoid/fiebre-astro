@@ -1,11 +1,8 @@
 ---
 import MobileMenu from "./mobile-menu/MobileMenu.astro";
-import Button from "./ui/button/Button.astro";
 import Container from "./ui/container/Container.astro";
-import Drawer from "./ui/drawer/Drawer.astro";
 import Flex from "./ui/flex/Flex.astro";
 import HeaderBase from "./ui/header/Header.astro";
-import Icon from "./ui/icon/Icon.astro";
 import type { iconPaths } from "./ui/icon/IconPaths";
 import Link from "./ui/link/Link.astro";
 import Nav from "./ui/nav/Nav.astro";
@@ -13,18 +10,18 @@ import NavLink from "./ui/nav/NavLink.astro";
 import Logo from "./ui/svg/Logo.astro";
 import Viewport from "./ui/viewport/Viewport.astro";
 
-// import useStickyHeader from "~/hooks/useStickyHeader";
 import styles from "./Header.module.css";
 
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 
-const isSticky = false;
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
-  { label: "Work", href: "/work/" },
-  { label: "About", href: "/about/" },
+  { label: "Servicios", href: "/#services" },
+  { label: "Sobre mi", href: "/#about" },
+  { label: "Recursos", href: "/#resources" },
+  { label: "Portfolio", href: "/portfolio" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -47,31 +44,20 @@ const iconLinks: {
 ---
 
 <HeaderBase
-  class:list={[styles.header, { [styles.sticky]: isSticky }]}
-  class="header"
+  id="page-header"
+  class={styles.header}
+  data-class-sticky={styles.sticky}
   position="fixed"
   style={{ zIndex: 1 }}
 >
   <Container>
     <Viewport variant="mobile">
-      <div>
-        <Drawer id="mobile-menu">
-          <Button
-            slot="button"
-            variant="ghost"
-            class:list={[styles.button, "menu-button"]}
-          >
-            <Icon icon="hamburger" size="24px" />
-            <span class="sr-only">Menu</span>
-          </Button>
-          <div id="menu-content">
-            <MobileMenu textLinks={textLinks} iconLinks={iconLinks} />
-          </div>
-        </Drawer>
+      <Flex justify="between">
         <Link href="/" class="logo-link" title="Home Page">
           <Logo />
         </Link>
-      </div>
+        <MobileMenu textLinks={textLinks} iconLinks={iconLinks} />
+      </Flex>
     </Viewport>
     <Viewport variant="mobile-hidden">
       <Flex justify="between" align="center">
@@ -80,15 +66,44 @@ const iconLinks: {
           <Logo />
         </Link>
         <Nav class:list={[styles.navigation, "internal-links"]}>
-          <NavLink href="#services">Servicios</NavLink>
-          <NavLink href="#about">Sobre mi</NavLink>
-          <NavLink href="#resources">Recursos</NavLink>
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
-          <HeaderLink href="/portfolio">Portfolio</HeaderLink>
-          <HeaderLink href="/about">About</HeaderLink>
+          {
+            textLinks.map(({ label, href }) => (
+              <NavLink
+                aria-current={Astro.url.pathname === href}
+                class:list={[
+                  "link",
+                  {
+                    active:
+                      Astro.url.pathname === href ||
+                      (href !== "/" && Astro.url.pathname.startsWith(href)),
+                  },
+                ]}
+                href={href}
+              >
+                {label}
+              </NavLink>
+            ))
+          }
         </Nav>
       </Flex>
     </Viewport>
   </Container>
 </HeaderBase>
+
+<script>
+  const headerElement = document.getElementById("page-header");
+  const handleScroll = () => {
+    if (headerElement) {
+      const sticky = headerElement.offsetTop;
+      const stickyClassName = headerElement.getAttribute("data-class-sticky");
+      if (window.scrollY > sticky) {
+        headerElement.classList.add(stickyClassName || "");
+      } else {
+        headerElement.classList.remove(stickyClassName || "");
+      }
+    }
+  };
+
+  // When the user scrolls the page, execute handleScroll
+  window.addEventListener("scroll", handleScroll);
+</script>

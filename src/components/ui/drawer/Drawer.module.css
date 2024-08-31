@@ -23,27 +23,26 @@
 .content {
   padding: 0;
   background-color: hsl(var(--background));
-  width: 80dvw;
+  width: 95dvw;
   max-width: 500px;
   min-width: 250px;
   height: 100dvh;
   overflow-y: auto;
   position: absolute;
   top: 0;
-  left: 0;
-  /* box-shadow: var(--shadow-2xl); */
+  right: 0;
   box-shadow: 4px 0 1px 12px hsl(296.36deg 100% 66% / 51%), 1px 1px 0 32px hsl(275.59deg 100% 63.91% / 27.9%);
-  animation: slideOut 250ms;
+  animation: slideOut 250ms ease-in-out forwards;
   overflow: auto;
 }
 
 .dialog[open] .content {
-  animation: slideIn 250ms forwards;
+  animation: slideIn 250ms ease-in-out forwards;
 }
 
 @keyframes slideIn {
   from {
-    transform: translateX(-100dvw);
+    transform: translateX(100dvw);
   }
 
   to {
@@ -57,7 +56,7 @@
   }
 
   to {
-    transform: translateX(-100dvw);
+    transform: translateX(100dvw);
   }
 }
 

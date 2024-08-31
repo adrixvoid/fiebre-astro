@@ -1,6 +1,6 @@
 ---
-import { cva, type VariantProps } from "class-variance-authority";
 import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
 import styles from "./Center.module.css";
 
 const cvaVariants = cva(null, {
@@ -29,6 +29,7 @@ const {
   direction,
   ...props
 } = Astro.props as Props;
+console.log("className", className);
 ---
 
 <div class={cvaVariants({ variant, direction, className })} {...props}>

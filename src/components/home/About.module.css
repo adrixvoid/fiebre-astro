@@ -1,0 +1,185 @@
+.sobremi {
+  background-color: hsl(266, 54%, 51%);
+  background: linear-gradient(180deg, #7A3FC6 38.5%, #FF4DD5 100%);
+
+  padding-top: 5vh;
+  padding-bottom: 14rem;
+  position: relative;
+}
+
+.mask {
+  overflow: hidden;
+}
+
+.nubes {
+  position: absolute;
+  top: 0;
+  transform: translateY(-90%);
+  width: 100vw;
+  height: auto;
+  max-height: 100%;
+}
+
+.sun {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  max-width: 320px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.mountains {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+.about-text {
+  padding: min(max(2vw, 0.5rem), 4rem);
+  max-width: 85vw;
+  margin: 2rem auto 0 auto
+}
+
+@media (width >=768px) {
+  .about-text {
+    max-width: 62vw;
+  }
+}
+
+
+.images {
+  position: relative;
+  max-width: 402px;
+  max-height: 460px;
+  width: 26em;
+  height: 29em;
+  flex-shrink: 0;
+  translate: -2em 0;
+}
+
+@media (width <=1440px) {
+  .images {
+    font-size: 0.9em;
+  }
+}
+
+@media (width <=1280px) {
+  .images {
+    font-size: 0.8em;
+  }
+}
+
+@media (width <=960px) {
+  .images {
+    font-size: 0.65em;
+  }
+}
+
+@media (width <=780px) {
+  .images {
+    font-size: 0.6em;
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.imgGrilla {
+  left: -4em;
+  top: -1.5em;
+}
+
+.imgFoto2 {
+  top: 1em;
+  left: 1em;
+}
+
+.imgFoto3 {
+  top: 2em;
+  left: 2em;
+}
+
+.imgPaint {
+  left: 0;
+  top: 2em;
+}
+
+/* .imgAbout {
+  max-width: 568px;
+  height: auto;
+  width: 36em;
+} */
+
+.imgSkillset {
+  max-width: 405px;
+  top: 1em;
+  right: -28em;
+  width: 26em;
+}
+
+.imgGustos {
+  max-width: 234px;
+  top: 17em;
+  left: -16em;
+  width: 15em;
+}
+
+.imgHerramientas {
+  max-width: 324px;
+  bottom: 3em;
+  right: -10em;
+  width: 21em;
+}
+
+.imgIdiomas {
+  max-width: 210px;
+  top: 0;
+  left: -14em;
+  width: 14em;
+}
+
+.imgMouse {
+  max-width: 41px;
+  bottom: -2em;
+  right: 0;
+}
+
+@media (width <=780px) {
+  .imgPaint {
+    display: none;
+  }
+
+  .imgSkillset {
+    max-width: 405px;
+    top: 1em;
+    right: -20em;
+    width: 26em;
+  }
+
+  .imgGustos {
+    max-width: 234px;
+    top: 17em;
+    left: -12em;
+    width: 15em;
+  }
+
+  .imgHerramientas {
+    max-width: 324px;
+    bottom: 3em;
+    right: -10em;
+    width: 21em;
+  }
+
+  .imgIdiomas {
+    max-width: 210px;
+    top: 0;
+    left: -8em;
+    width: 14em;
+  }
+}

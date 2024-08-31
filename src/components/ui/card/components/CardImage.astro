@@ -22,13 +22,10 @@ const styleExtended = { backgroundImage: `url(${src})`, ...inlineStyle };
 {
   asCover ? (
     <div
-      class:list={[styles.image, className]}
+      class:list={[styles.image, styles["image-cover"], className]}
       style={styleExtended}
-      {...props}
       aria-hidden="true"
-    >
-      <slot />
-    </div>
+    />
   ) : (
     <img
       src={src}

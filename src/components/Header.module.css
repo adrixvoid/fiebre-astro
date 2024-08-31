@@ -3,7 +3,10 @@
   transition: all 250ms;
 }
 
-.logo {}
+.logo {
+  color: white;
+  fill: white;
+}
 
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);

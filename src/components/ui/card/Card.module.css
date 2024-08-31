@@ -2,24 +2,16 @@
   background-color: hsl(var(--card));
   color: hsl(var(--card-foreground));
   border-width: 0;
-  /* border-color: color-mix(in hsl, hsl(var(--border)), transparent 70%); */
   border-radius: var(--radius);
   box-shadow:
     3px 3px 0 3px hsl(266, 54%, 51%);
-}
-
-@media (prefers-color-scheme: dark) {
-  .card {
-    background-color: hsl(var(--card));
-    box-shadow: none;
-  }
 }
 
 .header {
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 }
 
 .title {
@@ -56,7 +48,8 @@
 
 .footer {
   display: flex;
-  padding: 1.5rem;
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
   padding-top: 0;
   align-items: center;
 }

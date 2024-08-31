@@ -1,0 +1,167 @@
+---
+import { Image } from "astro:assets";
+
+import Button from "~/components/ui/button/Button.astro";
+import Center from "~/components/ui/center/Center.astro";
+import Container from "~/components/ui/container/Container.astro";
+import Title from "~/components/ui/text/Title.astro";
+
+import styles from "./Services.module.css";
+
+import Flex from "../ui/flex/Flex.astro";
+import Viewport from "../ui/viewport/Viewport.astro";
+
+import localAsesorias from "../../../public/home/asesorias.png";
+import localCurso from "../../../public/home/curso.png";
+import localDiseno from "../../../public/home/ventana-diseno.png";
+---
+
+<div id="services">
+  <Container variant="narrow" style={{ position: "relative" }}>
+    <div>
+      <Center id="design" class={styles.article}>
+        <Flex mobile="direction-column" class={styles.columns}>
+          <div>
+            <Title element="h3" variant="primary" size="sm" id="illustration"
+              >Portafolio</Title
+            >
+            <Viewport
+              variant="desktop-hidden"
+              style={{
+                flexShrink: 0,
+                width: "100%",
+                maxWidth: "430px",
+                height: "auto",
+                marginTop: "2.5rem",
+              }}
+            >
+              <Image src={localDiseno} aria-hidden="true" alt="Portafolio" />
+            </Viewport>
+            <p style={{ maxWidth: "14rem" }}>
+              Mira todos los proyectos de
+              <strong>ilustración y desarrollo de marcas</strong>
+              acá.
+            </p>
+            <Button
+              variant="outline"
+              href="/portfolio"
+              no-referrer="true"
+              target="_blank"
+              as="a"
+            >
+              Ver proyectos
+            </Button>
+          </div>
+          <Viewport
+            variant="desktop"
+            style={{
+              flexShrink: 0,
+              width: "100%",
+              maxWidth: "430px",
+              height: "auto",
+            }}
+          >
+            <Image src={localDiseno} aria-hidden="true" alt="Diseño" />
+          </Viewport>
+        </Flex>
+      </Center>
+      <Center id="course" class={styles.article}>
+        <Flex
+          class:list={[styles.columns, styles.column2]}
+          mobile="direction-column"
+        >
+          <Viewport
+            variant="desktop"
+            style={{
+              flexShrink: 0,
+              width: "100%",
+              maxWidth: "430px",
+              height: "auto",
+            }}
+          >
+            <Image src={localCurso} aria-hidden="true" alt="Curso" />
+          </Viewport>
+          <div>
+            <Title element="h3" variant="primary" size="sm" id="course"
+              >Curso</Title
+            >
+            <Viewport
+              variant="desktop-hidden"
+              style={{
+                flexShrink: 0,
+                width: "100%",
+                maxWidth: "430px",
+                height: "auto",
+                marginTop: "2.5rem",
+              }}
+            >
+              <Image src={localCurso} aria-hidden="true" alt="Curso" />
+            </Viewport>
+            <p style={{ maxWidth: "14rem" }}>
+              ¡Aprende a crear el <strong>diseño</strong>, las
+              <strong>redes sociales</strong> y la página <strong>web</strong> de
+              tu marca para que tu negocio despegue!
+            </p>
+            <Flex direction="column">
+              <Button
+                variant="outline"
+                href="https://www.instagram.com/p/C5ZXbkYJjSH/?img_index=1"
+                no-referrer="true"
+                target="_blank">Información del curso</Button
+              >
+              <Button
+                variant="primary"
+                href="https://forms.gle/rSzpkWwvkKDRUkuo6"
+                no-referrer="true"
+                target="_blank">Inscribirme</Button
+              >
+            </Flex>
+          </div>
+        </Flex>
+      </Center>
+    </div>
+    <div id="consultancies" class={styles.article}>
+      <Flex mobile="direction-column">
+        <div class={styles.columns}>
+          <Title element="h3" variant="primary" size="sm" id="consultants"
+            >Asesorías</Title
+          >
+          <Viewport
+            variant="desktop-hidden"
+            style={{
+              flexShrink: 0,
+              width: "100%",
+              maxWidth: "430px",
+              height: "auto",
+              marginTop: "2.5rem",
+            }}
+          >
+            <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
+          </Viewport>
+          <p style={{ maxWidth: "14rem" }}>
+            Dos horas en las que vamos a trabajar a fondo sobre tu proyecto
+            creando una
+            <strong>estrategia clara y definida.</strong>
+          </p>
+          <Button
+            variant="outline"
+            href="https://forms.gle/ay2Z6FnmTHDjmVFp8"
+            no-referrer="true"
+            target="_blank">Quiero asesorarme</Button
+          >
+        </div>
+        <Viewport
+          variant="desktop"
+          style={{
+            flexShrink: 0,
+            width: "100%",
+            maxWidth: "430px",
+            height: "auto",
+          }}
+        >
+          <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
+        </Viewport>
+      </Flex>
+    </div>
+  </Container>
+</div>

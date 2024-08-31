@@ -1,5 +1,5 @@
-import { cva, type VariantProps } from "class-variance-authority";
 import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
 import styles from "./Text.module.css";
 
 export const cvaVariants = cva(styles.base, {

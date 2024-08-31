@@ -60,12 +60,12 @@
     background-color: hsl(var(--button));
     color: hsl(var(--button-foreground));
     box-shadow: 2px 2px 0 2px currentcolor;
-    transform: translate(2px, 2px) scaleX(1) scaleY(1);
 }
 
 .base:hover {
     border: 1px solid hsl(var(--button-foreground));
     box-shadow: none;
+    transform: translate(2px, 2px) scaleX(1) scaleY(1);
 }
 
 .primary {
@@ -77,8 +77,8 @@
 
 .primary:hover {
     background-color: hsl(var(--primary) / 0.8);
-    transform: translate(2px, 2px) scaleX(1) scaleY(1);
     box-shadow: none;
+    transform: translate(2px, 2px) scaleX(1) scaleY(1);
 }
 
 .secondary {
@@ -211,13 +211,22 @@
 
 .large {
     gap: 0.55rem;
-    padding: 0.5cap 2.5cap;
+    padding: 0 2.5cap;
     min-width: 2rem;
-    min-height: 2.25rem;
     line-height: 2;
-    font-size: var(--text-lg);
+    font-size: clamp(var(--text-lg), 2.5vw, calc(var(--text-lg) + 0.5rem));
     font-weight: 500;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
+}
+
+.xlarge {
+    gap: 0.55rem;
+    padding: 0 2.5cap;
+    min-width: 2rem;
+    line-height: 2;
+    font-size: clamp(var(--text-xl), 2.5vw, calc(var(--text-lg) + 0.5rem));
+    font-weight: 500;
+    border-radius: var(--radius-xl);
 }
 
 

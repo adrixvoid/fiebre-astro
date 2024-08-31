@@ -39,7 +39,7 @@
 }
 
 .text-0 {
-  font-family: 'Montserrat';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   line-height: 2;
@@ -163,6 +163,7 @@
   right: 10vw;
   top: 0;
   transform: translateY(-12vh);
+  animation: spin-reverse 60s linear infinite;
 }
 
 .planeta2 {
@@ -180,6 +181,7 @@
   right: 20%;
   top: 30%;
   transform: rotate(-19.19deg);
+  animation: spin 360s linear infinite;
 }
 
 .planeta4 {
@@ -199,7 +201,7 @@
   left: 15cqw;
   bottom: 0;
   transform: rotate(21.47deg);
-  animation: spin-reverse 360s linear infinite;
+  animation: spin 360s linear infinite;
   transform-origin: center;
 }
 

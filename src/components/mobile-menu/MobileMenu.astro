@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import Button from "../ui/button/Button.astro";
+import Drawer from "../ui/drawer/Drawer.astro";
 import Icon from "../ui/icon/Icon.astro";
 import type { iconPaths } from "../ui/icon/IconPaths";
 import Link from "../ui/link/Link.astro";
@@ -25,64 +26,73 @@ const {
 const inlineStyle = typeof style === "object" ? style : null;
 ---
 
-<div class={styles.menu} style={{ ...inlineStyle }} {...props}>
-  <header class={styles.header}>
-    <div class={styles.padding}>
-      <Link
-        slot="mobile-menu-head"
-        href="/"
-        class="logo-link"
-        title="Home Page"
-      >
-        <Logo />
-      </Link>
-      <Button
-        data-action="close-drawer"
-        class:list={styles.close}
-        variant="ghost"
-      >
-        <Icon icon="x" size="24px" />
-        <span class="sr-only">Close Menu</span>
-      </Button>
-    </div>
-  </header>
-  <div class={styles.content}>
-    <Nav class={styles.nav}>
-      <NavLink href="#services">Servicios</NavLink>
-      <NavLink href="#about">Sobre mi</NavLink>
-      <NavLink href="#resources">Recursos</NavLink>
-      {
-        textLinks.map(({ label, href }) => (
-          <NavLink
-            aria-current={Astro.url.pathname === href}
-            class:list={[
-              "link",
-              {
-                active:
-                  Astro.url.pathname === href ||
-                  (href !== "/" && Astro.url.pathname.startsWith(href)),
-              },
-            ]}
-            href={href}
-          >
-            {label}
-          </NavLink>
-        ))
-      }
-    </Nav>
-  </div>
-  <div class={styles.footer}>
-    <div class={styles.padding}>
-      <div class={styles.socials}>
-        {
-          iconLinks.map(({ href, icon, label }) => (
-            <Link href={href} class="social">
-              <span class="sr-only">{label}</span>
-              <Icon icon={icon} size="2em" />
-            </Link>
-          ))
-        }
+<Drawer id="mobile-menu">
+  <Button
+    slot="button"
+    variant="ghost"
+    class:list={[styles.button, "menu-button"]}
+  >
+    <Icon icon="hamburger" size="24px" />
+    <span class="sr-only">Menu</span>
+  </Button>
+  <div id="menu-content">
+    <div class={styles.menu} style={{ ...inlineStyle }} {...props}>
+      <header class:list={[styles.header, styles.padding]}>
+        <Link
+          slot="mobile-menu-head"
+          href="/"
+          class="logo-link"
+          title="Home Page"
+        >
+          <Logo />
+        </Link>
+        <Button
+          data-action="close-drawer"
+          class:list={styles.close}
+          variant="ghost"
+        >
+          <Icon icon="x" size="24px" />
+          <span class="sr-only">Close Menu</span>
+        </Button>
+      </header>
+      <div class={styles.content}>
+        <Nav class={styles.nav}>
+          {
+            textLinks.map(({ label, href }) => (
+              <NavLink
+                aria-current={Astro.url.pathname === href}
+                class:list={[
+                  "link",
+                  {
+                    active:
+                      Astro.url.pathname === href ||
+                      (href !== "/" && Astro.url.pathname.startsWith(href)),
+                  },
+                ]}
+                href={href}
+              >
+                {label}
+              </NavLink>
+            ))
+          }
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/blog">Blog</NavLink>
+        </Nav>
+      </div>
+      <div class={styles.footer}>
+        <div class={styles.padding}>
+          <div class={styles.socials}>
+            {
+              iconLinks.map(({ href, icon, label }) => (
+                <Link href={href} class="social">
+                  <span class="sr-only">{label}</span>
+                  <Icon icon={icon} size="2em" />
+                </Link>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</Drawer>

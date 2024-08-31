@@ -28,8 +28,8 @@ const { id = "drawer", class: className = "", ...props } = Astro.props as Props;
     baseElement;
     focusableElements: NodeListOf<HTMLElement | HTMLDivElement> | null = null;
 
-    constructor(element?: HTMLElement) {
-      this.baseElement = element || document.querySelector("body");
+    constructor(element: HTMLElement) {
+      this.baseElement = element;
     }
 
     enable = () => {
@@ -76,6 +76,7 @@ const { id = "drawer", class: className = "", ...props } = Astro.props as Props;
     closeButtonElements?: NodeListOf<HTMLButtonElement> | null;
     backdropElement?: HTMLDivElement | null;
     trapFocus?: TrapFocus;
+    actionElements?: NodeListOf<HTMLAnchorElement | HTMLButtonElement>;
 
     constructor() {
       super();
@@ -105,6 +106,11 @@ const { id = "drawer", class: className = "", ...props } = Astro.props as Props;
       this.backdropElement = this.querySelector(".backdrop");
       this.backdropElement?.addEventListener("click", this.closeModal);
 
+      this.actionElements = this.dialogElement?.querySelectorAll("a, button");
+      this.actionElements?.forEach((element) => {
+        element.addEventListener("click", this.closeModal);
+      });
+
       addEventListener("resize", this.closeModal);
     };
 
@@ -119,6 +125,10 @@ const { id = "drawer", class: className = "", ...props } = Astro.props as Props;
       });
       this.backdropElement?.removeEventListener("click", this.closeModal);
       this.removeEventListener("resize", this.closeModal);
+
+      this.actionElements?.forEach((element) => {
+        element.removeEventListener("click", this.closeModal);
+      });
     };
 
     setAccessibility = (isActive: boolean = false) => {

@@ -18,6 +18,7 @@ export const buttonVariants = cva(styles.button, {
       md: styles.medium,
       sm: styles.small,
       lg: styles.large,
+      xl: styles.xlarge,
     },
     width: {
       ["full-width"]: styles["full-width"],
