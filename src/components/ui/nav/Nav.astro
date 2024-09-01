@@ -55,7 +55,7 @@ const { class: className = "", ...props } = Astro.props;
         "." + this.activeClassName
       );
       current?.classList.remove(this.activeClassName);
-      if (element.hasAttribute("aria-current")) {
+      if (element?.hasAttribute("aria-current")) {
         element.removeAttribute("aria-current");
       }
       element.classList.add(this.activeClassName);

@@ -25,7 +25,9 @@ const styleExtended = { backgroundImage: `url(${src})`, ...inlineStyle };
       class:list={[styles.image, styles["image-cover"], className]}
       style={styleExtended}
       aria-hidden="true"
-    />
+    >
+      <slot />
+    </div>
   ) : (
     <img
       src={src}

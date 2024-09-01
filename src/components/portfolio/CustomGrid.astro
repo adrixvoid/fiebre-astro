@@ -1,0 +1,9 @@
+---
+import styles from "./CustomGrid.module.css";
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div class:list={[styles.container, className]} {...props}>
+  <slot />
+</div>
