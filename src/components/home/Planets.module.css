@@ -1,0 +1,65 @@
+.planets {
+  padding-bottom: 28vh;
+  background: linear-gradient(0deg, rgb(94 12 110 / 68%) 0%, rgba(42, 19, 73, 1) 8%);
+  background: linear-gradient(0deg, rgb(155 25 181 / 46%) 0%, rgba(42, 19, 73, 1) 20%);
+}
+
+.planeta6 {
+  max-width: 445px;
+  max-height: 299px;
+  width: 20dvw;
+  height: 20dvw;
+  position: absolute;
+  right: -8dvw;
+  top: 16.33%;
+}
+
+.planeta7 {
+  /* planeta 7 */
+  position: absolute;
+  right: 6.63%;
+  bottom: 22.63%;
+}
+
+
+.planeta8 {
+  /* planeta 8 */
+  position: absolute;
+  width: 142.42px;
+  height: 91.62px;
+  left: 1%;
+  bottom: 26%;
+  transform: rotate(28.65deg);
+}
+
+.planeta9 {
+  /* planeta 9 */
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: 11%;
+  top: 30%;
+}
+
+@media (width < 768px) {
+  .planeta6 {
+    top: 40.33%;
+  }
+
+  .planeta7 {
+    right: 2.63%;
+    bottom: 20.63%;
+  }
+
+  .planeta8 {
+    left: auto;
+    right: 0;
+    bottom: 33%;
+  }
+
+  .planeta9 {
+    left: auto;
+    right: 19%;
+    top: 29%;
+  }
+}

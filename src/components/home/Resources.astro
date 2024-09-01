@@ -1,0 +1,118 @@
+---
+import Button from "../ui/button/Button.astro";
+import Card, {
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardImage,
+  CardTitle,
+} from "../ui/card";
+import Center from "../ui/center/Center.astro";
+import Container from "../ui/container/Container.astro";
+import Grid from "../ui/grid/Grid.astro";
+import WindowControllers from "../ui/svg/WindowControllers.astro";
+import Title from "../ui/text/Title.astro";
+
+import styles from "./Resources.module.css";
+---
+
+<div class={styles.descargables}>
+  <img
+    class={styles["palm-grid"]}
+    src="assets/palm-grid.svg"
+    aria-hidden="true"
+  />
+  <Container>
+    <Center variant="all">
+      <Title class={styles.title} element="h3" variant="primary" align="center"
+        >Descargables Gratis</Title
+      >
+    </Center>
+    <Grid>
+      <Card class={styles.card}>
+        <CardHeader class={styles.cardCustomHeader}>
+          <WindowControllers class={styles.fakeWindowController} />
+          <Center>
+            <CardImage src="/home/descargable-planner-para-feed.png" />
+          </Center>
+        </CardHeader>
+        <CardContent>
+          <CardTitle>Planner para feed</CardTitle>
+          <CardDescription
+            >Planifica el diseño de tu perfil y tu feed de Instagram en Canva.</CardDescription
+          >
+        </CardContent>
+        <CardFooter>
+          <Center>
+            <Button
+              href="https://www.canva.com/design/DAF2N-X_lG4/-lb4UI4eotzmP-xbAEOBGw/view?utm_content=DAF2N-X_lG4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
+              no-referrer="true"
+              target="_blank"
+              width="full-width"
+              size="md"
+            >
+              Abrir plantilla
+            </Button>
+          </Center>
+        </CardFooter>
+      </Card>
+      <Card class={styles.card}>
+        <CardHeader class={styles.cardCustomHeader}>
+          <WindowControllers class={styles.fakeWindowController} />
+          <Center>
+            <CardImage src="/home/descargable-planner-anual.png" />
+          </Center>
+        </CardHeader>
+        <CardContent>
+          <CardTitle>Planner anual</CardTitle>
+          <CardDescription
+            >Organiza tu negocio y olvídate de los dolores de cabeza.</CardDescription
+          >
+        </CardContent>
+        <CardFooter>
+          <Center>
+            <Button
+              href="https://fiebrediseno.gumroad.com/l/plannersgratis?layout=profile"
+              no-referrer="true"
+              target="_blank"
+              width="full-width"
+              size="md"
+            >
+              Descargar plantilla
+            </Button>
+          </Center>
+        </CardFooter>
+      </Card>
+      <Card class={styles.card}>
+        <CardHeader class={styles.cardCustomHeader}>
+          <WindowControllers class={styles.fakeWindowController} />
+          <Center>
+            <CardImage
+              src="/home/descargable-el-color-en-nuestro-proyecto.png"
+            />
+          </Center>
+        </CardHeader>
+        <CardContent>
+          <CardTitle>Guía de color</CardTitle>
+          <CardDescription>
+            Si te cuesta elegir los colores ideales para tu negocio, ¡es aquí!
+          </CardDescription>
+        </CardContent>
+        <CardFooter>
+          <Center>
+            <Button
+              href="https://drive.google.com/file/d/1PNN2jx30QAqugTwk-wQEG9Njl4fIPVsa/view?usp=sharing"
+              no-referrer="true"
+              target="_blank"
+              width="full-width"
+              size="md"
+            >
+              Descargar guía
+            </Button>
+          </Center>
+        </CardFooter>
+      </Card>
+    </Grid>
+  </Container>
+</div>

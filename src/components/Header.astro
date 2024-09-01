@@ -2,7 +2,6 @@
 import MobileMenu from "./mobile-menu/MobileMenu.astro";
 import Container from "./ui/container/Container.astro";
 import Flex from "./ui/flex/Flex.astro";
-import HeaderBase from "./ui/header/Header.astro";
 import type { iconPaths } from "./ui/icon/IconPaths";
 import Link from "./ui/link/Link.astro";
 import Nav from "./ui/nav/Nav.astro";
@@ -13,11 +12,9 @@ import Viewport from "./ui/viewport/Viewport.astro";
 import styles from "./Header.module.css";
 
 import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
   { label: "Servicios", href: "/#services" },
   { label: "Sobre mi", href: "/#about" },
   { label: "Recursos", href: "/#resources" },
@@ -41,14 +38,17 @@ const iconLinks: {
     icon: "youtube-logo",
   },
 ];
+
+const { class: ClassName = "", sticky, ...props } = Astro.props;
 ---
 
-<HeaderBase
-  id="page-header"
-  class={styles.header}
-  data-class-sticky={styles.sticky}
-  position="fixed"
-  style={{ zIndex: 1 }}
+<header
+  class:list={[
+    styles.header,
+    {
+      ["sticky-header"]: sticky,
+    },
+  ]}
 >
   <Container>
     <Viewport variant="mobile">
@@ -65,41 +65,31 @@ const iconLinks: {
           <span class="sr-only">{SITE_TITLE}</span>
           <Logo />
         </Link>
-        <Nav class:list={[styles.navigation, "internal-links"]}>
+        <Nav
+          aria-label="Main"
+          class:list={[styles.navigation, "internal-links"]}
+        >
           {
             textLinks.map(({ label, href }) => (
-              <NavLink
-                aria-current={Astro.url.pathname === href}
-                class:list={[
-                  "link",
-                  {
-                    active:
-                      Astro.url.pathname === href ||
-                      (href !== "/" && Astro.url.pathname.startsWith(href)),
-                  },
-                ]}
-                href={href}
-              >
-                {label}
-              </NavLink>
+              <NavLink href={href}>{label}</NavLink>
             ))
           }
         </Nav>
       </Flex>
     </Viewport>
   </Container>
-</HeaderBase>
+</header>
 
 <script>
-  const headerElement = document.getElementById("page-header");
+  const headerElement = document.querySelector(".sticky-header") as HTMLElement;
+
   const handleScroll = () => {
     if (headerElement) {
       const sticky = headerElement.offsetTop;
-      const stickyClassName = headerElement.getAttribute("data-class-sticky");
       if (window.scrollY > sticky) {
-        headerElement.classList.add(stickyClassName || "");
+        headerElement.classList.add("sticky");
       } else {
-        headerElement.classList.remove(stickyClassName || "");
+        headerElement.classList.remove("sticky");
       }
     }
   };
@@ -107,3 +97,17 @@ const iconLinks: {
   // When the user scrolls the page, execute handleScroll
   window.addEventListener("scroll", handleScroll);
 </script>
+
+<style>
+  .sticky-header {
+    position: fixed;
+    transition: all 250ms;
+    z-index: 2;
+  }
+
+  .sticky {
+    height: 3.5rem;
+    background-color: hsl(var(--background) / 0.5);
+    z-index: 1;
+  }
+</style>

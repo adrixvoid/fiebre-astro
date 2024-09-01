@@ -1,6 +1,8 @@
 .header {
   height: 6rem;
-  transition: all 250ms;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .logo {
@@ -16,15 +18,9 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.sticky {
-  height: 3.5rem;
-  background-color: hsl(var(--background) / 0.5);
-}
-
 .navigation a {
   text-underline-offset: 0.2rem;
   text-rendering: optimizeLegibility;
-  text-shadow: 0 0 1px white;
 }
 
 .navigation a:hover {
@@ -34,8 +30,4 @@
 .navigation a:focus-visible {
   outline: 4px solid hsl(var(--ring));
   outline-offset: 5px;
-}
-
-.navigation a {
-  color: hsl(var(--foreground));
 }

@@ -2,20 +2,31 @@
 import Link from "../link/Link.astro";
 import styles from "./Nav.module.css";
 
-const { class: className = "", ...props } = Astro.props;
+const { href, class: className = "", ...props } = Astro.props;
 
 // @hardcoded
 const isPending = false;
-const isActive = false;
+
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === "/" + subpath?.[0];
 ---
 
 <Link
-  {...props}
+  href={href}
+  aria-current={Astro.url.pathname === href}
   class:list={[
+    "link",
+    {
+      [styles.active]:
+        Astro.url.pathname === href ||
+        (href !== "/" && Astro.url.pathname.startsWith(href)),
+    },
     styles.nav,
     { pending: isPending, [styles.primary]: isActive },
     className,
   ]}
+  {...props}
 >
   <slot />
 </Link>

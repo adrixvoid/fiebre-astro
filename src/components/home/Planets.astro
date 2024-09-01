@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+
+import Services from "~/components/home/Services.astro";
+import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
+import Background from "~/components/ui/background/Background.astro";
+
+import localPlaneta6 from "../../../public/assets/planeta6.svg";
+import localPlaneta7 from "../../../public/assets/planeta7.svg";
+import localPlaneta8 from "../../../public/assets/planeta8.svg";
+import localPlaneta9 from "../../../public/assets/planeta9.svg";
+
+import styles from "./Planets.module.css";
+---
+
+<div class={styles.planets}>
+  <Background
+    url="/assets/estrellas3.svg"
+    style={{ backgroundSize: "contain", position: "relative" }}
+    repeat
+  >
+    <Background
+      url="/assets/estrellas4.svg"
+      style={{ backgroundSize: "contain", position: "relative" }}
+      repeat
+    >
+      <ElementAsBackground style={{ overflow: "hidden" }}>
+        <!--
+        <PlanetaSVG6 class={styles.planeta6} />
+        <PlanetaSVG7 class={styles.planeta7} />
+        <PlanetaSVG8 class={styles.planeta8} />
+        <PlanetaSVG9 class={styles.planeta9} />
+        -->
+        <Image
+          src={localPlaneta6}
+          class={styles.planeta6}
+          aria-hidden="true"
+          alt="planet"
+        />
+        <Image
+          src={localPlaneta7}
+          class={styles.planeta7}
+          aria-hidden="true"
+          alt="planet"
+        />
+        <Image
+          src={localPlaneta8}
+          class={styles.planeta8}
+          aria-hidden="true"
+          alt="planet"
+        />
+        <Image
+          src={localPlaneta9}
+          class={styles.planeta9}
+          aria-hidden="true"
+          alt="planet"
+        />
+      </ElementAsBackground>
+      <Services />
+    </Background>
+  </Background>
+</div>

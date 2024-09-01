@@ -21,7 +21,7 @@ import localSobrePaint from "../../../public/home/sobre-paint.png";
 import localSobreSkillset from "../../../public/home/sobre-skillset.png";
 ---
 
-<div id="about" class={styles.sobremi}>
+<div class={styles.sobremi}>
   <img class={styles.nubes} src="assets/nubes.svg" aria-hidden="true" />
   <img class={styles.sun} src="assets/sun.svg" aria-hidden="true" />
   <div class={styles.mask}>
@@ -42,7 +42,10 @@ import localSobreSkillset from "../../../public/home/sobre-skillset.png";
             backgroundPosition: "top",
           }}
         >
-          <Container variant="narrow" style={{ position: "relative" }}>
+          <Container
+            variant="narrow"
+            style={{ position: "relative", marginBlock: "4rem" }}
+          >
             <Title variant="primary" size="sm" align="center" fontStyle="italic"
               >Sobre Fiebre</Title
             >

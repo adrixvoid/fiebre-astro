@@ -112,16 +112,19 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  scroll-padding-top: 10rem;
 }
 
 body {
+  scroll-snap-type: y proximity;
+  scroll-snap-align: center;
   min-width: 360px;
   line-height: 1.6;
   font-family: var(--font-family);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   overflow-x: auto;
-  scrollbar-gutter: stable;
 }
 
 .sr-only {

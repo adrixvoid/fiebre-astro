@@ -1,38 +1,15 @@
 ---
-import { Image } from "astro:assets";
-
 import MainHero from "~/components/MainHero.astro";
-import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
-import Background from "~/components/ui/background/Background.astro";
-import Button from "~/components/ui/button/Button.astro";
-import Card, {
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardImage,
-  CardTitle,
-} from "~/components/ui/card";
-import Center from "~/components/ui/center/Center.astro";
-import Container from "~/components/ui/container/Container.astro";
-import Grid from "~/components/ui/grid/Grid.astro";
-import Section from "~/components/ui/section/Section.astro";
-import Title from "~/components/ui/text/Title.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-import styles from "~/components/home/Home.module.css";
-
 import About from "~/components/home/About.astro";
-import Services from "~/components/home/Services.astro";
-import WindowControllers from "~/components/ui/svg/WindowControllers.astro";
-import localPlaneta6 from "../../public/assets/planeta6.svg";
-import localPlaneta7 from "../../public/assets/planeta7.svg";
-import localPlaneta8 from "../../public/assets/planeta8.svg";
-import localPlaneta9 from "../../public/assets/planeta9.svg";
+import Portfolio from "~/components/home/Planets.astro";
+import Resources from "~/components/home/Resources.astro";
+import Section from "~/components/ui/section/Section.astro";
 ---
 
 <!doctype html>
@@ -41,162 +18,21 @@ import localPlaneta9 from "../../public/assets/planeta9.svg";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
-    <Section>
-      <MainHero />
-      <div class={styles.portfolio}>
-        <Background
-          url="/assets/estrellas3.svg"
-          style={{ backgroundSize: "contain", position: "relative" }}
-          repeat
-        >
-          <Background
-            url="/assets/estrellas4.svg"
-            style={{ backgroundSize: "contain", position: "relative" }}
-            repeat
-          >
-            <ElementAsBackground style={{ overflow: "hidden" }}>
-              <!--
-              <PlanetaSVG6 class={styles.planeta6} />
-              <PlanetaSVG7 class={styles.planeta7} />
-              <PlanetaSVG8 class={styles.planeta8} />
-              <PlanetaSVG9 class={styles.planeta9} />
-              -->
-              <Image
-                src={localPlaneta6}
-                class={styles.planeta6}
-                aria-hidden="true"
-                alt="planet"
-              />
-              <Image
-                src={localPlaneta7}
-                class={styles.planeta7}
-                aria-hidden="true"
-                alt="planet"
-              />
-              <Image
-                src={localPlaneta8}
-                class={styles.planeta8}
-                aria-hidden="true"
-                alt="planet"
-              />
-              <Image
-                src={localPlaneta9}
-                class={styles.planeta9}
-                aria-hidden="true"
-                alt="planet"
-              />
-            </ElementAsBackground>
-            <Services />
-          </Background>
-        </Background>
-      </div>
-      <About />
-      <div id="resources" class={styles.descargables}>
-        <img
-          class={styles["palm-grid"]}
-          src="assets/palm-grid.svg"
-          aria-hidden="true"
-        />
-        <Container>
-          <Center variant="all">
-            <Title
-              class={styles.title}
-              element="h3"
-              variant="primary"
-              align="center">Descargables Gratis</Title
-            >
-          </Center>
-          <Grid>
-            <Card class={styles.card}>
-              <CardHeader class={styles.cardCustomHeader}>
-                <WindowControllers class={styles.fakeWindowController} />
-                <Center>
-                  <CardImage src="/home/descargable-planner-para-feed.png" />
-                </Center>
-              </CardHeader>
-              <CardContent>
-                <CardTitle>Planner para feed</CardTitle>
-                <CardDescription
-                  >Planifica el diseño de tu perfil y tu feed de Instagram en
-                  Canva.</CardDescription
-                >
-              </CardContent>
-              <CardFooter>
-                <Center>
-                  <Button
-                    href="https://www.canva.com/design/DAF2N-X_lG4/-lb4UI4eotzmP-xbAEOBGw/view?utm_content=DAF2N-X_lG4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
-                    no-referrer="true"
-                    target="_blank"
-                    width="full-width"
-                    size="md"
-                  >
-                    Abrir plantilla
-                  </Button>
-                </Center>
-              </CardFooter>
-            </Card>
-            <Card class={styles.card}>
-              <CardHeader class={styles.cardCustomHeader}>
-                <WindowControllers class={styles.fakeWindowController} />
-                <Center>
-                  <CardImage src="/home/descargable-planner-anual.png" />
-                </Center>
-              </CardHeader>
-              <CardContent>
-                <CardTitle>Planner anual</CardTitle>
-                <CardDescription
-                  >Organiza tu negocio y olvídate de los dolores de cabeza.</CardDescription
-                >
-              </CardContent>
-              <CardFooter>
-                <Center>
-                  <Button
-                    href="https://fiebrediseno.gumroad.com/l/plannersgratis?layout=profile"
-                    no-referrer="true"
-                    target="_blank"
-                    width="full-width"
-                    size="md"
-                  >
-                    Descargar plantilla
-                  </Button>
-                </Center>
-              </CardFooter>
-            </Card>
-            <Card class={styles.card}>
-              <CardHeader class={styles.cardCustomHeader}>
-                <WindowControllers class={styles.fakeWindowController} />
-                <Center>
-                  <CardImage
-                    src="/home/descargable-el-color-en-nuestro-proyecto.png"
-                  />
-                </Center>
-              </CardHeader>
-              <CardContent>
-                <CardTitle>Guía de color</CardTitle>
-                <CardDescription>
-                  Si te cuesta elegir los colores ideales para tu negocio, ¡es
-                  aquí!
-                </CardDescription>
-              </CardContent>
-              <CardFooter>
-                <Center>
-                  <Button
-                    href="https://drive.google.com/file/d/1PNN2jx30QAqugTwk-wQEG9Njl4fIPVsa/view?usp=sharing"
-                    no-referrer="true"
-                    target="_blank"
-                    width="full-width"
-                    size="md"
-                  >
-                    Descargar guía
-                  </Button>
-                </Center>
-              </CardFooter>
-            </Card>
-          </Grid>
-        </Container>
-      </div>
-    </Section>
+    <Header sticky />
+    <main>
+      <Section id="hero">
+        <MainHero />
+      </Section>
+      <Section id="services">
+        <Portfolio />
+      </Section>
+      <Section id="about">
+        <About />
+      </Section>
+      <Section id="resources">
+        <Resources />
+      </Section>
+    </main>
     <Footer />
   </body>
 </html>

@@ -7,3 +7,9 @@
 .primary {
   color: hsl(var(--primary))
 }
+
+a.active {
+  color: hsl(var(--primary));
+  font-weight: bolder;
+  text-decoration: underline;
+}
