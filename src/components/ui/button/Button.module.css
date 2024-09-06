@@ -130,7 +130,7 @@
 .ghost {
     border-color: transparent;
     background-color: transparent;
-    color: hsl(var(--foreground));
+    color: currentColor;
     box-shadow: none;
 }
 
@@ -141,14 +141,14 @@
 .ghost:focus-within,
 .ghost:focus-within svg {
     box-shadow: none;
-    color: hsl(var(--color-brand-highlight));
+    color: hsl(var(--color-brand5));
     fill: currentColor;
 }
 
 .link {
     border-color: transparent;
     background-color: transparent;
-    color: hsl(var(--foreground));
+    color: currentColor;
     text-decoration: none;
     line-height: 1;
     text-underline-offset: 4px;

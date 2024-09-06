@@ -34,16 +34,16 @@ export const cvaVariants = cva(styles.base, {
   },
 });
 
-export type PropsParagraph = HTMLAttributes<"div"> &
+export type PropsParagraph = HTMLAttributes<"p" | "span"> &
   VariantProps<typeof cvaVariants> & {
-    element?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-    asChild?: boolean;
+    as?: HTMLElement;
     weight?: number;
   };
 
-export type PropsTitle = HTMLAttributes<"div"> &
+export type PropsTitle = HTMLAttributes<
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+> &
   VariantProps<typeof cvaVariants> & {
-    element?: "p" | "span";
-    asChild?: boolean;
+    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     weight?: number;
   };

@@ -1,12 +1,16 @@
 ---
 title: Verdeo
 description: ""
-pubDate: "Jul 08 2022"
-heroImage: /portfolio/verdeo/1.jpg
-draft: true
-tags: []
-categories: []
+date: 2023-11-30T01:42:02.686Z
+pubDate: Jul 08 2022
+preview: /portfolio/verdeo/1.jpg
+draft: false
+categories:
+  - branding
 slug: verdeo
+keywords:
+  - branding
+  - portfolio
 ---
 
 ![](/portfolio/verdeo/2.jpg)

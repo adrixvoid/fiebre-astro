@@ -1,24 +1,49 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
 import CustomGrid from "~/components/portfolio/CustomGrid.astro";
-import Card, { CardFooter, CardImage, CardTitle } from "~/components/ui/card";
+import { CardFooter, CardImage, CardTitle } from "~/components/ui/card";
 import Container from "~/components/ui/container/Container.astro";
 import Section from "~/components/ui/section/Section.astro";
 import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
+import Link from "~/components/ui/link/Link.astro";
+import Text from "~/components/ui/text/Text.astro";
+
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
-import styles from "~/components/portfolio/Portfolio.module.css";
-import Link from "~/components/ui/link/Link.astro";
+import styles from "~/layouts/PortfolioList.module.css";
 
-const posts = (await getCollection("portfolio")).sort(
+const posts = (await getCollection("portfolio")).filter(p => !p.data.draft).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const links = [
+  {
+    label: "Ilustraciones",
+    category: "illustration",
+  },
+  {
+    label: "Branding",
+    category: "branding",
+  },
+  {
+    label: "Todo",
+    category: "all",
+    active: true,
+  },
+];
+
+import localSVGStar from '../../../public/assets/star.svg';
+import Article from "~/components/portfolio/Article.astro";
 ---
 
 <html lang="en">
   <head>
+    <ViewTransitions />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
@@ -26,53 +51,96 @@ const posts = (await getCollection("portfolio")).sort(
     <main>
       <Section id="portfolio" marginBottom>
         <Container>
-          <CustomGrid>
+          <nav id="filter" class={styles.filter}>
+            {
+              links.map((link) => {
+                return (
+                    <span><Image src={localSVGStar} aria-hidden="true" alt="estrella" /></span>
+                    <Text
+                      class={{
+                        active: link.active,
+                      }}
+                      variant="primary"
+                      as={Link}
+                      href={`#${link.category}`}
+                      data-filter-by={link.category}
+                      style={{ fontSize: "6cqw" }}
+                    >
+                      {link.label}
+                    </Text>
+                );
+              })
+            }
+          </nav>
+          <CustomGrid class={styles.grid}>
             {
               posts.map((post) => (
-                <article class:list={[styles.item, styles.itemHover]}>
-                  <Link href={`/portfolio/${post.slug}/`}>
-                    <Card class={styles.card}>
-                      <CardImage
-                        class={styles.image}
-                        width={720}
-                        height={344}
-                        src={post.data.heroImage}
-                        aria-hidden="true"
-                        asCover
-                      >
-                        <CardFooter
-                          class:list={[styles.footer, styles.opacity]}
-                        >
-                          <CardTitle class={styles.title}>
-                            {post.data.title}
-                          </CardTitle>
-                        </CardFooter>
-                      </CardImage>
-                    </Card>
-                  </Link>
-                </article>
+                <Article {...post} />
               ))
             }
           </CustomGrid>
         </Container>
       </Section>
+
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>
+<script>
+  const filter = document.getElementById("filter");
+  const links = filter?.querySelectorAll("a");
+  const posts = document?.querySelectorAll("article");
 
-{
-  /* <CardContent>
-  <CardTitle class="title">{post.data.title}</CardTitle>
-  <p class="date">
-    <FormattedDate date={post.data.pubDate} />
-  </p>
-  <Button
-    as="a"
-    href={`/portfolio/${post.slug}/`}
-    width="full-width"
-  >
-    More...
-  </Button>
-  </CardContent> */
+  function activate(link: HTMLAnchorElement) {
+    const activeElement = filter?.querySelector(".active");
+    activeElement?.classList.remove("active");
+    link?.classList.add("active");
+    filterBy(link.dataset.filterBy);
+  }
+
+  function filterBy(categorySelected?: string) {
+    if (categorySelected === "all") {
+      posts?.forEach((post) => {
+        post.classList.remove("hidden");
+      });
+      return;
+    }
+
+    posts?.forEach((post) => {
+      post.classList.add("hidden");
+      const categoriesOfPost = post.dataset.categories?.split(",");
+      categoriesOfPost?.map((currentCategory) => {
+        if (categorySelected === currentCategory) {
+          post?.classList.remove("hidden");
+          return;
+        }
+      });
+    });
+  }
+
+  links?.forEach((link) => {
+    link.addEventListener("click", () => activate(link));
+  });
+</script>
+
+<style>
+  .active {
+    color: hsl(var(--color-brand3));
+  }
+
+  .hidden {
+    animation: scaleDown 150ms;
+  }
+
+  @keyframes scaleDown {
+  from {
+    display: block;
+    transform: scale(1);
+  }
+
+  to {
+    display: none;
+    transform: scale(0);
+  }
 }
+</style>

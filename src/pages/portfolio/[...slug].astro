@@ -1,20 +1,31 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import RelatedPosts from "~/components/portfolio/RelatedPosts.astro";
+import Title from "~/components/ui/text/Title.astro";
+import PortfolioDetail from "~/layouts/PortfolioDetail.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('portfolio');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("portfolio");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post, posts },
+  }));
 }
-type Props = CollectionEntry<'portfolio'>;
 
-const post = Astro.props;
+type Props = {
+  post: CollectionEntry<"portfolio">;
+  posts: CollectionEntry<"portfolio">[];
+};
+
+const { post, posts } = Astro.props;
+// const related = getPostsPerCategory(posts, post.data.categories)
+const related = posts.filter((r) => r.id !== post.id).slice(0, 3);
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<PortfolioDetail {...post.data}>
+  <Content />
+  <Title size="xl" style="margin-top: 4rem;">Ver más proyectos</Title>
+  <hr style="margin-bottom: 1rem" />
+  <RelatedPosts posts={related} style="margin-bottom: 1rem" />
+</PortfolioDetail>

@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { CardFooter, CardImage, CardTitle } from "~/components/ui/card";
+import Link from "~/components/ui/link/Link.astro";
+
+import { mergeCategories } from "./utils";
+
+import styles from "./Article.module.css";
+
+type Props = CollectionEntry<"portfolio">;
+
+const post = Astro.props;
+---
+
+<article
+  transition:animate="slide"
+  class:list={[styles.item, styles.itemHover]}
+  data-categories={mergeCategories(post.data.categories)}
+>
+  <Link href={`/portfolio/${post.slug}/`}>
+    <div class={styles.card}>
+      <CardImage
+        class={styles.image}
+        width={720}
+        height={344}
+        src={post.data.preview}
+        aria-hidden="true"
+        asCover
+      >
+        <CardFooter class:list={[styles.footer, styles.opacity]}>
+          <CardTitle class={styles.title}>{post.data.title}</CardTitle>
+        </CardFooter>
+      </CardImage>
+    </div>
+  </Link>
+</article>
+
+<style>
+  .active {
+    color: hsl(var(--color-brand3));
+  }
+
+  .hidden {
+    animation: scaleDown 150ms;
+  }
+
+  @keyframes scaleDown {
+    from {
+      display: block;
+      transform: scale(1);
+    }
+
+    to {
+      display: none;
+      transform: scale(0);
+    }
+  }
+</style>

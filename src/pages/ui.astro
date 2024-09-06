@@ -1,14 +1,9 @@
 ---
+import Container from "~/components/ui/container/Container.astro";
 import Text from "~/components/ui/text/Text.astro";
-import Layout from "../layouts/BlogPost.astro";
 ---
 
-<Layout
-  title="About Me"
-  description="Lorem ipsum dolor sit amet"
-  pubDate={new Date("August 08 2021")}
-  heroImage="/blog-placeholder-about.jpg"
->
+<Container>
   <Text size="sm">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione suscipit
     qui unde aut explicabo autem alias ad beatae neque ab ex earum doloribus
@@ -32,4 +27,4 @@ import Layout from "../layouts/BlogPost.astro";
     qui unde aut explicabo autem alias ad beatae neque ab ex earum doloribus
     harum, voluptatem est? Eos beatae corporis quisquam!
   </Text>
-</Layout>
+</Container>

@@ -22,7 +22,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
       <Center id="design" class={styles.article}>
         <Flex mobile="direction-column" class={styles.columns}>
           <div>
-            <Title element="h3" variant="primary" size="sm" id="illustration"
+            <Title as="h3" variant="primary" size="sm" id="illustration"
               >Portafolio</Title
             >
             <Viewport
@@ -37,7 +37,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             >
               <Image src={localDiseno} aria-hidden="true" alt="Portafolio" />
             </Viewport>
-            <p style={{ maxWidth: "14rem" }}>
+            <p class={styles.text}>
               Mira todos los proyectos de
               <strong>ilustración y desarrollo de marcas</strong>
               acá.
@@ -82,9 +82,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             <Image src={localCurso} aria-hidden="true" alt="Curso" />
           </Viewport>
           <div>
-            <Title element="h3" variant="primary" size="sm" id="course"
-              >Curso</Title
-            >
+            <Title as="h3" variant="primary" size="sm" id="course">Curso</Title>
             <Viewport
               variant="desktop-hidden"
               style={{
@@ -97,7 +95,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             >
               <Image src={localCurso} aria-hidden="true" alt="Curso" />
             </Viewport>
-            <p style={{ maxWidth: "14rem" }}>
+            <p class={styles.text}>
               ¡Aprende a crear el <strong>diseño</strong>, las
               <strong>redes sociales</strong> y la página <strong>web</strong> de
               tu marca para que tu negocio despegue!
@@ -123,7 +121,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
     <div id="consultancies" class={styles.article}>
       <Flex mobile="direction-column">
         <div class={styles.columns}>
-          <Title element="h3" variant="primary" size="sm" id="consultants"
+          <Title as="h3" variant="primary" size="sm" id="consultants"
             >Asesorías</Title
           >
           <Viewport
@@ -138,7 +136,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
           >
             <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
           </Viewport>
-          <p style={{ maxWidth: "14rem" }}>
+          <p class={styles.text}>
             Dos horas en las que vamos a trabajar a fondo sobre tu proyecto
             creando una
             <strong>estrategia clara y definida.</strong>

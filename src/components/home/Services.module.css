@@ -27,3 +27,13 @@
     max-width: 85vw;
   }
 }
+
+.text {
+  max-width: 25rem;
+}
+
+@media (width >=768px) {
+  .text {
+    max-width: 14rem;
+  }
+}

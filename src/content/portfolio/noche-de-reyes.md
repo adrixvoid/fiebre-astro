@@ -1,16 +1,20 @@
 ---
 title: Noche de Reyes
 description: ""
+date: 2024-06-11T14:43:17.494Z
 pubDate: "Jul 08 2022"
-heroImage: /portfolio/noche-de-reyes/preview.jpg
+preview: /portfolio/noche-de-reyes/preview.jpg
 draft: false
-tags:
-  - Portfolio
-  - Proyectos
 categories:
-  - Portfolio
+  - illustration
 type: default
 slug: noche-de-reyes
+keywords:
+  - Portfolio
+  - Proyectos
+  - Books
+  - Libros
+  - Illustration
 ---
 
 ![](/portfolio/noche-de-reyes/1-01.jpg)

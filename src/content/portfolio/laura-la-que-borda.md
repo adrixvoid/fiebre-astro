@@ -1,12 +1,12 @@
 ---
 title: Laura la que borda
 description: ""
-date: "Jun 19 2024"
+date: 2024-06-11T18:54:16.286Z
 pubDate: "Jun 19 2024"
-heroImage: /portfolio/laura-borda/preview.jpg
-draft: true
-tags: []
-categories: []
+preview: /portfolio/laura-borda/preview.jpg
+draft: false
+categories:
+  - branding
 type: default
 ---
 

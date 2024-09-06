@@ -45,5 +45,7 @@
     "virtuals",
     "zustand"
   ],
-  "editor.fontSize": 12
+  "editor.fontSize": 12,
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321"
 }

@@ -6,16 +6,15 @@ const {
   align,
   variant,
   size,
-  element = "p",
+  as: Element = "p",
   fontStyle,
-  style,
   ...props
 } = Astro.props as PropsParagraph;
 ---
 
-<p
+<Element
   class={cvaVariants({ variant, size, align, fontStyle, className })}
   {...props}
 >
   <slot />
-</p>
+</Element>

@@ -1,0 +1,100 @@
+body {
+  background-image: url("/assets/nebulosa.svg");
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-image img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
+
+.prose {
+  margin: auto;
+  padding: 1em;
+  color: rgb(var(--gray-dark));
+}
+
+.title {
+  margin-bottom: 1em;
+  padding: 0;
+  text-align: center;
+  line-height: 1;
+  font-size: xx-large;
+}
+
+.title h1 {
+  margin: 0;
+}
+
+.date {
+  margin-bottom: 0.5em;
+  color: rgb(var(--gray));
+}
+
+.last-updated-on {
+  font-style: italic;
+}
+
+
+.content {
+  margin-inline: auto;
+}
+
+.content p {
+  margin-inline: auto;
+  width: 65cqw;
+  margin-inline: auto;
+}
+
+@media screen and (width > 640px) {
+  .content p {
+    width: 60cqw;
+  }
+}
+
+@media screen and (width > 780px) {
+  .content p {
+    width: 50dvw;
+  }
+}
+
+.content p:has(img) {
+  width: 100%;
+}
+
+.content p:has(:not(img)) {
+  margin-bottom: 2rem;
+}
+
+.content figure {
+  width: 100%;
+}
+
+.content img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.content figcaption {
+  background-color: hsl(var(--card));
+  padding: 0.5rem;
+}
+
+.content blockquote {
+  margin-block: 2.5rem;
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--card));
+}
+
+.content blockquote p {
+  margin: 0;
+}

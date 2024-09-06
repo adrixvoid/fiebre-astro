@@ -1,16 +1,15 @@
 ---
 title: Gold Coast Ipa
 slug: gold-coast-ipa
+date: 2022-07-08T14:43:17.494Z
 pubDate: "Jul 08 2022"
-heroImage: /portfolio/gold-coast-ipa/preview.jpg
+preview: /portfolio/gold-coast-ipa/preview.jpg
 description: Esta es una descripción para SEO
 draft: false
-tags:
-  - illustration
-  - Branding
 categories:
-  - Illustrations
-  - Branding
+  - branding
+background: "#ddccb0"
+color: "#444444"
 ---
 
 ![](/portfolio/gold-coast-ipa/01.png)

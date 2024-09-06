@@ -1,0 +1,99 @@
+.item {
+  --height: 25vh;
+  box-sizing: border-box;
+  min-height: var(--height);
+  position: relative;
+  animation: scaleUp 250ms;
+}
+
+.item .opacity {
+  transition: opacity 250ms ease-in;
+  opacity: 0;
+}
+
+.item:hover .opacity {
+  opacity: 1;
+}
+
+@media (width >=768px) {
+  .item {
+    --height: 45vh;
+    min-height: var(--height);
+  }
+}
+
+.card {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+@media (width >=768px) {
+  .image {
+    aspect-ratio: unset;
+    min-height: var(--height);
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(var(--background) / 90%);
+  color: hsl(var(--foreground));
+  text-align: center;
+  border-radius: calc(var(--radius) - 1px);
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  font-size: 2cqw;
+}
+
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(100dvh);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}

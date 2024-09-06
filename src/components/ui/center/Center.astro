@@ -29,7 +29,6 @@ const {
   direction,
   ...props
 } = Astro.props as Props;
-console.log("className", className);
 ---
 
 <div class={cvaVariants({ variant, direction, className })} {...props}>

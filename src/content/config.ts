@@ -9,7 +9,7 @@ const blog = defineCollection({
     // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    heroImage: z.string().optional(),
+    preview: z.string().optional(),
   }),
 });
 
@@ -22,7 +22,11 @@ const portfolio = defineCollection({
     // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    heroImage: z.string().optional(),
+    preview: z.string().optional(),
+    categories: z.array(z.string()),
+    background: z.string().optional(),
+    color: z.string().optional(),
+    draft: z.boolean().default(true),
   }),
 });
 

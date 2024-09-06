@@ -1,10 +1,17 @@
 ---
 title: Emprematch
-description: ""
-date: "Jun 19 2024"
-pubDate: "Jun 19 2024"
-heroImage: /portfolio/emprematch/preview.jpg
-type: default
+description: Aplicación para emprendedores. Creación de regla de negocio, UX e imagen de marca
+date: 2024-06-11T21:35:31.068Z
+pubDate: Jun 19 2024
+preview: /portfolio/emprematch/preview.jpg
+type: branding
+categories:
+  - branding
+keywords:
+  - branding
+  - portfolio
+  - ux
+  - diseño de marca
 ---
 
 ![](/portfolio/emprematch/emprematch01.jpg)

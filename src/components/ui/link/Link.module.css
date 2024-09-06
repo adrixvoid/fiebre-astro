@@ -1,10 +1,10 @@
 .link {
-  color: inherit;
+  color: currentColor;
   text-underline-offset: .2rem;
 }
 
 .link:hover {
-  text-decoration: underline;
+  color: hsl(var(--color-brand5))
 }
 
 .link:focus-visible {

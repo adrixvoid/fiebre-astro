@@ -51,6 +51,10 @@ const { class: className = "", ...props } = Astro.props;
     };
 
     activateLink = (element: HTMLAnchorElement) => {
+      if (!element) {
+        return;
+      }
+
       const current = this.parentElement?.querySelector(
         "." + this.activeClassName
       );
@@ -58,7 +62,7 @@ const { class: className = "", ...props } = Astro.props;
       if (element?.hasAttribute("aria-current")) {
         element.removeAttribute("aria-current");
       }
-      element.classList.add(this.activeClassName);
+      element?.classList.add(this.activeClassName);
       element.setAttribute("aria-current", "page");
     };
   }
