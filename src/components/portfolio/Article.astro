@@ -35,25 +35,3 @@ const post = Astro.props;
     </div>
   </Link>
 </article>
-
-<style>
-  .active {
-    color: hsl(var(--color-brand3));
-  }
-
-  .hidden {
-    animation: scaleDown 150ms;
-  }
-
-  @keyframes scaleDown {
-    from {
-      display: block;
-      transform: scale(1);
-    }
-
-    to {
-      display: none;
-      transform: scale(0);
-    }
-  }
-</style>

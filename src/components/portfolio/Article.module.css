@@ -64,12 +64,12 @@
 
 @keyframes scaleDown {
   from {
-    opacity: 1;
+    display: block;
     transform: scale(1);
   }
 
   to {
-    opacity: 0;
+    display: none;
     transform: scale(0);
   }
 }

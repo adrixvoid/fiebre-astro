@@ -8,9 +8,10 @@ draft: false
 categories:
   - illustration
 type: default
+background: "#000000"
+color: "#00e2de"
 ---
 
-![](/portfolio/tropical-stickers/stickers-01.png)
 ![](/portfolio/tropical-stickers/stickers-02.jpg)
 ![](/portfolio/tropical-stickers/stickers-03.jpg)
 ![](/portfolio/tropical-stickers/stickers-04.jpg)

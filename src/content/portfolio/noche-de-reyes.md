@@ -15,6 +15,7 @@ keywords:
   - Books
   - Libros
   - Illustration
+background: "#461f52"
 ---
 
 ![](/portfolio/noche-de-reyes/1-01.jpg)

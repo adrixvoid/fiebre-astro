@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  gap: 1.5rem;
 }
 
 .filter a {

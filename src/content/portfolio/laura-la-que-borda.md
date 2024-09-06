@@ -8,6 +8,8 @@ draft: false
 categories:
   - branding
 type: default
+background: "#ffccf2"
+color: "#9038ff"
 ---
 
 ![](/portfolio/laura-borda/laura-borda01.jpg)

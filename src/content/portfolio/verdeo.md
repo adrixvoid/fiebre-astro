@@ -11,6 +11,8 @@ slug: verdeo
 keywords:
   - branding
   - portfolio
+color: "#36674e"
+background: "#d6c0a8"
 ---
 
 ![](/portfolio/verdeo/2.jpg)

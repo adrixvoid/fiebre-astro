@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
@@ -43,13 +42,12 @@ import Article from "~/components/portfolio/Article.astro";
 
 <html lang="en">
   <head>
-    <ViewTransitions />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
     <main>
-      <Section id="portfolio" marginBottom>
+      <Section marginBottom>
         <Container>
           <nav id="filter" class={styles.filter}>
             {
@@ -95,24 +93,31 @@ import Article from "~/components/portfolio/Article.astro";
     const activeElement = filter?.querySelector(".active");
     activeElement?.classList.remove("active");
     link?.classList.add("active");
-    filterBy(link.dataset.filterBy);
+  }
+
+  function hideElement(element: HTMLElement) {
+    element.setAttribute("style", 'display: none');
+  }
+
+  function showElement(element: HTMLElement) {
+    element.removeAttribute("style");
   }
 
   function filterBy(categorySelected?: string) {
     if (categorySelected === "all") {
       posts?.forEach((post) => {
-        post.classList.remove("hidden");
+        showElement(post);
       });
       return;
     }
 
     posts?.forEach((post) => {
-      post.classList.add("hidden");
       const categoriesOfPost = post.dataset.categories?.split(",");
       categoriesOfPost?.map((currentCategory) => {
         if (categorySelected === currentCategory) {
-          post?.classList.remove("hidden");
-          return;
+          showElement(post);
+        } else {
+          hideElement(post);
         }
       });
     });
@@ -121,26 +126,14 @@ import Article from "~/components/portfolio/Article.astro";
   links?.forEach((link) => {
     link.addEventListener("click", () => activate(link));
   });
+
+  window.addEventListener('popstate', function (event) {
+  filterBy(window.location.hash.replace('#', ''));
+});
 </script>
 
 <style>
   .active {
     color: hsl(var(--color-brand3));
   }
-
-  .hidden {
-    animation: scaleDown 150ms;
-  }
-
-  @keyframes scaleDown {
-  from {
-    display: block;
-    transform: scale(1);
-  }
-
-  to {
-    display: none;
-    transform: scale(0);
-  }
-}
 </style>

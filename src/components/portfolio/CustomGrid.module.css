@@ -13,27 +13,27 @@
     flex-wrap: wrap;
   }
 
-  .container>*:nth-child(6n + 1) {
+  .container>article:nth-child(6n + 1) {
     width: calc(50% - var(--gap));
   }
 
-  .container>*:nth-child(6n + 2) {
+  .container>article:nth-child(6n + 2) {
     width: calc(50% - var(--gap));
   }
 
-  .container>*:nth-child(6n + 3) {
+  .container>article:nth-child(6n + 3) {
     width: calc(70% - var(--gap));
   }
 
-  .container>*:nth-child(6n + 4) {
+  .container>article:nth-child(6n + 4) {
     width: calc(30% - var(--gap));
   }
 
-  .container>*:nth-child(6n + 5) {
+  .container>article:nth-child(6n + 5) {
     width: calc(30% - var(--gap));
   }
 
-  .container>*:nth-child(6n + 6) {
+  .container>article:nth-child(6n + 6) {
     width: calc(70% - var(--gap));
   }
 }

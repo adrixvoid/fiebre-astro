@@ -4,6 +4,7 @@ description: Aplicación para emprendedores. Creación de regla de negocio, UX e
 date: 2024-06-11T21:35:31.068Z
 pubDate: Jun 19 2024
 preview: /portfolio/emprematch/preview.jpg
+draft: false
 type: branding
 categories:
   - branding
@@ -12,6 +13,7 @@ keywords:
   - portfolio
   - ux
   - diseño de marca
+background: "#523b94"
 ---
 
 ![](/portfolio/emprematch/emprematch01.jpg)
