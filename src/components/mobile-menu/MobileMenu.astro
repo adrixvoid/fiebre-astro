@@ -12,7 +12,7 @@ import styles from "./MobileMenu.module.css";
 
 type Props = HTMLAttributes<"div"> & {
   textLinks: { label: string; href: string }[];
-  iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[];
+  iconLinks: { label?: string; href: string; icon: keyof typeof iconPaths }[];
 };
 
 const {

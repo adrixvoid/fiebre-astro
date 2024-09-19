@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "~/consts";
+import { navigationLinks, SITE_TITLE, socialLinks } from "~/consts";
 import Button from "./ui/button/Button.astro";
 import Container from "./ui/container/Container.astro";
 import Nav from "./ui/nav/Nav.astro";
@@ -18,47 +18,29 @@ const today = new Date();
     <div class={styles.grid}>
       {SITE_TITLE}
       <Nav>
-        <NavLink href="#services">Servicios</NavLink>
-        <NavLink href="#about">Sobre mi</NavLink>
-        <NavLink href="#resources">Recursos</NavLink>
+        {
+          navigationLinks.map((link) => (
+            <NavLink href={link.href}>{link.label}</NavLink>
+          ))
+        }
       </Nav>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        <Button
-          variant="link"
-          href="mailto:fiebredg@hotmail.com"
-          title="Contact me fiebredg@hotmail.com"
-          rel="noopener noreferrer"
-        >
-          <!-- <Mail /> -->
-          <Icon icon="paper-plane-tilt" size="24px" />
-          <span class={styles.label}>fiebredg@hotmail.com</span>
-        </Button>
-        <Button variant="link">
-          <!-- <Linkedin /> -->
-          <Icon icon="linkedin-logo" size="24px" />
-        </Button>
-        <Button variant="link">
-          <Icon icon="pinterest-logo" size="24px" />
-          <!-- <Pinterest /> -->
-        </Button>
-        <Button
-          variant="link"
-          href="https://www.instagram.com/fiebre.creativa/"
-          title="My Instagram"
-          rel="noopener noreferrer"
-        >
-          <Icon icon="instagram-logo" size="24px" />
-          <!-- <Instagram /> -->
-        </Button>
-        <Button
-          variant="link"
-          href="https://www.behance.net/fiebre_creativa"
-          title="My Behance portfolio"
-          rel="noopener noreferrer"
-        >
-          <Icon icon="behance-logo" size="24px" />
-          <!-- <Behance /> -->
-        </Button>
+      <div class={styles.social}>
+        {
+          socialLinks.map((link) => (
+            <Button
+              as="a"
+              variant="link"
+              target="_blank"
+              href={link.href}
+              title={link.title}
+              rel={link.rel}
+              aria-label={link.title}
+            >
+              <Icon icon={link.icon} size="24px" />
+              <span class={styles.label}>{link.label}</span>
+            </Button>
+          ))
+        }
       </div>
     </div>
     <Center style={{ marginTop: "2rem" }}>

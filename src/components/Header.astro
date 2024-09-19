@@ -2,7 +2,7 @@
 import MobileMenu from "./mobile-menu/MobileMenu.astro";
 import Container from "./ui/container/Container.astro";
 import Flex from "./ui/flex/Flex.astro";
-import type { iconPaths } from "./ui/icon/IconPaths";
+
 import Link from "./ui/link/Link.astro";
 import Nav from "./ui/nav/Nav.astro";
 import NavLink from "./ui/nav/NavLink.astro";
@@ -11,33 +11,7 @@ import Viewport from "./ui/viewport/Viewport.astro";
 
 import styles from "./Header.module.css";
 
-import { SITE_TITLE } from "../consts";
-
-/** Main menu items */
-const textLinks: { label: string; href: string }[] = [
-  { label: "Servicios", href: "/#services" },
-  { label: "Sobre mi", href: "/#about" },
-  { label: "Recursos", href: "/#resources" },
-  { label: "Portfolio", href: "/portfolio" },
-];
-
-/** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: {
-  label: string;
-  href: string;
-  icon: keyof typeof iconPaths;
-}[] = [
-  { label: "Twitter", href: "https://twitter.com/me", icon: "twitter-logo" },
-  { label: "Twitch", href: "https://twitch.tv/me", icon: "twitch-logo" },
-  { label: "GitHub", href: "https://github.com/me", icon: "github-logo" },
-  { label: "CodePen", href: "https://codepen.io/me", icon: "codepen-logo" },
-  { label: "dribbble", href: "https://dribbble.com/me", icon: "dribbble-logo" },
-  {
-    label: "YouTube",
-    href: "https://www.youtube.com/@me/",
-    icon: "youtube-logo",
-  },
-];
+import { navigationLinks, SITE_TITLE, socialLinks } from "../consts";
 
 const { class: ClassName = "", sticky, ...props } = Astro.props;
 ---
@@ -56,7 +30,7 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
         <Link href="/" class="logo-link" title="Home Page">
           <Logo />
         </Link>
-        <MobileMenu textLinks={textLinks} iconLinks={iconLinks} />
+        <MobileMenu textLinks={navigationLinks} iconLinks={socialLinks} />
       </Flex>
     </Viewport>
     <Viewport variant="mobile-hidden">
@@ -70,7 +44,7 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
           class:list={[styles.navigation, "internal-links"]}
         >
           {
-            textLinks.map(({ label, href }) => (
+            navigationLinks.map(({ label, href }) => (
               <NavLink href={href}>{label}</NavLink>
             ))
           }

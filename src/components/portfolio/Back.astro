@@ -1,13 +1,15 @@
 ---
+import Button from "../ui/button/Button.astro";
 import Link from "../ui/link/Link.astro";
 ---
 
-<Link
-  href="javascript:void(0)"
+<Button
+  variant="link"
   class="back"
   onclick="history.back()"
   style="color: currentColor;fill:currentColor;"
-  ><svg
+>
+  <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
@@ -20,5 +22,5 @@ import Link from "../ui/link/Link.astro";
     class="lucide lucide-circle-arrow-left"
     ><circle cx="12" cy="12" r="10"></circle><path d="M16 12H8"></path><path
       d="m12 8-4 4 4 4"></path></svg
-  > Volver</Link
->
+  > Volver
+</Button>

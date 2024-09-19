@@ -156,8 +156,7 @@
 }
 
 .link:hover {
-    background-color: hsl(var(--button-foreground) / .05);
-    color: hsl(var(--button-foreground));
+    color: hsl(var(--color-brand5));
     box-shadow: none;
 }
 
