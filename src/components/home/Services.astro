@@ -16,12 +16,12 @@ import localCurso from "../../../public/home/curso.png";
 import localDiseno from "../../../public/home/ventana-diseno.png";
 ---
 
-<div>
+<section>
   <Container variant="narrow" style={{ position: "relative" }}>
     <div>
       <Center id="design" class={styles.article}>
         <Flex mobile="direction-column" class={styles.columns}>
-          <div>
+          <article>
             <Title as="h3" variant="primary" size="sm" id="illustration"
               >Portafolio</Title
             >
@@ -38,9 +38,9 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
               <Image src={localDiseno} aria-hidden="true" alt="Portafolio" />
             </Viewport>
             <p class={styles.text}>
-              Mira todos los proyectos de
-              <strong>ilustración y desarrollo de marcas</strong>
-              acá.
+              Mira todos los proyectos de <strong
+                >ilustración y desarrollo de marcas.</strong
+              >
             </p>
             <Button
               variant="outline"
@@ -51,7 +51,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             >
               Ver proyectos
             </Button>
-          </div>
+          </article>
           <Viewport
             variant="desktop"
             style={{
@@ -81,7 +81,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
           >
             <Image src={localCurso} aria-hidden="true" alt="Curso" />
           </Viewport>
-          <div>
+          <article>
             <Title as="h3" variant="primary" size="sm" id="course">Curso</Title>
             <Viewport
               variant="desktop-hidden"
@@ -114,13 +114,13 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
                 target="_blank">Inscribirme</Button
               >
             </Flex>
-          </div>
+          </article>
         </Flex>
       </Center>
     </div>
     <div id="consultancies" class={styles.article}>
       <Flex mobile="direction-column">
-        <div class={styles.columns}>
+        <article class={styles.columns}>
           <Title as="h3" variant="primary" size="sm" id="consultants"
             >Asesorías</Title
           >
@@ -147,7 +147,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             no-referrer="true"
             target="_blank">Quiero asesorarme</Button
           >
-        </div>
+        </article>
         <Viewport
           variant="desktop"
           style={{
@@ -162,4 +162,4 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
       </Flex>
     </div>
   </Container>
-</div>
+</section>

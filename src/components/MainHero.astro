@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
 import Center from "~/components/ui/center/Center.astro";
 import Viewport from "~/components/ui/viewport/Viewport.astro";
@@ -8,16 +6,16 @@ import Viewport from "~/components/ui/viewport/Viewport.astro";
 import styles from "./home/MainHero.module.css";
 import Rainbow from "./ui/svg/Rainbow.astro";
 
-import localEstrella1 from "../../public/assets/estrellas.svg";
-import localEstrella2 from "../../public/assets/estrellas2.svg";
-import localOndaEstelar1 from "../../public/assets/onda-estelar-1.svg";
-import localOndaEstelar2 from "../../public/assets/onda-estelar-2.svg";
-import localOndaEstelar3 from "../../public/assets/onda-estelar-3.svg";
-import localPlaneta1 from "../../public/assets/planeta1.svg";
-import localPlaneta2 from "../../public/assets/planeta2.svg";
-import localPlaneta3 from "../../public/assets/planeta3.svg";
-import localPlaneta4 from "../../public/assets/planeta4.svg";
-import localPlaneta5 from "../../public/assets/planeta5.svg";
+import Estrella1SVG from "~/components/ui/svg/assets/Estrellas.astro";
+import Estrella2SVG from "~/components/ui/svg/assets/Estrellas2.astro";
+import OndaEstelar1SVG from "~/components/ui/svg/assets/OndaEstelar-1.astro";
+import OndaEstelar2SVG from "~/components/ui/svg/assets/OndaEstelar-2.astro";
+import OndaEstelar3SVG from "~/components/ui/svg/assets/OndaEstelar-3.astro";
+import Planeta1SVG from "~/components/ui/svg/assets/Planeta1.astro";
+import Planeta2SVG from "~/components/ui/svg/assets/Planeta2.astro";
+import Planeta3SVG from "~/components/ui/svg/assets/Planeta3.astro";
+import Planeta4SVG from "~/components/ui/svg/assets/Planeta4.astro";
+import Planeta5SVG from "~/components/ui/svg/assets/Planeta5.astro";
 ---
 
 <div class={styles.hero}>
@@ -25,80 +23,35 @@ import localPlaneta5 from "../../public/assets/planeta5.svg";
     <div class={styles.orbit}>
       <ElementAsBackground>
         <Center variant="all">
-          <Image
-            class={styles.estrella1}
-            src={localEstrella1}
-            aria-hidden="true"
-            alt="estrella"
-          />
+          <Estrella1SVG class={styles.estrella1} aria-hidden="true" />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <Image src={localEstrella2} aria-hidden="true" alt="estrella" />
+          <Estrella2SVG class={styles.estrella12} aria-hidden="true" />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <Image
-            src={localOndaEstelar1}
-            aria-hidden="true"
-            class={styles.ondaEstelar1}
-            alt="onda estelar"
-          />
+          <OndaEstelar1SVG class={styles.ondaEstelar1} aria-hidden="true" />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <Image
-            src={localOndaEstelar2}
-            aria-hidden="true"
-            class={styles.ondaEstelar2}
-            alt="onda estelar"
-          />
+          <OndaEstelar2SVG class={styles.ondaEstelar2} aria-hidden="true" />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
         <Center variant="all">
-          <Image
-            src={localOndaEstelar3}
-            aria-hidden="true"
-            class={styles.ondaEstelar3}
-            alt="onda estelar"
-          />
+          <OndaEstelar3SVG class={styles.ondaEstelar3} aria-hidden="true" />
         </Center>
       </ElementAsBackground>
       <ElementAsBackground>
-        <Image
-          src={localPlaneta1}
-          aria-hidden="true"
-          class={styles.planeta1}
-          alt="planeta"
-        />
-        <Image
-          src={localPlaneta2}
-          aria-hidden="true"
-          class={styles.planeta2}
-          alt="planeta"
-        />
-        <Image
-          src={localPlaneta3}
-          aria-hidden="true"
-          class={styles.planeta3}
-          alt="planeta"
-        />
-        <Image
-          src={localPlaneta4}
-          aria-hidden="true"
-          class={styles.planeta4}
-          alt="planeta"
-        />
-        <Image
-          src={localPlaneta5}
-          aria-hidden="true"
-          class={styles.planeta5}
-          alt="planeta"
-        />
+        <Planeta1SVG class={styles.planeta1} aria-hidden="true" />
+        <Planeta2SVG class={styles.planeta2} aria-hidden="true" />
+        <Planeta3SVG class={styles.planeta3} aria-hidden="true" />
+        <Planeta4SVG class={styles.planeta4} aria-hidden="true" />
+        <Planeta5SVG class={styles.planeta5} aria-hidden="true" />
       </ElementAsBackground>
     </div>
   </div>
@@ -132,8 +85,8 @@ import localPlaneta5 from "../../public/assets/planeta5.svg";
         <h1 class={styles.title}>
           <span class={styles["text-0"]}>Hagamos que la</span>
           <span class={styles.headline}>
-            <span class={styles["text-1"]}>magia</span>
-            <span class={styles["text-2"]}>suceda</span>
+            <span class={styles.headlineText1}>magia</span>
+            <span class={styles.headlineText2}>suceda</span>
           </span>
         </h1>
       </Viewport>

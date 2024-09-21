@@ -15,40 +15,41 @@ const { class: className = "", ...props } =
   xml-space="preserve"
   {...props}
 >
-  <path
-    id="Magenta"
-    fill="#FF4DD5"
-    class="st0"
-    d="M206,121C206,86.3,188.6,9.2,105,9.2C21.4,9.2,6,77.3,6,121v121h16V114
+  <g id="arcos">
+    <g class="animated">
+      <path
+        class="arco st0"
+        fill="#FF4DD5"
+        d="M206,121C206,86.3,188.6,9.2,105,9.2C21.4,9.2,6,77.3,6,121v121h16V114
 	c0-40.4,15.9-89.6,83.7-89.6c70.6,0,85.3,61.8,85.3,89.6h0c0,30.7,0,80.3,0,128h15C206,195.5,206,151,206,121L206,121z"
-  ></path>
-  <g>
-    <path
-      class="st1"
-      fill="#6792FF"
-      d="M174.2,123c0-25.6-12-82.4-69.8-82.4C46.7,40.6,36,90.8,36,123v119h15.5V116.5v-1c0-23.9,8.4-61.3,53.9-61.3
-		c17.1,0,29.1,5.9,37.4,14.4c14.3,14,18,35.3,18,47.3c0,29.6,0,84.8,0,126.1h13.3C174.2,197.7,174.2,151.4,174.2,123L174.2,123z"
-    ></path>
-    <path
-      class="st2"
-      fill="#DDFF83"
-      d="M105.7,24.4C37.9,24.4,22,73.6,22,114v128h13.7H36V123c0-32.2,10.7-82.4,68.4-82.4c57.7,0,69.8,56.8,69.8,82.4
+      ></path>
+      <path
+        class="arco st1"
+        fill="#DDFF83"
+        d="M105.7,24.4C37.9,24.4,22,73.6,22,114v128h13.7H36V123c0-32.2,10.7-82.4,68.4-82.4c57.7,0,69.8,56.8,69.8,82.4
 		h0c0,28.4,0,74.7,0,119h2.1h0.3H191c0-47.7,0-97.3,0-128h0C191,86.2,176.3,24.4,105.7,24.4z"
+      ></path>
+      <path
+        class="arco st2"
+        fill="#6792FF"
+        d="M174.2,123c0-25.6-12-82.4-69.8-82.4C46.7,40.6,36,90.8,36,123v119h15.5V116.5v-1c0-23.9,8.4-61.3,53.9-61.3
+		c17.1,0,29.1,5.9,37.4,14.4c14.3,14,18,35.3,18,47.3c0,29.6,0,84.8,0,126.1h13.3C174.2,197.7,174.2,151.4,174.2,123L174.2,123z"
+      ></path>
+    </g>
+    <path
+      class="arco st3"
+      fill="#2667C6"
+      d="M142.9,68.6c-9.2-9.2-20.3-14.4-37.4-14.4c-45.5,0-53.9,37.3-53.9,61.3v1V242h7H59l93.5-0.4v0.4h7.9h0.3h0.1
+	c0-41.3,0-96.5,0-126.1C160.9,103.9,157,82.7,142.9,68.6z"
     ></path>
   </g>
-  <path
-    class="st3"
-    fill="#2667C6"
-    d="M142.9,68.6c-9.2-9.2-20.3-14.4-37.4-14.4c-45.5,0-53.9,37.3-53.9,61.3v1V242h7H59l93.5-0.4v0.4h7.9h0.3h0.1
-	c0-41.3,0-96.5,0-126.1C160.9,103.9,157,82.7,142.9,68.6z"
-  ></path>
-  <path
-    id="Violeta"
-    class="st4"
-    fill="#BC99FF"
-    d="M153,116v-1h0c0-16.3-8.2-52.5-47.5-52.5C66.3,62.5,59,94.5,59,115v0.8v7.3V242h94V116L153,116z"
-  ></path>
   <g id="Puerta">
+    <path
+      id="Violeta"
+      class="st4 interior"
+      fill="#BC99FF"
+      d="M153,116v-1h0c0-16.3-8.2-52.5-47.5-52.5C66.3,62.5,59,94.5,59,115v0.8v7.3V242h94V116L153,116z"
+    ></path>
     <g>
       <defs>
         <path
@@ -94,19 +95,30 @@ const { class: className = "", ...props } =
 </svg>
 
 <style>
+  .rainbow {
+    --color-0: #ff4dd5;
+    --color-1: #6792ff;
+    --color-2: #ddff83;
+    --color-3: #2667c6;
+    --color-4: #bc99ff;
+    --color-5: #f9c2f6;
+    --color-6: #ffa9f7;
+    --color-7: #f98cf4;
+  }
+
   .st0 {
     fill: hsl(314, 60%, 39%);
     animation: magentaAnimation 500ms forwards ease-in;
     animation-delay: 250ms;
   }
 
-  .st2 {
+  .st1 {
     fill: hsl(76, 63%, 35%);
     animation: yellowAnimation 500ms forwards ease-in;
     animation-delay: 300ms;
   }
 
-  .st1 {
+  .st2 {
     fill: hsl(223, 61%, 41%);
     animation: lightBlueAnimation 500ms forwards ease-in;
     animation-delay: 350ms;
@@ -124,22 +136,11 @@ const { class: className = "", ...props } =
     animation-delay: 400ms;
   }
 
-  /* .rainbow:hover .st4 {
-  animation: violetAnimation 500ms forwards;
-}
-*/
-
   .st6 {
     fill: hsl(303, 49%, 35%);
     animation: cloudAnimation1 450ms forwards ease-in;
     animation-delay: 800ms;
   }
-
-  /* .rainbow:hover .st6 {
-  animation-name: cloudAnimationReverse1;
-  animation-duration: 500ms;
-  animation-delay: unset;
-} */
 
   .st7 {
     fill: hsl(306, 55%, 41%);
@@ -147,23 +148,11 @@ const { class: className = "", ...props } =
     animation-delay: 800ms;
   }
 
-  /* .rainbow:hover .st7 {
-  animation-name: cloudAnimationReverse2;
-  animation-duration: 500ms;
-  animation-delay: unset;
-} */
-
   .st8 {
     fill: hsl(303, 46%, 50%);
     animation: cloudAnimation3 450ms forwards ease-in;
     animation-delay: 800ms;
   }
-
-  /* .rainbow:hover .st8 {
-  animation-name: cloudAnimationReverse3;
-  animation-duration: 500ms;
-  animation-delay: unset;
-} */
 
   .st9 {
     transform: translateY(100%);

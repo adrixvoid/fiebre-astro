@@ -25,20 +25,26 @@ import styles from "./Resources.module.css";
   />
   <Container>
     <Center variant="all">
-      <Title class={styles.title} as="h3" variant="primary" align="center"
-        >Descargables Gratis</Title
+      <Title
+        id="descargables"
+        class={styles.title}
+        as="h2"
+        variant="primary"
+        align="center">Descargables Gratis</Title
       >
     </Center>
     <Grid>
-      <Card class={styles.card}>
-        <CardHeader class={styles.cardCustomHeader}>
+      <Card as="article" class={styles.card}>
+        <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
             <CardImage src="/home/descargable-planner-para-feed.png" />
           </Center>
         </CardHeader>
         <CardContent>
-          <CardTitle>Planner para feed</CardTitle>
+          <CardTitle id="abrir-plantilla" aria-describedby="descargables"
+            >Planner para feed</CardTitle
+          >
           <CardDescription
             >Planifica el diseño de tu perfil y tu feed de Instagram en Canva.</CardDescription
           >
@@ -51,21 +57,22 @@ import styles from "./Resources.module.css";
               target="_blank"
               width="full-width"
               size="md"
+              aria-describedby="abrir-plantilla"
             >
               Abrir plantilla
             </Button>
           </Center>
         </CardFooter>
       </Card>
-      <Card class={styles.card}>
-        <CardHeader class={styles.cardCustomHeader}>
+      <Card as="article" class={styles.card}>
+        <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
             <CardImage src="/home/descargable-planner-anual.png" />
           </Center>
         </CardHeader>
         <CardContent>
-          <CardTitle>Planner anual</CardTitle>
+          <CardTitle id="planner-anual">Planner anual</CardTitle>
           <CardDescription
             >Organiza tu negocio y olvídate de los dolores de cabeza.</CardDescription
           >
@@ -78,14 +85,15 @@ import styles from "./Resources.module.css";
               target="_blank"
               width="full-width"
               size="md"
+              aria-describedby="planner-anual"
             >
               Descargar plantilla
             </Button>
           </Center>
         </CardFooter>
       </Card>
-      <Card class={styles.card}>
-        <CardHeader class={styles.cardCustomHeader}>
+      <Card as="article" class={styles.card}>
+        <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
             <CardImage
@@ -94,7 +102,7 @@ import styles from "./Resources.module.css";
           </Center>
         </CardHeader>
         <CardContent>
-          <CardTitle>Guía de color</CardTitle>
+          <CardTitle id="guia-color">Guía de color</CardTitle>
           <CardDescription>
             Si te cuesta elegir los colores ideales para tu negocio, ¡es aquí!
           </CardDescription>
@@ -107,6 +115,7 @@ import styles from "./Resources.module.css";
               target="_blank"
               width="full-width"
               size="md"
+              aria-describedby="guia-color"
             >
               Descargar guía
             </Button>

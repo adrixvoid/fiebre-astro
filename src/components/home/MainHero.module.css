@@ -52,7 +52,6 @@
   color: #FFFFFF;
 
   display: block;
-  margin-bottom: 1em;
 }
 
 .headline {
@@ -71,13 +70,14 @@
   text-transform: uppercase;
 
   color: #FFFFFF;
+  transition: font-size 10ms ease-in-out;
 }
 
-.text-1 {
+.headlineText1 {
   font-size: 10.6em;
 }
 
-.text-2 {
+.headlineText2 {
   font-size: 9em;
 }
 
@@ -88,6 +88,10 @@
 @media screen and (width <960px) {
   .title {
     font-size: min(max(3cqw, 1.8rem), 2.5cqh);
+  }
+
+  .text-0 {
+    margin-bottom: 1em;
   }
 
   .rainbowSVG {
@@ -118,16 +122,10 @@
   }
 
   .text-0 {
-    font-size: 0.8em;
+    font-size: 1.6em;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-size: 2.4cqw;
     letter-spacing: 0.5em;
-  }
-
-  .text-1 {
-    font-size: 16em;
-  }
-
-  .text-2 {
-    font-size: 9.5em;
   }
 }
 

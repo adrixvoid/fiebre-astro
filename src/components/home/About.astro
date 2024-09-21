@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import Background from "~/components/ui/background/Background.astro";
+import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
 import Button from "~/components/ui/button/Button.astro";
 import Center from "~/components/ui/center/Center.astro";
 import Container from "~/components/ui/container/Container.astro";
@@ -13,6 +13,12 @@ import styles from "./About.module.css";
 import localSobreGrilla from "../../../public/home/sobre-grilla.svg";
 import localSobreMouse from "../../../public/home/sobre-mouse.svg";
 
+import Estrellas3SVG from "~/components/ui/svg/assets/Estrellas3.astro";
+import Estrellas4SVG from "~/components/ui/svg/assets/Estrellas4.astro";
+// import Nube1 from "~/components/ui/svg/assets/Nube1.astro";
+import NubesSVG from "~/components/ui/svg/assets/Nubes.astro";
+import Nubes2SVG from "~/components/ui/svg/assets/Nubes2.astro";
+import SunSVG from "~/components/ui/svg/assets/Sun.astro";
 import localSobreFoto from "../../../public/home/sobre-foto.png";
 import localSobreGustos from "../../../public/home/sobre-gustos.png";
 import localSobreHerramientas from "../../../public/home/sobre-herramientas.png";
@@ -22,148 +28,147 @@ import localSobreSkillset from "../../../public/home/sobre-skillset.png";
 ---
 
 <div class={styles.sobremi}>
-  <img class={styles.nubes} src="assets/nubes.svg" aria-hidden="true" />
-  <img class={styles.sun} src="assets/sun.svg" aria-hidden="true" />
-  <div class={styles.mask}>
-    <!-- <SunSVG class={styles.sun} /> -->
-    <Background
-      url="/assets/estrellas3.svg"
-      style={{ backgroundSize: "100% auto", position: "relative" }}
+  <NubesSVG class={styles.nubes} aria-hidden="true" />
+  <ElementAsBackground class={styles.mask} aria-hidden="true">
+    <Estrellas3SVG class:list={[styles.backgroundSVG, styles.estrellas3]} />
+    <Estrellas4SVG class:list={[styles.backgroundSVG, styles.estrellas4]} />
+    <!-- <Nube1 class:list={[styles.backgroundSVG, styles.nube1]} /> -->
+    <Nubes2SVG
+      class:list={[styles.backgroundSVG, styles.nubes2]}
+      aria-hidden="true"
+    />
+  </ElementAsBackground>
+  <article>
+    <Container
+      variant="narrow"
+      style={{ position: "relative", marginBlock: "4rem" }}
     >
-      <Background
-        url="/assets/estrellas4.svg"
-        style={{ backgroundSize: "100% auto", position: "relative" }}
+      <Title
+        variant="primary"
+        as="h2"
+        size="sm"
+        align="center"
+        fontStyle="italic">Sobre Fiebre</Title
       >
-        <Background
-          url="/assets/nubes2.svg"
-          style={{
-            backgroundSize: "100% auto",
-            position: "relative",
-            backgroundPosition: "top",
-          }}
-        >
-          <Container
-            variant="narrow"
-            style={{ position: "relative", marginBlock: "4rem" }}
-          >
-            <Title variant="primary" size="sm" align="center" fontStyle="italic"
-              >Sobre Fiebre</Title
-            >
-          </Container>
-          <div style={{ position: "relative" }}>
-            <Center>
-              <div class={styles.images}>
-                <Image
-                  class:list={[styles.absolute, styles.imgGrilla]}
-                  src={localSobreGrilla}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[
-                    styles.absolute,
-                    styles.imgFoto,
-                    styles.imgFoto3,
-                  ]}
-                  src={localSobreFoto}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[
-                    styles.absolute,
-                    styles.imgFoto,
-                    styles.imgFoto2,
-                  ]}
-                  src={localSobreFoto}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[
-                    styles.absolute,
-                    styles.imgFoto,
-                    styles.imgFoto1,
-                  ]}
-                  src={localSobreFoto}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[
-                    styles.absolute,
-                    styles.imgFoto,
-                    styles.imgPaint,
-                  ]}
-                  src={localSobrePaint}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[styles.absolute, styles.imgSkillset]}
-                  src={localSobreSkillset}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[styles.absolute, styles.imgGustos]}
-                  src={localSobreGustos}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[styles.absolute, styles.imgHerramientas]}
-                  src={localSobreHerramientas}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[styles.absolute, styles.imgIdiomas]}
-                  src={localSobreIdiomas}
-                  aria-hidden="true"
-                  alt="about"
-                />
-                <Image
-                  class:list={[styles.absolute, styles.imgMouse]}
-                  src={localSobreMouse}
-                  aria-hidden="true"
-                  alt="about"
-                />
-              </div>
-            </Center>
+    </Container>
+    <div class={styles.mask}>
+      <div style={{ position: "relative" }} aria-hidden="true">
+        <Center>
+          <div class={styles.images}>
+            <Image
+              class:list={[styles.absolute, styles.imgGrilla]}
+              src={localSobreGrilla}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgFoto, styles.imgFoto3]}
+              src={localSobreFoto}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgFoto, styles.imgFoto2]}
+              src={localSobreFoto}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgFoto, styles.imgFoto1]}
+              src={localSobreFoto}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgFoto, styles.imgPaint]}
+              src={localSobrePaint}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgSkillset]}
+              src={localSobreSkillset}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgGustos]}
+              src={localSobreGustos}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgHerramientas]}
+              src={localSobreHerramientas}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgIdiomas]}
+              src={localSobreIdiomas}
+              aria-hidden="true"
+              alt="about"
+            />
+            <Image
+              class:list={[styles.absolute, styles.imgMouse]}
+              src={localSobreMouse}
+              aria-hidden="true"
+              alt="about"
+            />
           </div>
-          <Container variant="narrow" style={{ position: "relative" }}>
-            <Center class={styles["about-text"]} variant="text">
-              <Text size="lg">
-                Soy Desirée, diseñadora gráfica graduada en la Universidad de
-                Buenos Aires (UBA).
-              </Text>
-              <Text size="lg">
-                Desde 2017 ayudo a empresas y emprendedores a desarrollar sus
-                proyectos en mi estudio Fiebre<small><sup>Ⓡ</sup></small>
-              </Text>
-              <Text size="lg">
-                Fui docente en la UBA y en la UADE en materias de diseño y
-                gestión de proyectos. Me apasiona la investigación y la
-                educación <strong aria-label="heart icon">♡</strong>
-              </Text>
-
-              <Button
-                variant="outline"
-                size="xl"
-                style={{ margin: "2rem auto 0 auto" }}
-                href="https://forms.gle/6bbvAgRPGFkqofDx7"
-                no-referrer="true"
-                target="_blank"
-              >
-                Hablemos
-              </Button>
-            </Center>
-          </Container>
-        </Background>
-      </Background>
-    </Background>
-  </div>
+        </Center>
+      </div>
+      <Container variant="narrow" style={{ position: "relative" }}>
+        <Center class={styles["about-text"]} variant="text">
+          <Text size="lg">
+            Soy Desirée, diseñadora gráfica graduada en la Universidad de Buenos
+            Aires (UBA).
+          </Text>
+          <Text size="lg">
+            Desde 2017 ayudo a empresas y emprendedores a desarrollar sus
+            proyectos en mi estudio Fiebre<small aria-hidden="true"
+              ><sup>Ⓡ</sup></small
+            >
+          </Text>
+          <Text size="lg">
+            Fui docente en la UBA y en la UADE en materias de diseño y gestión
+            de proyectos. Me apasiona la investigación y la educación
+            <strong aria-hidden="true">♡</strong>.
+          </Text>
+          <div class="sr-only">
+            <h4>Gustos e intereses</h4>
+            <p>
+              Arte pop, 80s, Vaporwave, Cosmic, Surf & Chill, 90s, Disco Music,
+              Pasta
+            </p>
+            <h4>Idiomas</h4>
+            <p>Ingles Intermedio (B2), Español Nativo, Portugués Básico</p>
+            <h4>Skillset</h4>
+            <p>
+              Branding, Ilustración, Marketing, Project Management, UX/UI, Soft
+              Skills, Negocios, Desarrollo de Marca
+            </p>
+            <h4>Herramientas</h4>
+            <p>
+              Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe
+              Fresco, Figma, Procreate, Canva
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            size="xl"
+            style={{ margin: "2rem auto 0 auto" }}
+            href="https://forms.gle/6bbvAgRPGFkqofDx7"
+            no-referrer="true"
+            target="_blank"
+          >
+            Hablemos
+          </Button>
+        </Center>
+      </Container>
+    </div>
+  </article>
+  <SunSVG class={styles.sun} aria-hidden="true" />
   <img class={styles.mountains} src="assets/mountains.svg" aria-hidden="true" />
   <!-- <MountainsSVG class={styles.mountains} /> -->
 </div>
