@@ -47,9 +47,12 @@ body {
   margin-inline: auto;
 }
 
+.content ul,
+.content ol,
 .content p {
   margin-inline: auto;
   width: 65cqw;
+  font-size: 1.34rem;
   margin-inline: auto;
 }
 

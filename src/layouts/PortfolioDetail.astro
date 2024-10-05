@@ -4,7 +4,6 @@ import { ViewTransitions } from "astro:transitions";
 import Container from "~/components/ui/container/Container.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 
 import Back from "~/components/portfolio/Back.astro";
@@ -13,13 +12,12 @@ import style from "./PortfolioDetail.module.css";
 
 type Props = CollectionEntry<"portfolio">["data"];
 
-const { title, description, pubDate, updatedDate, preview, background, color } =
-  Astro.props;
+const { title, description, preview, background, color } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description || ""} image={preview} />
     <ViewTransitions />
   </head>
 
@@ -36,15 +34,6 @@ const { title, description, pubDate, updatedDate, preview, background, color } =
           <Back />
           <div class={style.prose}>
             <div class={style.title}>
-              <div class={style.date}>
-                {
-                  updatedDate && (
-                    <div class={style["last-updated-on"]}>
-                      Last updated on <FormattedDate date={updatedDate} />
-                    </div>
-                  )
-                }
-              </div>
               <Title transition:name="title">
                 {title}
               </Title>

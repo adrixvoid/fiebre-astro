@@ -8,12 +8,20 @@ body {
   margin-top: 4rem;
 }
 
+.grid .article {
+  transition: opacity 250ms ease-in;
+}
+
+.grid:hover .article:not(:hover) {
+  opacity: 0.8;
+}
+
 .filter {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   margin-top: 2rem;
-  gap: 1.5rem;
 }
 
 .filter a {

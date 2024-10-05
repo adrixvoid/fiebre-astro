@@ -10,18 +10,16 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     preview: z.string().optional(),
+    draft: z.boolean().default(true),
   }),
 });
 
 const portfolio = defineCollection({
   type: "content",
-  // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    // Transform string to Date object
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
+    description: z.string().optional(),
+    pubDate: z.coerce.date().optional(),
     preview: z.string().optional(),
     categories: z.array(z.string()),
     background: z.string().optional(),

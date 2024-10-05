@@ -1,29 +1,18 @@
 .item {
   --height: 25vh;
   box-sizing: border-box;
-  min-height: var(--height);
   position: relative;
   animation: scaleUp 250ms;
-}
-
-.item .opacity {
-  transition: opacity 250ms ease-in;
-  opacity: 0;
-}
-
-.item:hover .opacity {
-  opacity: 1;
 }
 
 @media (width >=768px) {
   .item {
     --height: 45vh;
-    min-height: var(--height);
   }
 }
 
 .card {
-  border-radius: var(--radius);
+  /* border-radius: var(--radius); */
   overflow: hidden;
 }
 
@@ -40,9 +29,8 @@
   position: absolute;
   bottom: 0;
   background-color: hsl(var(--background) / 90%);
-  color: hsl(var(--foreground));
   text-align: center;
-  border-radius: calc(var(--radius) - 1px);
+  opacity: 0;
 }
 
 .title {

@@ -2,7 +2,7 @@
 title: Laura la que borda
 description: ""
 date: 2024-06-11T18:54:16.286Z
-pubDate: "Jun 19 2024"
+pubDate: 2024-06-11T18:54:16.286Z
 preview: /portfolio/laura-borda/preview.jpg
 draft: false
 categories:

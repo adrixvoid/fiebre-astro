@@ -10,6 +10,7 @@
 }
 
 .card {
+  color: hsl(var(--card-foreground));
   margin-top: 2.5rem;
   margin-inline: auto;
   width: 100%;

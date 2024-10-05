@@ -13,6 +13,13 @@
       "path": "[[workspace]]/src/content/portfolio"
     }
   ],
+  "frontMatter.taxonomy.keywords": [
+    "branding",
+    "portfolio",
+    "ux",
+    "diseño de marca",
+    "plantillas"
+  ],
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
@@ -22,26 +29,14 @@
       "clearEmpty": true,
       "fields": [
         {
-          "title": "Title",
+          "title": "title",
           "name": "title",
-          "type": "string",
-          "single": true
-        },
-        {
-          "title": "Description",
-          "name": "description",
           "type": "string"
         },
         {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image",
-          "isPreviewImage": true
-        },
-        {
-          "title": "date",
-          "name": "date",
-          "type": "datetime"
+          "title": "description",
+          "name": "description",
+          "type": "string"
         },
         {
           "title": "pubDate",
@@ -49,9 +44,15 @@
           "type": "datetime"
         },
         {
+          "title": "preview",
+          "name": "preview",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
           "title": "draft",
           "name": "draft",
-          "type": "draft"
+          "type": "boolean"
         },
         {
           "title": "categories",
@@ -59,26 +60,39 @@
           "type": "categories"
         },
         {
-          "title": "type",
-          "name": "type",
-          "type": "string"
-        },
-        {
           "title": "keywords",
           "name": "keywords",
           "type": "choice",
-          "choices": [
-            "Portfolio",
-            "Proyectos",
-            "Books",
-            "Libros",
-            "Illustration"
-          ]
+          "choices": ["branding", "portfolio"]
+        },
+        {
+          "title": "color",
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "title": "background",
+          "name": "background",
+          "type": "string"
         }
       ]
     },
     {
-      "name": "default",
+      "name": "blog",
+      "pageBundle": false,
+      "previewPath": "'blog'",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "pubDate",
+          "name": "pubDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "portfolio",
       "pageBundle": false,
       "previewPath": "'portfolio'",
       "filePrefix": null,
@@ -104,7 +118,7 @@
         {
           "title": "draft",
           "name": "draft",
-          "type": "draft"
+          "type": "boolean"
         },
         {
           "title": "categories",
@@ -120,6 +134,17 @@
           "title": "Color Text",
           "name": "color",
           "type": "string"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "taxonomy",
+          "taxonomyId": "keywords"
+        },
+        {
+          "title": "pubDate",
+          "name": "pubDate",
+          "type": "datetime"
         }
       ]
     }

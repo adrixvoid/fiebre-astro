@@ -1,8 +1,10 @@
 .card {
   background-color: hsl(var(--card));
-  color: hsl(var(--card-foreground));
+  color: currentColor;
   border-width: 0;
-  border-radius: var(--radius);
+}
+
+.shadow {
   box-shadow:
     3px 3px 0 3px hsl(266, 54%, 51%);
 }

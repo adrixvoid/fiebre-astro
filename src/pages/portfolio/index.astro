@@ -2,8 +2,6 @@
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
-import CustomGrid from "~/components/portfolio/CustomGrid.astro";
-import { CardFooter, CardImage, CardTitle } from "~/components/ui/card";
 import Container from "~/components/ui/container/Container.astro";
 import Section from "~/components/ui/section/Section.astro";
 import BaseHead from "../../components/BaseHead.astro";
@@ -16,9 +14,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
 import styles from "~/layouts/PortfolioList.module.css";
 
-const posts = (await getCollection("portfolio")).filter(p => !p.data.draft).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = await getCollection("portfolio");
+const filtered = posts.filter(p => !p.data.draft).sort(
+  (a, b) => a.data.pubDate && b.data.pubDate ? b.data.pubDate.valueOf() - a.data.pubDate.valueOf() : 0
+)
 
 const links = [
   {
@@ -38,6 +37,7 @@ const links = [
 
 import localSVGStar from '../../../public/assets/star.svg';
 import Article from "~/components/portfolio/Article.astro";
+import Grid from "~/components/ui/grid/Grid.astro";
 ---
 
 <html lang="en">
@@ -48,7 +48,7 @@ import Article from "~/components/portfolio/Article.astro";
     <Header />
     <main>
       <Section marginBottom>
-        <Container>
+        <Container variant="fluid">
           <nav id="filter" class={styles.filter}>
             {
               links.map((link) => {
@@ -70,13 +70,13 @@ import Article from "~/components/portfolio/Article.astro";
               })
             }
           </nav>
-          <CustomGrid class={styles.grid}>
+          <Grid class={styles.grid}>
             {
-              posts.map((post) => (
-                <Article {...post} />
+              filtered.map((post) => (
+                <Article class={styles.article} {...post} />
               ))
             }
-          </CustomGrid>
+          </Grid>
         </Container>
       </Section>
 
@@ -127,12 +127,38 @@ import Article from "~/components/portfolio/Article.astro";
     link.addEventListener("click", () => activate(link));
   });
 
-  window.addEventListener('popstate', function (event) {
+  window.addEventListener('popstate', function () {
   filterBy(window.location.hash.replace('#', ''));
 });
 </script>
 
+<!-- <script>
+  const posts = document?.querySelectorAll("article");
+  const body = document?.querySelector("body");
+
+  posts?.forEach((post) => {
+    post?.addEventListener("mouseover", () => setColor(post));
+    post?.addEventListener("mouseout", () => removeColor());
+  });
+
+  function setColor(element: HTMLElement) {
+    console.log("element", element)
+    body?.setAttribute("style", `
+    background-color: ${element.dataset.background};
+    color: ${element.dataset.color};`);
+  }
+
+  function removeColor() {
+    body?.removeAttribute("style");
+  }
+</script> -->
+
 <style>
+  body {
+    transition-property: background-color, color;
+    transition-duration:  250ms;
+    transition-timing-function: ease-in-out;
+  }
   .active {
     color: hsl(var(--color-brand3));
   }

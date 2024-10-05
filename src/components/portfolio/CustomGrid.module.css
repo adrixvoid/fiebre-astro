@@ -1,15 +1,16 @@
 .container {
-  --gap: 1rem;
+  --gap: 1.5rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  /* max-width: 860px; */
 }
 
 @media (width >=768px) {
   .container {
     flex-direction: row;
-    --gap: 1rem;
+    --gap: 1.5rem;
     flex-wrap: wrap;
   }
 

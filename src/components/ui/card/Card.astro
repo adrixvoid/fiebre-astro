@@ -4,16 +4,20 @@ import styles from "./Card.module.css";
 
 export type BackgroundProps = HTMLAttributes<"div"> & {
   as?: "div" | "article";
+  shadow: boolean;
 };
 
 const {
   as: Element = "div",
   class: className = "",
-  style = {},
+  shadow = false,
   ...props
 } = Astro.props as BackgroundProps;
 ---
 
-<Element class:list={[styles.card, className]}>
+<Element
+  class:list={[styles.card, className, { [styles.shadow]: shadow }]}
+  {...props}
+>
   <slot />
 </Element>

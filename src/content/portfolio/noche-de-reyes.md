@@ -2,7 +2,7 @@
 title: Noche de Reyes
 description: ""
 date: 2024-06-11T14:43:17.494Z
-pubDate: "Jul 08 2022"
+pubDate: 2024-06-11T14:43:17.494Z
 preview: /portfolio/noche-de-reyes/preview.jpg
 draft: false
 categories:

@@ -36,7 +36,7 @@ export const cvaVariants = cva(styles.base, {
 
 export type PropsParagraph = HTMLAttributes<"p" | "span"> &
   VariantProps<typeof cvaVariants> & {
-    as?: HTMLElement;
+    as?: "p" | "span";
     weight?: number;
   };
 

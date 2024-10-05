@@ -2,7 +2,7 @@
 title: Tropical stickers
 description: ""
 date: 2024-06-11T21:53:31.824Z
-pubDate: "Jun 19 2024"
+pubDate: 2024-06-11T21:53:31.824Z
 preview: /portfolio/tropical-stickers/preview.jpg
 draft: false
 categories:

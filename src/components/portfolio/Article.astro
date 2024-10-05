@@ -8,15 +8,19 @@ import { mergeCategories } from "./utils";
 
 import styles from "./Article.module.css";
 
-type Props = CollectionEntry<"portfolio">;
+type Props = CollectionEntry<"portfolio"> & {
+  class?: string;
+};
 
-const post = Astro.props;
+const { class: className = "", ...post } = Astro.props;
 ---
 
 <article
   transition:animate="slide"
-  class:list={[styles.item, styles.itemHover]}
+  class:list={[styles.item, styles.itemHover, className]}
   data-categories={mergeCategories(post.data.categories)}
+  data-background={post.data.background}
+  data-color={post.data.color}
 >
   <Link href={`/portfolio/${post.slug}/`}>
     <div class={styles.card}>

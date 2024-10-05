@@ -2,7 +2,7 @@
 title: Verdeo
 description: ""
 date: 2023-11-30T01:42:02.686Z
-pubDate: Jul 08 2022
+pubDate: 2023-11-30T01:42:02.686Z
 preview: /portfolio/verdeo/1.jpg
 draft: false
 categories:

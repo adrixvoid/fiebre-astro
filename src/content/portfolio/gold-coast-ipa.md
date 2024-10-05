@@ -1,8 +1,7 @@
 ---
 title: Gold Coast Ipa
 slug: gold-coast-ipa
-date: 2022-07-08T14:43:17.494Z
-pubDate: "Jul 08 2022"
+pubDate: 2024-10-04T21:34:00.209Z
 preview: /portfolio/gold-coast-ipa/preview.jpg
 description: Esta es una descripción para SEO
 draft: false

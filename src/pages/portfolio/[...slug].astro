@@ -1,6 +1,12 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import RelatedPosts from "~/components/portfolio/RelatedPosts.astro";
+import Card, {
+  CardContent,
+  CardHeader,
+  CardPadding,
+  CardTitle,
+} from "~/components/ui/card";
 import Title from "~/components/ui/text/Title.astro";
 import PortfolioDetail from "~/layouts/PortfolioDetail.astro";
 
@@ -17,15 +23,37 @@ type Props = {
   posts: CollectionEntry<"portfolio">[];
 };
 
+function shuffle<Type>(array: Type[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 const { post, posts } = Astro.props;
 // const related = getPostsPerCategory(posts, post.data.categories)
-const related = posts.filter((r) => r.id !== post.id).slice(0, 3);
+const shuffled = shuffle<(typeof posts)[0]>(
+  posts.filter((r) => r.id !== post.id)
+);
+const related = shuffled.slice(0, 6);
 const { Content } = await post.render();
 ---
 
 <PortfolioDetail {...post.data}>
   <Content />
-  <Title size="xl" style="margin-top: 4rem;">Ver más proyectos</Title>
-  <hr style="margin-bottom: 1rem" />
-  <RelatedPosts posts={related} style="margin-bottom: 1rem" />
+  <Card
+    style="background-color: color-mix(in hsl, currentColor, transparent 94%);"
+  >
+    <CardHeader>
+      <CardPadding>
+        <CardTitle style="margin-top:1.5rem">
+          <Title size="lg">Ver más proyectos</Title>
+        </CardTitle>
+      </CardPadding>
+    </CardHeader>
+    <CardContent>
+      <RelatedPosts posts={related} style="margin-bottom: 1rem" />
+    </CardContent>
+  </Card>
 </PortfolioDetail>
