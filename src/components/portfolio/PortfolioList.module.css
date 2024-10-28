@@ -27,6 +27,12 @@ body {
 .filter a {
   display: inline-block;
   margin-bottom: 0;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+.filter a:hover {
+  color: hsl(var(--color-brand5));
 }
 
 .filter span {

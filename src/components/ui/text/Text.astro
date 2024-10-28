@@ -1,5 +1,5 @@
 ---
-import { cvaVariants, type PropsParagraph } from "./Text.cva.ts";
+import { textVariants, type PropsParagraph } from "./Text.cva.ts";
 
 const {
   class: className = "",
@@ -13,7 +13,7 @@ const {
 ---
 
 <Component
-  class={cvaVariants({ variant, size, align, fontStyle, className })}
+  class={textVariants({ variant, size, align, fontStyle, className })}
   {...props}
 >
   <slot />

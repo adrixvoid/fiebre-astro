@@ -21,6 +21,7 @@
 .navigation a {
   text-underline-offset: 0.2rem;
   text-rendering: optimizeLegibility;
+  text-decoration: none;
 }
 
 .navigation a:hover {

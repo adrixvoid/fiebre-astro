@@ -123,8 +123,7 @@
 
   .text-0 {
     font-size: 1.6em;
-    font-size: clamp(2rem, 2.5vw, 3rem);
-    font-size: 2.4cqw;
+    font-size: clamp(2.5rem, 2.5vw, 3.5rem);
     letter-spacing: 0.5em;
   }
 }

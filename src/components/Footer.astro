@@ -8,6 +8,7 @@ import NavLink from "./ui/nav/NavLink.astro";
 import styles from "./Footer.module.css";
 import Center from "./ui/center/Center.astro";
 import Icon from "./ui/icon/Icon.astro";
+import Link from "./ui/link/Link.astro";
 import Text from "./ui/text/Text.astro";
 
 const today = new Date();
@@ -44,8 +45,9 @@ const today = new Date();
       </div>
     </div>
     <Center style={{ marginTop: "2rem" }}>
-      <Text size="sm">
-        &copy; {today.getFullYear()} Fiebre. All rights reserved.
+      <Text size="sm" align="center">
+        &copy; {today.getFullYear()} Fiebre. All rights reserved.<br />
+        <Link href="mailto:fiebredg@hotmail.com">fiebredg@hotmail.com</Link>
       </Text>
     </Center>
   </Container>

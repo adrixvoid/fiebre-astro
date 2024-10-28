@@ -1,14 +1,14 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 import BaseHead from "~/components/BaseHead.astro";
 import Footer from "~/components/Footer.astro";
 import Header from "~/components/Header.astro";
 import About from "~/components/home/About.astro";
-import Portfolio from "~/components/home/Planets.astro";
+import MainHero from "~/components/home/MainHero.astro";
+import Planets from "~/components/home/Planets.astro";
 import Resources from "~/components/home/Resources.astro";
-import MainHero from "~/components/MainHero.astro";
+import Services from "~/components/home/Services.astro";
 import Section from "~/components/ui/section/Section.astro";
 ---
 
@@ -16,7 +16,6 @@ import Section from "~/components/ui/section/Section.astro";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <ViewTransitions />
   </head>
   <body>
     <Header sticky />
@@ -25,7 +24,9 @@ import Section from "~/components/ui/section/Section.astro";
         <MainHero />
       </Section>
       <Section id="services">
-        <Portfolio />
+        <Planets>
+          <Services />
+        </Planets>
       </Section>
       <Section id="about">
         <About />
@@ -37,3 +38,10 @@ import Section from "~/components/ui/section/Section.astro";
     <Footer />
   </body>
 </html>
+
+<style is:inline>
+  header a:hover,
+  footer a:hover {
+    color: hsl(var(--color-brand5)) !important;
+  }
+</style>

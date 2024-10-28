@@ -2,25 +2,13 @@
 import type { HTMLAttributes } from "astro/types";
 import type { CollectionEntry } from "astro:content";
 import Article from "./Article.astro";
+import styles from "./RelatedPosts.module.css";
 
 type Props = { posts: CollectionEntry<"portfolio">[] } & HTMLAttributes<"div">;
 
 const { posts, ...props } = Astro.props;
 ---
 
-<div class="grid" {...props}>
+<div class={styles.grid} {...props}>
   {posts.map((post) => <Article {...post} />)}
 </div>
-
-<style is:inline>
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0;
-  }
-
-  .grid > article {
-    --height: 28vh;
-    width: 100%;
-  }
-</style>

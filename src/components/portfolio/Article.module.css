@@ -1,25 +1,18 @@
 .item {
-  --height: 25vh;
+  aspect-ratio: 1 / 1;
   box-sizing: border-box;
   position: relative;
   animation: scaleUp 250ms;
-}
-
-@media (width >=768px) {
-  .item {
-    --height: 45vh;
-  }
+  width: 100%;
 }
 
 .card {
-  /* border-radius: var(--radius); */
   overflow: hidden;
 }
 
 @media (width >=768px) {
   .image {
-    aspect-ratio: unset;
-    min-height: var(--height);
+    aspect-ratio: 1 / 1;
   }
 }
 

@@ -1,14 +1,24 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
+
+import BaseHead from "~/components/BaseHead.astro";
+import Footer from "~/components/Footer.astro";
+import Header from "~/components/Header.astro";
 import RelatedPosts from "~/components/portfolio/RelatedPosts.astro";
-import Card, {
-  CardContent,
-  CardHeader,
-  CardPadding,
-  CardTitle,
-} from "~/components/ui/card";
+import Container from "~/components/ui/container/Container.astro";
 import Title from "~/components/ui/text/Title.astro";
-import PortfolioDetail from "~/layouts/PortfolioDetail.astro";
+
+import "~/components/portfolio/MarkdownContent.css";
+import style from "~/components/portfolio/PortfolioDetail.module.css";
+import Center from "~/components/ui/center/Center.astro";
+import Button from "~/components/ui/button/Button.astro";
+import Icon from "~/components/ui/icon/Icon.astro";
+
+type Props = {
+  post: CollectionEntry<"portfolio">;
+  posts: CollectionEntry<"portfolio">[];
+};
 
 export async function getStaticPaths() {
   const posts = await getCollection("portfolio");
@@ -18,11 +28,6 @@ export async function getStaticPaths() {
   }));
 }
 
-type Props = {
-  post: CollectionEntry<"portfolio">;
-  posts: CollectionEntry<"portfolio">[];
-};
-
 function shuffle<Type>(array: Type[]) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -31,29 +36,66 @@ function shuffle<Type>(array: Type[]) {
   return array;
 }
 
-const { post, posts } = Astro.props;
+// type Props = CollectionEntry<"portfolio">["data"];
+// const { title, description, preview, background, color } = Astro.props;
 // const related = getPostsPerCategory(posts, post.data.categories)
+
+const { post, posts } = Astro.props;
+
 const shuffled = shuffle<(typeof posts)[0]>(
   posts.filter((r) => r.id !== post.id)
 );
-const related = shuffled.slice(0, 6);
+
+const related = shuffled.slice(0, 9);
 const { Content } = await post.render();
 ---
 
-<PortfolioDetail {...post.data}>
-  <Content />
-  <Card
-    style="background-color: color-mix(in hsl, currentColor, transparent 94%);"
+<html lang="en">
+  <head>
+    <BaseHead
+      title={post.data.title}
+      description={post.data.description || ""}
+      image={post.data.preview}
+    />
+    <ViewTransitions />
+  </head>
+
+  <body
+    style={{
+      backgroundColor: post.data.background,
+      color: post.data.color || "inherit",
+    }}
   >
-    <CardHeader>
-      <CardPadding>
-        <CardTitle style="margin-top:1.5rem">
-          <Title size="lg">Ver más proyectos</Title>
-        </CardTitle>
-      </CardPadding>
-    </CardHeader>
-    <CardContent>
-      <RelatedPosts posts={related} style="margin-bottom: 1rem" />
-    </CardContent>
-  </Card>
-</PortfolioDetail>
+    <Header />
+    <main>
+      <article class={style.content} transition:name="article">
+        <Container class={style.container} variant="fluid">
+          <Button variant="link" class="back" onclick="history.back()">
+            <Icon icon="back" size="24px" /> Volver
+          </Button>
+
+          <div class={style.prose}>
+            <div class={style.title}>
+              <Title transition:name="title">
+                {post.data.title}
+              </Title>
+            </div>
+            <div>
+              <div class="markdown">
+                <Content />
+              </div>
+              <Center variant="text" style={{ marginBlock: "4rem 2.5rem" }}>
+                <Title as="h4" size="md">Ver más proyectos</Title>
+              </Center>
+              <RelatedPosts posts={related} style="margin-bottom: 1rem" />
+            </div>
+          </div>
+          <Button variant="link" class="back" onclick="history.back()">
+            <Icon icon="back" size="24px" /> Volver
+          </Button>
+        </Container>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

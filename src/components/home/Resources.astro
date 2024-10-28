@@ -14,15 +14,13 @@ import Grid from "../ui/grid/Grid.astro";
 import WindowControllers from "../ui/svg/WindowControllers.astro";
 import Title from "../ui/text/Title.astro";
 
+import PalmGrid from "~/components/ui/svg/assets/PalmGrid.astro";
+
 import styles from "./Resources.module.css";
 ---
 
 <div class={styles.descargables}>
-  <img
-    class={styles["palm-grid"]}
-    src="assets/palm-grid.svg"
-    aria-hidden="true"
-  />
+  <PalmGrid class={styles["palm-grid"]} aria-hidden={true} />
   <Container>
     <Center variant="all">
       <Title
@@ -38,7 +36,10 @@ import styles from "./Resources.module.css";
         <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
-            <CardImage src="/home/descargable-planner-para-feed.png" />
+            <CardImage
+              src="/home/descargable-planner-para-feed.png"
+              aria-hidden="true"
+            />
           </Center>
         </CardHeader>
         <CardContent>
@@ -52,6 +53,7 @@ import styles from "./Resources.module.css";
         <CardFooter>
           <Center>
             <Button
+              as="a"
               href="https://www.canva.com/design/DAF2N-X_lG4/-lb4UI4eotzmP-xbAEOBGw/view?utm_content=DAF2N-X_lG4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
               no-referrer="true"
               target="_blank"
@@ -69,6 +71,9 @@ import styles from "./Resources.module.css";
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
             <CardImage src="/home/descargable-planner-anual.png" />
+            <!-- <CardImage
+              src="https://public-files.gumroad.com/excd36deld2agw2v0goy5173icb6"
+            /> -->
           </Center>
         </CardHeader>
         <CardContent>
@@ -80,6 +85,7 @@ import styles from "./Resources.module.css";
         <CardFooter>
           <Center>
             <Button
+              as="a"
               href="https://fiebrediseno.gumroad.com/l/plannersgratis?layout=profile"
               no-referrer="true"
               target="_blank"
@@ -110,6 +116,7 @@ import styles from "./Resources.module.css";
         <CardFooter>
           <Center>
             <Button
+              as="a"
               href="https://drive.google.com/file/d/1PNN2jx30QAqugTwk-wQEG9Njl4fIPVsa/view?usp=sharing"
               no-referrer="true"
               target="_blank"

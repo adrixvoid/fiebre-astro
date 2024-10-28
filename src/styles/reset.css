@@ -90,11 +90,6 @@ figure {
     margin-right: 0;
 }
 
-a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
 a:hover {
     cursor: pointer;
 }

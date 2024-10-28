@@ -1,19 +1,27 @@
 ---
-import { cvaVariants, type PropsTitle } from "./Text.cva";
+import { titleVariants, type PropsTitle } from "./Text.cva";
 
 const {
+  as: Element = "h1",
   class: className = "",
   align,
   variant,
   size,
-  as: Element = "h1",
   fontStyle,
+  baseline,
   ...props
 } = Astro.props as PropsTitle;
 ---
 
 <Element
-  class={cvaVariants({ variant, size, align, fontStyle, className })}
+  class={titleVariants({
+    variant,
+    size,
+    align,
+    fontStyle,
+    baseline,
+    className,
+  })}
   {...props}
 >
   <slot />

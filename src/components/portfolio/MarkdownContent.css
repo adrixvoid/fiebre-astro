@@ -1,0 +1,120 @@
+.content {
+  margin-inline: auto;
+}
+
+.content ul,
+.content ol,
+.content p {
+  width: 65cqw;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+}
+
+@media screen and (width > 640px) {
+  .content p {
+    width: 60cqw;
+  }
+}
+
+@media screen and (width > 780px) {
+  .content p {
+    width: 50dvw;
+  }
+}
+
+.content p:has(img) {
+  width: 100%;
+}
+
+.content p:has(:not(img)) {
+  margin-bottom: 2rem;
+}
+
+.content figure {
+  width: 100%;
+}
+
+.content img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.content figcaption {
+  background-color: hsl(var(--card));
+  padding: 0.5rem;
+}
+
+.content blockquote {
+  margin-block: 2.5rem;
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--card));
+}
+
+.content blockquote p {
+  margin: 0;
+}
+
+/* ------- */
+
+.markdown>ul {
+  padding-left: 1.5rem;
+}
+
+.markdown {
+  margin-inline: auto;
+}
+
+.markdown>* {
+  max-width: 60cqw;
+  margin: 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+@media screen and (width > 640px) {
+  .markdown>* {
+    max-width: 50cqw;
+  }
+}
+
+@media screen and (width > 780px) {
+  .markdown>* {
+    max-width: 40dvw;
+  }
+}
+
+.markdown p:has(img) {
+  max-width: 100%;
+}
+
+.markdown p:has(:not(img)) {
+  margin-bottom: 2rem;
+}
+
+.markdown figure {
+  width: 100%;
+}
+
+.markdown img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.markdown figcaption {
+  background-color: hsl(var(--card));
+  padding: 0.5rem;
+}
+
+.markdown blockquote {
+  margin-block: 2.5rem;
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--card));
+}
+
+.markdown blockquote p {
+  margin: 0;
+}

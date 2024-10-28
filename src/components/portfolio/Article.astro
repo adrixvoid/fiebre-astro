@@ -33,6 +33,7 @@ const { class: className = "", ...post } = Astro.props;
         asCover
       >
         <CardFooter class:list={[styles.footer, styles.opacity]}>
+          {post.data.draft && "draft"}
           <CardTitle class={styles.title}>{post.data.title}</CardTitle>
         </CardFooter>
       </CardImage>

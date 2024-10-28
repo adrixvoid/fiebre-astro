@@ -3,17 +3,12 @@
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
+  max-width: 1440px;
 }
 
 @media (min-width: 1024px) {
   .container {
     padding: 0 2.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .default {
-    max-width: 1280px;
   }
 }
 

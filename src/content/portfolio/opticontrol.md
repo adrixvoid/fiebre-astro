@@ -16,4 +16,3 @@ background: "#e0eaec"
 ![](/portfolio/opticontrol/opticontrol-04.jpg)
 ![](/portfolio/opticontrol/opticontrol-05.jpg)
 ![](/portfolio/opticontrol/opticontrol-06.jpg)
-![](/portfolio/opticontrol/opticontrol-07.jpg)

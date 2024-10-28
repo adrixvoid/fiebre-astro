@@ -4,14 +4,10 @@
 }
 
 .link:hover {
-  color: hsl(var(--color-brand5))
+  color: color-mix(in hsl, currentColor, #ffffff 10%);
 }
 
 .link:focus-visible {
   outline: 4px solid hsl(var(--ring));
   outline-offset: 5px;
-}
-
-.primary {
-  color: hsl(var(--primary))
 }

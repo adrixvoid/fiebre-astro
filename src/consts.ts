@@ -22,7 +22,7 @@ export const socialLinks: {
   rel?: string;
 }[] = [
   {
-    label: "fiebredg@hotmail.com",
+    // label: "fiebredg@hotmail.com",
     href: "mailto:fiebredg@hotmail.com",
     icon: "paper-plane-tilt",
     title: "Contact me fiebredg@hotmail.com",
@@ -51,5 +51,21 @@ export const socialLinks: {
     href: "https://www.behance.net/fiebre_creativa",
     rel: "noopener noreferrer",
     icon: "behance-logo",
+  },
+];
+
+export const PORTFOLIO_FILTERS = [
+  {
+    label: "Ilustraciones",
+    category: "illustration",
+  },
+  {
+    label: "Branding",
+    category: "branding",
+  },
+  {
+    label: "Todo",
+    category: "all",
+    active: true,
   },
 ];
