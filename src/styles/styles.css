@@ -73,7 +73,7 @@
   --shadow-2xl: 0 25px 50px -12px hsl(var(--shadow-color));
   --shadow-inner: inset 0 2px 4px 0 hsl(var(--shadow-color));
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
 
