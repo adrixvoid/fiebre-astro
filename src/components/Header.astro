@@ -12,6 +12,8 @@ import Viewport from "./ui/viewport/Viewport.astro";
 import styles from "./Header.module.css";
 
 import { navigationLinks, SITE_TITLE, socialLinks } from "../consts";
+import Button from "./ui/button/Button.astro";
+import Icon from "./ui/icon/Icon.astro";
 
 const { class: ClassName = "", sticky, ...props } = Astro.props;
 ---
@@ -35,11 +37,13 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
       </Flex>
     </Viewport>
     <Viewport variant="mobile-hidden">
-      <Flex justify="between" align="center">
-        <Link href="/" class="logo-link" title="Home Page">
-          <span class="sr-only">{SITE_TITLE}</span>
-          <Logo />
-        </Link>
+      <div class={styles.headerColumns}>
+        <div>
+          <Link href="/" class="logo-link" title="Home Page">
+            <span class="sr-only">{SITE_TITLE}</span>
+            <Logo />
+          </Link>
+        </div>
         <Nav
           aria-label="Main"
           class:list={[styles.navigation, "internal-links"]}
@@ -50,7 +54,25 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
             ))
           }
         </Nav>
-      </Flex>
+        <div class={styles.social}>
+          {
+            socialLinks.map((link) => (
+              <Button
+                as="a"
+                variant="link"
+                target="_blank"
+                href={link.href}
+                title={link.title}
+                rel={link.rel}
+                aria-label={link.title}
+              >
+                <Icon icon={link.icon} size="24px" />
+                <span class={styles.label}>{link.label}</span>
+              </Button>
+            ))
+          }
+        </div>
+      </div>
     </Viewport>
   </Container>
 </header>
@@ -83,6 +105,7 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
   .sticky {
     height: 3.5rem;
     background-color: hsl(var(--background) / 0.5);
+    backdrop-filter: blur(1rem);
     z-index: 1;
   }
 </style>

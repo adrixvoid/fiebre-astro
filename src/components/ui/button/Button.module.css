@@ -168,7 +168,7 @@ a.button:hover {
 
 .link:focus,
 .link:focus-within {
-    color: hsl(var(--button-foreground));
+    color: hsl(var(--accent));
     text-underline-offset: 4px;
 }
 
