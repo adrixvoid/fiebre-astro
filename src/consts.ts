@@ -37,7 +37,7 @@ export const socialLinks: {
   },
   {
     title: "Pinterest",
-    href: "https://ar.pinterest.com/fiebrecreativa/",
+    href: "https://ar.pinterest.com/fiebrecreativa/_created",
     icon: "pinterest-logo",
     rel: "noopener noreferrer",
   },
