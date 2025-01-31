@@ -75,8 +75,6 @@ const inlineStyle = typeof style === "object" ? style : null;
               </NavLink>
             ))
           }
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
         </Nav>
       </div>
       <div class={styles.footer}>
@@ -86,7 +84,7 @@ const inlineStyle = typeof style === "object" ? style : null;
               iconLinks.map(({ href, icon, label }) => (
                 <Link href={href} class="social">
                   <span class="sr-only">{label}</span>
-                  <Icon icon={icon} size="2em" />
+                  <Icon icon={icon} size="1.5rem" />
                 </Link>
               ))
             }

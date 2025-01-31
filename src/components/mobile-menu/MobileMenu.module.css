@@ -32,11 +32,12 @@
   width: 100%;
   padding: 0.25rem 0.5rem;
   font-size: x-large;
+  text-decoration: none;
 }
 
 .nav>a:hover {
   background-color: hsl(var(--button) / 0.5);
-  text-decoration: none;
+  text-decoration: underline;
   border-radius: 0.25rem;
 }
 

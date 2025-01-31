@@ -2,10 +2,11 @@
 import type { HTMLAttributes } from "astro/types";
 import { buttonVariants, type ButtonVariants } from "./Button.cva";
 
-export type ButtonProps = ButtonVariants & {
-  asLink?: boolean;
-  class?: string;
-} & (HTMLAttributes<"a"> | HTMLAttributes<"button">);
+export type ButtonProps = (HTMLAttributes<"a"> | HTMLAttributes<"button">) &
+  ButtonVariants & {
+    asLink?: boolean;
+    class?: string;
+  };
 
 const {
   asLink,
