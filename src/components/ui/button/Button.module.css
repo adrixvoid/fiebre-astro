@@ -52,8 +52,6 @@
 
 a.button,
 a.button:hover {
-    color: currentColor;
-    fill: currentcolor;
     text-decoration: none;
 }
 
