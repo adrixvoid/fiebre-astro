@@ -1,6 +1,5 @@
 .card {
   background-color: hsl(var(--card));
-  color: currentColor;
   border-width: 0;
 }
 
