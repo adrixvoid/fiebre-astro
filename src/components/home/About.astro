@@ -19,6 +19,7 @@ import Estrellas4SVG from "~/components/ui/svg/assets/Estrellas4.astro";
 import NubesSVG from "~/components/ui/svg/assets/Nubes.astro";
 import Nubes2SVG from "~/components/ui/svg/assets/Nubes2.astro";
 import SunSVG from "~/components/ui/svg/assets/Sun.astro";
+import { t } from "~/i18n/translate";
 import localSobreFoto from "../../../public/home/sobre-foto.png";
 import localSobreGustos from "../../../public/home/sobre-gustos.png";
 import localSobreHerramientas from "../../../public/home/sobre-herramientas.png";
@@ -49,8 +50,10 @@ import MountainsSVG from "../ui/svg/assets/Mountains.astro";
         as="h2"
         size="sm"
         align="center"
-        fontStyle="italic">Sobre Fiebre</Title
+        fontStyle="italic"
       >
+        {t("ABOUT.TITLE")}
+      </Title>
     </Container>
     <div class={styles.mask}>
       <div style={{ position: "relative" }} aria-hidden="true">
@@ -121,49 +124,20 @@ import MountainsSVG from "../ui/svg/assets/Mountains.astro";
       </div>
       <Container variant="narrow" style={{ position: "relative" }}>
         <Center class={styles["about-text"]} variant="text">
-          <Text size="lg">
-            Soy Desirée, diseñadora gráfica graduada en la Universidad de Buenos
-            Aires (UBA).
-          </Text>
-          <Text size="lg">
-            Desde 2017 ayudo a empresas y emprendedores a desarrollar sus
-            proyectos en mi estudio Fiebre<small aria-hidden="true"
-              ><sup>Ⓡ</sup></small
-            >
-          </Text>
-          <Text size="lg">
-            Fui docente en la UBA y en la UADE en materias de diseño y gestión
-            de proyectos. Me apasiona la investigación y la educación
-            <strong aria-hidden="true">♡</strong>.
-          </Text>
+          <Text size="lg" as="div" set:html={t("ABOUT.DESCRIPTION")} />
           <div class="sr-only">
-            <h4>Gustos e intereses</h4>
-            <p>
-              Arte pop, 80s, Vaporwave, Cosmic, Surf & Chill, 90s, Disco Music,
-              Pasta
-            </p>
-            <h4>Idiomas</h4>
-            <p>Ingles Intermedio (B2), Español Nativo, Portugués Básico</p>
-            <h4>Skillset</h4>
-            <p>
-              Branding, Ilustración, Marketing, Project Management, UX/UI, Soft
-              Skills, Negocios, Desarrollo de Marca
-            </p>
-            <h4>Herramientas</h4>
-            <p>
-              Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe
-              Fresco, Figma, Procreate, Canva
-            </p>
+            <h4>{t("ABOUT.INTERESTS.TITLE")}</h4>
+            <Text as="div" set:html={t("ABOUT.INTERESTS.DESCRIPTION")} />
           </div>
           <Button
             variant="outline"
             size="xl"
             style={{ margin: "2rem auto 0 auto" }}
-            href="https://forms.gle/6bbvAgRPGFkqofDx7"
+            href={t("ABOUT.LINK.HREF")}
             no-referrer="true"
             target="_blank"
           >
-            Hablemos
+            {t("ABOUT.LINK.TITLE")}
           </Button>
         </Center>
       </Container>

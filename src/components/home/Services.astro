@@ -11,12 +11,13 @@ import styles from "./Services.module.css";
 import Flex from "../ui/flex/Flex.astro";
 import Viewport from "../ui/viewport/Viewport.astro";
 
+import { t } from "~/i18n/translate";
 import localAsesorias from "../../../public/home/asesorias.png";
 import localCurso from "../../../public/home/curso.png";
 import localDiseno from "../../../public/home/ventana-diseno.png";
 ---
 
-<section>
+<section class="services">
   <Container variant="narrow" style={{ position: "relative" }}>
     <div>
       <Center id="design" class={styles.article}>
@@ -27,8 +28,10 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
               variant="primary"
               size="sm"
               id="illustration"
-              baseline="adjust">Portafolio</Title
+              baseline="adjust"
             >
+              {t("SERVICES.PORTFOLIO.TITLE")}
+            </Title>
             <Viewport
               variant="desktop-hidden"
               style={{
@@ -41,19 +44,18 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             >
               <Image src={localDiseno} aria-hidden="true" alt="Portafolio" />
             </Viewport>
-            <p class={styles.text}>
-              Mira todos los proyectos de <strong
-                >ilustración y desarrollo de marcas.</strong
-              >
-            </p>
+            <p
+              class={styles.text}
+              set:html={t("SERVICES.PORTFOLIO.DESCRIPTION")}
+            />
             <Button
               variant="outline"
-              href="/portfolio"
+              href={t("SERVICES.PORTFOLIO.LINK.HREF")}
               no-referrer="true"
               target="_blank"
               as="a"
             >
-              Ver proyectos
+              {t("SERVICES.PORTFOLIO.LINK.TITLE")}
             </Button>
           </article>
           <Viewport
@@ -91,8 +93,10 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
               variant="primary"
               size="sm"
               id="course"
-              baseline="adjust">Curso</Title
+              baseline="adjust"
             >
+              {t("SERVICES.COURSE.TITLE")}
+            </Title>
             <Viewport
               variant="desktop-hidden"
               style={{
@@ -105,23 +109,22 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             >
               <Image src={localCurso} aria-hidden="true" alt="Curso" />
             </Viewport>
-            <p class={styles.text}>
-              ¡Aprende a crear el <strong>diseño</strong>, las
-              <strong>redes sociales</strong> y la página <strong>web</strong> de
-              tu marca para que tu negocio despegue!
-            </p>
+            <p
+              class={styles.text}
+              set:html={t("SERVICES.COURSE.DESCRIPTION")}
+            />
             <Flex direction="column">
               <Button
                 variant="outline"
-                href="https://www.instagram.com/p/C5ZXbkYJjSH/?img_index=1"
+                href={t("SERVICES.COURSE.LINK.0.HREF")}
                 no-referrer="true"
-                target="_blank">Información del curso</Button
+                target="_blank">{t("SERVICES.COURSE.LINK.0.TITLE")}</Button
               >
               <Button
                 variant="primary"
-                href="https://forms.gle/rSzpkWwvkKDRUkuo6"
+                href={t("SERVICES.COURSE.LINK.1.HREF")}
                 no-referrer="true"
-                target="_blank">Inscribirme</Button
+                target="_blank">{t("SERVICES.COURSE.LINK.1.TITLE")}</Button
               >
             </Flex>
           </article>
@@ -136,8 +139,10 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             variant="primary"
             size="sm"
             id="consultants"
-            baseline="adjust">Asesorías</Title
+            baseline="adjust"
           >
+            {t("SERVICES.CONSULTANTS.TITLE")}
+          </Title>
           <Viewport
             variant="desktop-hidden"
             style={{
@@ -150,16 +155,15 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
           >
             <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
           </Viewport>
-          <p class={styles.text}>
-            Dos horas en las que vamos a trabajar a fondo sobre tu proyecto
-            creando una
-            <strong>estrategia clara y definida.</strong>
-          </p>
+          <p
+            class={styles.text}
+            set:html={t("SERVICES.CONSULTANTS.DESCRIPTION")}
+          />
           <Button
             variant="outline"
-            href="https://forms.gle/ay2Z6FnmTHDjmVFp8"
+            href={t("SERVICES.CONSULTANTS.LINK.HREF")}
             no-referrer="true"
-            target="_blank">Quiero asesorarme</Button
+            target="_blank">{t("SERVICES.CONSULTANTS.LINK.TITLE")}</Button
           >
         </article>
         <Viewport

@@ -15,6 +15,7 @@ import Planeta4SVG from "~/components/ui/svg/assets/Planeta4.astro";
 import Planeta5SVG from "~/components/ui/svg/assets/Planeta5.astro";
 import Rainbow from "~/components/ui/svg/Rainbow.astro";
 
+import { t } from "~/i18n/translate";
 import styles from "./MainHero.module.css";
 ---
 
@@ -55,14 +56,13 @@ import styles from "./MainHero.module.css";
       </ElementAsBackground>
     </div>
   </div>
-  {/* <div class={styles.backdrop} /> */}
   <div class={styles.content}>
     <hgroup>
       <Viewport variant="desktop">
         <h1 class={styles.title}>
-          <span class={styles["text-0"]}>Hagamos que la</span>
+          <span class={styles["text-0"]}>{t("HERO.TITLE.HEADLINE1")}</span>
           <span class={styles.headline}>
-            <span>magia</span>
+            <span>{t("HERO.TITLE.HEADLINE2")}</span>
             <span>
               <Rainbow
                 src="/assets/rainbow.svg"
@@ -70,7 +70,7 @@ import styles from "./MainHero.module.css";
                 class={styles.rainbowSVG}
               />
             </span>
-            <span>suceda</span>
+            <span>{t("HERO.TITLE.HEADLINE3")}</span>
           </span>
         </h1>
       </Viewport>
@@ -83,10 +83,12 @@ import styles from "./MainHero.module.css";
           />
         </span>
         <h1 class={styles.title}>
-          <span class={styles["text-0"]}>Hagamos que la</span>
+          <span class={styles["text-0"]}>{t("HERO.TITLE.HEADLINE1")}</span>
           <span class={styles.headline}>
-            <span class={styles.headlineText1}>magia</span>
-            <span class={styles.headlineText2}>suceda</span>
+            <span class={styles.headlineText1}>{t("HERO.TITLE.HEADLINE2")}</span
+            >
+            <span class={styles.headlineText2}>{t("HERO.TITLE.HEADLINE3")}</span
+            >
           </span>
         </h1>
       </Viewport>

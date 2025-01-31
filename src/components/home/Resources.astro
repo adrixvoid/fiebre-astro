@@ -16,6 +16,7 @@ import Title from "../ui/text/Title.astro";
 
 import PalmGrid from "~/components/ui/svg/assets/PalmGrid.astro";
 
+import { t } from "~/i18n/translate";
 import styles from "./Resources.module.css";
 ---
 
@@ -28,40 +29,37 @@ import styles from "./Resources.module.css";
         class={styles.title}
         as="h2"
         variant="primary"
-        align="center">Descargables Gratis</Title
+        align="center"
       >
+        {t("RESOURCES.TITLE")}
+      </Title>
     </Center>
     <Grid>
       <Card as="article" class={styles.card} shadow={true}>
         <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
-            <CardImage
-              src="/home/descargable-planner-para-feed.png"
-              aria-hidden="true"
-            />
+            <CardImage aria-hidden="true" src={t("RESOURCES.0.image")} />
           </Center>
         </CardHeader>
         <CardContent>
-          <CardTitle id="abrir-plantilla" aria-describedby="descargables"
-            >Planner para feed</CardTitle
-          >
-          <CardDescription
-            >Planifica el diseño de tu perfil y tu feed de Instagram en Canva.</CardDescription
-          >
+          <CardTitle id="abrir-plantilla" aria-describedby="descargables">
+            {t("RESOURCES.0.title")}
+          </CardTitle>
+          <CardDescription>{t("RESOURCES.0.description")}</CardDescription>
         </CardContent>
         <CardFooter>
           <Center>
             <Button
               as="a"
-              href="https://www.canva.com/design/DAF2N-X_lG4/-lb4UI4eotzmP-xbAEOBGw/view?utm_content=DAF2N-X_lG4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
+              href={t("RESOURCES.0.link.href")}
               no-referrer="true"
               target="_blank"
               width="full-width"
               size="md"
               aria-describedby="abrir-plantilla"
             >
-              Abrir plantilla
+              {t("RESOURCES.0.link.title")}
             </Button>
           </Center>
         </CardFooter>
@@ -70,30 +68,28 @@ import styles from "./Resources.module.css";
         <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
-            <CardImage src="/home/descargable-planner-anual.png" />
+            <CardImage src={t("RESOURCES.1.image")} />
             <!-- <CardImage
               src="https://public-files.gumroad.com/excd36deld2agw2v0goy5173icb6"
             /> -->
           </Center>
         </CardHeader>
         <CardContent>
-          <CardTitle id="planner-anual">Planner anual</CardTitle>
-          <CardDescription
-            >Organiza tu negocio y olvídate de los dolores de cabeza.</CardDescription
-          >
+          <CardTitle id="planner-anual">{t("RESOURCES.1.title")}</CardTitle>
+          <CardDescription>{t("RESOURCES.1.description")}.</CardDescription>
         </CardContent>
         <CardFooter>
           <Center>
             <Button
               as="a"
-              href="https://fiebrediseno.gumroad.com/l/plannersgratis?layout=profile"
+              href={t("RESOURCES.1.link.href")}
               no-referrer="true"
               target="_blank"
               width="full-width"
               size="md"
               aria-describedby="planner-anual"
             >
-              Descargar plantilla
+              {t("RESOURCES.1.link.title")}
             </Button>
           </Center>
         </CardFooter>
@@ -102,29 +98,27 @@ import styles from "./Resources.module.css";
         <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
           <WindowControllers class={styles.fakeWindowController} />
           <Center>
-            <CardImage
-              src="/home/descargable-el-color-en-nuestro-proyecto.png"
-            />
+            <CardImage src={t("RESOURCES.2.image")} />
           </Center>
         </CardHeader>
         <CardContent>
-          <CardTitle id="guia-color">Guía de color</CardTitle>
+          <CardTitle id="guia-color">{t("RESOURCES.2.title")}</CardTitle>
           <CardDescription>
-            Si te cuesta elegir los colores ideales para tu negocio, ¡es aquí!
+            {t("RESOURCES.2.description")}
           </CardDescription>
         </CardContent>
         <CardFooter>
           <Center>
             <Button
               as="a"
-              href="https://drive.google.com/file/d/1PNN2jx30QAqugTwk-wQEG9Njl4fIPVsa/view?usp=sharing"
+              href={t("RESOURCES.2.link.title")}
               no-referrer="true"
               target="_blank"
               width="full-width"
               size="md"
               aria-describedby="guia-color"
             >
-              Descargar guía
+              {t("RESOURCES.2.link.title")}
             </Button>
           </Center>
         </CardFooter>

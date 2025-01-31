@@ -1,0 +1,10 @@
+---
+type PropsA11yText = { srOnly: string };
+
+const { srOnly } = Astro.props as PropsA11yText;
+---
+
+<>
+  <span class="sr-only">{srOnly}</span>
+  <span aria-hidden="true"><slot /></span>
+</>
