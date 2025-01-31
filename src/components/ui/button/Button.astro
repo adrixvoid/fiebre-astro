@@ -2,15 +2,13 @@
 import type { HTMLAttributes } from "astro/types";
 import { buttonVariants, type ButtonVariants } from "./Button.cva";
 
-type BaseProps = HTMLAttributes<"button" | "a" | "div"> & {
-  as?: "button" | "a";
+export type ButtonProps = ButtonVariants & {
+  asLink?: boolean;
   class?: string;
-}
-
-export type ButtonProps = BaseProps & ButtonVariants;
+} & (HTMLAttributes<"a"> | HTMLAttributes<"button">);
 
 const {
-  as: Component = "button",
+  asLink,
   variant,
   size,
   width,
@@ -19,9 +17,20 @@ const {
 } = Astro.props as ButtonProps;
 ---
 
-<Component
-  class={buttonVariants({ variant, size, width, className })}
-  {...props}
->
-  <slot />
-</Component>
+{
+  asLink ? (
+    <a
+      class={buttonVariants({ variant, size, width, className })}
+      {...(props as HTMLAttributes<"a">)}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      class={buttonVariants({ variant, size, width, className })}
+      {...(props as HTMLAttributes<"button">)}
+    >
+      <slot />
+    </button>
+  )
+}
