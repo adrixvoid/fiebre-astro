@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.logoLink:focus-visible {
+  outline: none;
+}
+
 .menu {
   min-height: 100dvh;
   background-color: hsl(265.56 52.63% 38.53%);
