@@ -59,5 +59,6 @@
   "frontMatter.framework.id": "astro",
   "frontMatter.preview.host": "http://localhost:4321",
   "[markdown]": {},
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "editor.wordWrapColumn": 120
 }

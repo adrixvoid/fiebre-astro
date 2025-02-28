@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 
 import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
-import Header from "../../components/Header.astro";
+import MainHeader from "../../components/MainHeader.astro";
 import Container from "~/components/ui/container/Container.astro";
 import Section from "~/components/ui/section/Section.astro";
 import Link from "~/components/ui/link/Link.astro";
@@ -30,7 +30,7 @@ const filtered:CollectionEntry<"portfolio">[] = posts.sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
+    <MainHeader />
     <main>
       <Section marginBottom>
         <Container variant="fluid">

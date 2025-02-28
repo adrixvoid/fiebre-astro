@@ -4,7 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 
 import BaseHead from "~/components/BaseHead.astro";
 import Footer from "~/components/Footer.astro";
-import Header from "~/components/Header.astro";
+import MainHeader from "~/components/MainHeader.astro";
 import RelatedPosts from "~/components/portfolio/RelatedPosts.astro";
 import Container from "~/components/ui/container/Container.astro";
 import Title from "~/components/ui/text/Title.astro";
@@ -69,7 +69,7 @@ console.log("rest", rest);
       color: post.data.color || "inherit",
     }}
   >
-    <Header />
+    <MainHeader />
     <main>
       <article class={style.content} transition:name="article">
         <Container class={style.container} variant="fluid">

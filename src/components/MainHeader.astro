@@ -1,0 +1,189 @@
+---
+import MobileMenu from "./mobile-menu/MobileMenu.astro";
+import Container from "./ui/container/Container.astro";
+import Flex from "./ui/flex/Flex.astro";
+
+import Link from "./ui/link/Link.astro";
+import Nav from "./ui/nav/Nav.astro";
+import NavLink from "./ui/nav/NavLink.astro";
+import Logo from "./ui/svg/Logo.astro";
+import Viewport from "./ui/viewport/Viewport.astro";
+import Button from "./ui/button/Button.astro";
+import Icon from "./ui/icon/Icon.astro";
+import Header from "./ui/header/Header.astro";
+
+import styles from "./MainHeader.module.css";
+
+import { navigationLinks, SITE_TITLE, socialLinks } from "../consts";
+
+const { class: ClassName = "", sticky, ...props } = Astro.props;
+---
+
+<Header position="sticky" class:list={["header", styles.header]} {...props}>
+  <Container>
+    <Viewport variant="mobile">
+      <Flex justify="between">
+        <Link href="/" class="logo-link" title="Home Page">
+          <Logo />
+        </Link>
+        <MobileMenu textLinks={navigationLinks} iconLinks={socialLinks} />
+      </Flex>
+    </Viewport>
+    <Viewport variant="mobile-hidden">
+      <div class={styles.headerColumns}>
+        <div>
+          <Link href="/" class="logo-link" title="Home Page">
+            <span class="sr-only">{SITE_TITLE}</span>
+            <Logo />
+          </Link>
+        </div>
+        <Nav
+          aria-label="Main"
+          class:list={[styles.navigation, "internal-links"]}
+        >
+          {
+            navigationLinks.map(({ label, href }) => (
+              <NavLink href={href}>{label}</NavLink>
+            ))
+          }
+        </Nav>
+        <div class={styles.social}>
+          {
+            socialLinks.map((link) => (
+              <Button
+                asLink
+                variant="link"
+                target="_blank"
+                href={link.href}
+                title={link.title}
+                rel={link.rel}
+                aria-label={link.title}
+              >
+                <Icon icon={link.icon} size="24px" />
+                <span class={styles.label}>{link.label}</span>
+              </Button>
+            ))
+          }
+        </div>
+      </div>
+    </Viewport>
+  </Container>
+</Header>
+
+<script>
+  import DynamicHeader from "./ui/header/dynamicHeader";
+  new DynamicHeader(".header");
+</script>
+<style>
+  .hamburger-icon :global(path):nth-child(1) {
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    transform-origin: 12px 12px;
+    /* transform-origin: 0 25%; */
+  }
+
+  .hamburger-icon.opened :global(path):nth-child(1) {
+    animation-name: animateTop;
+  }
+
+  .hamburger-icon.closed :global(path):nth-child(1) {
+    animation-name: animateTopBack;
+  }
+
+  @keyframes animateTop {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes animateTopBack {
+    from {
+      transform: rotate(45deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .hamburger-icon.opened :global(path):nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.closed :global(path):nth-child(2) {
+    opacity: 1;
+    animation: middleBack 500ms ease-out forwards;
+  }
+
+  @keyframes middleBack {
+    0% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 1;
+    }
+  }
+
+  .hamburger-icon :global(path):nth-child(3) {
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    /* transform-origin: 2px 16px; */
+    transform-origin: 10% 66%;
+  }
+
+  .hamburger-icon.opened :global(path):nth-child(3) {
+    animation-name: animateBottom;
+  }
+
+  .hamburger-icon.closed :global(path):nth-child(3) {
+    animation-name: animateBottomBack;
+  }
+
+  @keyframes animateBottom {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @keyframes animateBottomBack {
+    from {
+      transform: rotate(-45deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+</style>
+<style>
+  .header {
+    position: fixed;
+    z-index: 2;
+    transition-property: translate, height, position;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+  }
+
+  .header .container {
+    background-color: hsl(var(--background));
+  }
+
+  .sticky {
+    backdrop-filter: blur(1rem);
+    z-index: 1;
+    translate: 0 0;
+    height: 3.5rem;
+  }
+
+  .header-hidden {
+    translate: 0 -100%;
+  }
+</style>
