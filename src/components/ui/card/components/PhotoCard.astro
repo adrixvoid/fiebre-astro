@@ -1,0 +1,49 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import Chip from "../../chip/Chip.astro";
+import styles from "./PhotoCard.module.css";
+
+export type PhotoCardProp = (
+  | HTMLAttributes<"div">
+  | HTMLAttributes<"article">
+) & {
+  class?: string;
+  image?: string;
+  title?: string;
+  url?: string;
+  badge?: string;
+  description?: string;
+};
+
+const {
+  image,
+  title,
+  url,
+  badge,
+  description,
+  class: className = "",
+  ...props
+} = Astro.props as PhotoCardProp;
+---
+
+<article class:list={[className, styles.card]} {...props}>
+  <a href={url}>
+    <div class={styles.imageContainer}>
+      <img class={styles.image} src={image} alt={title} aria-hidden="true" />
+    </div>
+  </a>
+  {
+    title ||
+      (badge && (
+        <div class={styles.columns}>
+          {title && <h4 class={styles.title}>{title}</h4>}
+          {badge && (
+            <div>
+              <Chip variant="outlined" label={badge} />
+            </div>
+          )}
+        </div>
+      ))
+  }
+  {description && <p class={styles.description}>{description}</p>}
+</article>

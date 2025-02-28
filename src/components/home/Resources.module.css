@@ -9,34 +9,9 @@
   font-size: 4rem;
 }
 
-.card {
-  color: hsl(var(--card-foreground));
-  margin-top: 2.5rem;
-  margin-inline: auto;
-  width: 100%;
-  max-width: 380px;
-  position: relative;
-}
-
-.fakeWindowController {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-}
-
-.cardCustomHeader {
-  padding-inline: 0.5rem;
-}
-
 @media (width >=768px) {
   .descargables .title {
     font-size: 6rem;
-  }
-}
-
-@media (width >=960px) {
-  .card {
-    max-width: 62vw;
   }
 }
 

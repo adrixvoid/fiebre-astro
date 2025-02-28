@@ -1,0 +1,81 @@
+---
+import { t } from "~/i18n/translate";
+import Button from "../ui/button/Button.astro";
+import Card from "../ui/card/Card.astro";
+import CardContent from "../ui/card/components/CardContent.astro";
+import CardFooter from "../ui/card/components/CardFooter.astro";
+import CardTitle from "../ui/card/components/CardTitle.astro";
+import PhotoCard from "../ui/card/components/PhotoCard.astro";
+import Center from "../ui/center/Center.astro";
+import Container from "../ui/container/Container.astro";
+import Flex from "../ui/flex/Flex.astro";
+import Title from "../ui/text/Title.astro";
+
+const data = [
+  {
+    title: "Long Sleeve T-Shirt",
+    image:
+      "https://ih1.redbubble.net/image.5717287241.4476/rco,long_t_shirt,flatlay,x1000,fafafa:ca443f4786,front-c,0,0,750,1000-bg,f8f8f8.jpg",
+    url: "https://www.redbubble.com/i/sweatshirt/Magical-kitten-by-fevercosmic/166924476.0LCRC",
+  },
+  {
+    title: "Long Sleeve T-Shirt",
+    image:
+      "https://ih1.redbubble.net/image.5717287241.4476/rco,long_t_shirt,flatlay,x1000,fafafa:ca443f4786,front-c,0,0,750,1000-bg,f8f8f8.jpg",
+    url: "https://www.redbubble.com/i/sweatshirt/Magical-kitten-by-fevercosmic/166924476.0LCRC",
+  },
+  {
+    title: "Long Sleeve T-Shirt",
+    image:
+      "https://ih1.redbubble.net/image.5717287241.4476/rco,long_t_shirt,flatlay,x1000,fafafa:ca443f4786,front-c,0,0,750,1000-bg,f8f8f8.jpg",
+    url: "https://www.redbubble.com/i/sweatshirt/Magical-kitten-by-fevercosmic/166924476.0LCRC",
+  },
+];
+// class={styles.title}
+---
+
+<div style="margin-bottom: 4rem">
+  <PhotoCard
+    image="/portfolio/gold-coast-ipa/13.jpg"
+    src="/portfolio/gold-coast-ipa/13.jpg"
+    height="100vh"
+    loading="lazy"
+    style="object-size: cover;height:100vh"
+  />
+</div>
+<Container>
+  <Center variant="all">
+    <Title id="descargables" as="h2" variant="primary" align="center">
+      {t("STORE.TITLE")}
+    </Title>
+  </Center>
+  <Flex>
+    {
+      data.map(({ image, title }) => (
+        <article>
+          <Card shadow={true}>
+            <PhotoCard image={image} />
+          </Card>
+          <CardContent>
+            <CardTitle id="planner-anual">{t("RESOURCES.1.title")}</CardTitle>
+          </CardContent>
+          <CardFooter>
+            <Center>
+              <Button
+                asLink
+                href={t("RESOURCES.1.link.href")}
+                no-referrer="true"
+                target="_blank"
+                width="full-width"
+                size="md"
+                aria-describedby="planner-anual"
+              >
+                {title}
+              </Button>
+            </Center>
+          </CardFooter>
+        </article>
+      ))
+    }
+  </Flex>
+</Container>

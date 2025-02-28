@@ -1,0 +1,18 @@
+---
+import WindowControllers from "../../svg/WindowControllers.astro";
+import Card from "../Card.astro";
+
+import type { HTMLAttributes } from "astro/types";
+import styles from "./WindowCard.module.css";
+
+export type WindowCardProps = HTMLAttributes<"div">;
+
+const { class: className = "", ...props } = Astro.props as WindowCardProps;
+---
+
+<Card class:list={[className, styles.windowCard]} shadow={true} {...props}>
+  <div class={styles.cardCustomHeader} aria-hidden="true">
+    <WindowControllers class={styles.fakeWindowController} />
+  </div>
+  <slot />
+</Card>

@@ -1,4 +1,4 @@
-.sobremi {
+.about {
   background-color: hsl(266, 54%, 51%);
   background: linear-gradient(180deg, #7A3FC6 38.5%, #FF4DD5 100%);
 
@@ -6,6 +6,23 @@
   padding-bottom: 14rem;
   position: relative;
 }
+
+/* .title {
+  animation: increase 1s ease-in-out;
+  animation-timeline: view();
+}
+
+@keyframes increase {
+  0% {
+    rotate: 360deg;
+    scale: 1;
+  }
+
+  20% {
+    rotate: 0;
+    scale: 2;
+  }
+} */
 
 .mask {
   overflow: hidden;

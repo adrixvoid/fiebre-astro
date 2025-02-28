@@ -1,0 +1,23 @@
+.windowCard {
+  color: hsl(var(--card-foreground));
+  margin-inline: auto;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+}
+
+.fakeWindowController {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+.cardCustomHeader {
+  padding-inline: 0.5rem;
+}
+
+@media (width >=960px) {
+  .windowCard {
+    max-width: 62vw;
+  }
+}

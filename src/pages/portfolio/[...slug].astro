@@ -21,7 +21,9 @@ type Props = {
 };
 
 export async function getStaticPaths() {
-  const posts = await getCollection("portfolio");
+  const posts = (await getCollection(
+    "portfolio"
+  )) as CollectionEntry<"portfolio">[];
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post, posts },
@@ -47,7 +49,8 @@ const shuffled = shuffle<(typeof posts)[0]>(
 );
 
 const related = shuffled.slice(0, 9);
-const { Content } = await post.render();
+const { Content, ...rest } = await post.render();
+console.log("rest", rest);
 ---
 
 <html lang="en">

@@ -1,22 +1,19 @@
 ---
+import PalmGrid from "~/components/ui/svg/assets/PalmGrid.astro";
 import Button from "../ui/button/Button.astro";
-import Card, {
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardImage,
-  CardTitle,
-} from "../ui/card";
+import CardContent from "../ui/card/components/CardContent.astro";
+import CardDescription from "../ui/card/components/CardDescription.astro";
+import CardFooter from "../ui/card/components/CardFooter.astro";
+import CardHeader from "../ui/card/components/CardHeader.astro";
+import CardImage from "../ui/card/components/CardImage.astro";
+import CardTitle from "../ui/card/components/CardTitle.astro";
 import Center from "../ui/center/Center.astro";
 import Container from "../ui/container/Container.astro";
 import Grid from "../ui/grid/Grid.astro";
-import WindowControllers from "../ui/svg/WindowControllers.astro";
 import Title from "../ui/text/Title.astro";
 
-import PalmGrid from "~/components/ui/svg/assets/PalmGrid.astro";
-
 import { t } from "~/i18n/translate";
+import WindowCard from "../ui/card/components/WindowCard.astro";
 import styles from "./Resources.module.css";
 ---
 
@@ -35,9 +32,8 @@ import styles from "./Resources.module.css";
       </Title>
     </Center>
     <Grid>
-      <Card as="article" class={styles.card} shadow={true}>
-        <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
-          <WindowControllers class={styles.fakeWindowController} />
+      <WindowCard as="article" class={styles.card} shadow={true}>
+        <CardHeader aria-hidden="true">
           <Center>
             <CardImage aria-hidden="true" src={t("RESOURCES.0.image")} />
           </Center>
@@ -63,15 +59,11 @@ import styles from "./Resources.module.css";
             </Button>
           </Center>
         </CardFooter>
-      </Card>
-      <Card as="article" class={styles.card} shadow={true}>
-        <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
-          <WindowControllers class={styles.fakeWindowController} />
+      </WindowCard>
+      <WindowCard as="article" class={styles.card} shadow={true}>
+        <CardHeader aria-hidden="true">
           <Center>
             <CardImage src={t("RESOURCES.1.image")} />
-            <!-- <CardImage
-              src="https://public-files.gumroad.com/excd36deld2agw2v0goy5173icb6"
-            /> -->
           </Center>
         </CardHeader>
         <CardContent>
@@ -93,10 +85,9 @@ import styles from "./Resources.module.css";
             </Button>
           </Center>
         </CardFooter>
-      </Card>
-      <Card as="article" class={styles.card} shadow={true}>
-        <CardHeader class={styles.cardCustomHeader} aria-hidden="true">
-          <WindowControllers class={styles.fakeWindowController} />
+      </WindowCard>
+      <WindowCard as="article" class={styles.card} shadow={true}>
+        <CardHeader aria-hidden="true">
           <Center>
             <CardImage src={t("RESOURCES.2.image")} />
           </Center>
@@ -122,7 +113,7 @@ import styles from "./Resources.module.css";
             </Button>
           </Center>
         </CardFooter>
-      </Card>
+      </WindowCard>
     </Grid>
   </Container>
 </div>

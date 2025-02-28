@@ -29,7 +29,7 @@ import localSobreSkillset from "../../../public/home/sobre-skillset.png";
 import MountainsSVG from "../ui/svg/assets/Mountains.astro";
 ---
 
-<div class={styles.sobremi}>
+<div class={styles.about}>
   <NubesSVG class={styles.nubes} aria-hidden="true" />
   <ElementAsBackground class={styles.mask} aria-hidden="true">
     <Estrellas3SVG class:list={[styles.backgroundSVG, styles.estrellas3]} />
@@ -46,6 +46,7 @@ import MountainsSVG from "../ui/svg/assets/Mountains.astro";
       style={{ position: "relative", marginBlock: "4rem" }}
     >
       <Title
+        class={styles.title}
         variant="primary"
         as="h2"
         size="sm"

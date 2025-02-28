@@ -155,6 +155,9 @@ const en = {
       },
     },
   },
+  STORE: {
+    TITLE: "VISIT MY STORE",
+  },
 };
 
 export default en;
