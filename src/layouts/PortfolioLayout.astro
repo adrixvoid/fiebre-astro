@@ -1,0 +1,26 @@
+---
+import BaseHead from "~/components/BaseHead.astro";
+import Footer from "~/components/Footer.astro";
+import MainHeader from "~/components/MainHeader.astro";
+
+import { SITE_DESCRIPTION, SITE_TITLE } from "~/consts";
+
+const { title, description, image, style } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title || SITE_TITLE}
+      description={description || SITE_DESCRIPTION}
+      image={image}
+    />
+  </head>
+  <body style={{ ...style, paddingTop: "10rem" }}>
+    <MainHeader />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

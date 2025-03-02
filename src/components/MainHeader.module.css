@@ -1,3 +1,7 @@
+.header {
+  color: hsl(var(--foreground));
+}
+
 .headerColumns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -11,8 +15,6 @@
 }
 
 .logo {
-  color: white;
-  fill: white;
   will-change: filter;
   transition: filter 300ms;
 }

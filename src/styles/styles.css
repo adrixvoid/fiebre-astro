@@ -39,7 +39,7 @@
   --text-xl: 1.5rem;
   --text-2xl: 1.7rem;
 
-  --font-family: Inter, "Montserrat", "Open Sans", "sans-serif";
+  --font-family: Inter, "sans-serif";
 
   --shadow-color: 258.11 100% 91.28%;
 
@@ -137,18 +137,8 @@ body {
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border-width: 0;
   white-space: nowrap;
-}
-
-.sr-only {
   border: 0;
   padding: 0;
   margin: 0;

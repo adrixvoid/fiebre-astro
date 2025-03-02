@@ -14,4 +14,4 @@ pubDate: 2024-10-04T21:01:04.603Z
 ![](/portfolio/illustrations/illustrations-3.jpg)
 ![](/portfolio/illustrations/illustrations-4.jpg)
 ![](/portfolio/illustrations/illustrations-5.jpg)
-![](/portfolio/illustrations/illustrations-6.jpg)
+![](/portfolio/illustrations/illustrations-6.png)

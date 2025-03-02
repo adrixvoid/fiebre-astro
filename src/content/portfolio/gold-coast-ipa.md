@@ -7,6 +7,7 @@ description: Esta es una descripción para SEO
 draft: false
 categories:
   - branding
+  - illustration
 background: "#ddccb0"
 color: "#444444"
 ---

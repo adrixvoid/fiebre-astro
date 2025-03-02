@@ -40,7 +40,7 @@
 }
 
 .nav>a:hover {
-  background-color: hsl(var(--button) / 0.5);
+  background-color: hsl(var(--button), 0.5);
   text-decoration: underline;
   border-radius: 0.25rem;
 }

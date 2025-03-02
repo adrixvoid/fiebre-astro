@@ -21,7 +21,7 @@
   height: 100%;
   position: absolute;
   bottom: 0;
-  background-color: hsl(var(--background) / 90%);
+  background-color: hsl(var(--background), 90%);
   text-align: center;
   opacity: 0;
 }

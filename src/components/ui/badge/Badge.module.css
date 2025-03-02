@@ -60,7 +60,7 @@ a.badge:hover {
     background-color: transparent;
     border-width: 2px;
     border-style: solid;
-    border-color: hsl(var(--button-foreground) / 0.8);
+    border-color: hsl(var(--button-foreground), 0.8);
     text-underline-offset: 4px;
     text-decoration: none;
 }

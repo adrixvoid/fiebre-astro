@@ -161,6 +161,7 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
 </style>
 <style>
   .header {
+    color: currentColor;
     position: fixed;
     z-index: 2;
     transition-property: translate, height, position;
@@ -169,11 +170,7 @@ const { class: ClassName = "", sticky, ...props } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6rem;
-  }
-
-  .header .container {
-    background-color: hsl(var(--background));
+    height: 5.5rem;
   }
 
   .sticky {

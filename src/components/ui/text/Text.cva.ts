@@ -2,53 +2,65 @@ import type { HTMLAttributes } from "astro/types";
 import { cva, type VariantProps } from "class-variance-authority";
 import styles from "./Text.module.css";
 
-export const textVariants = cva(styles.text, {
-  variants: {
-    variant: {
-      default: styles.textDefault,
-    },
-    size: {
-      xl: styles.xl,
-      lg: styles.lg,
-      md: styles.md,
-      sm: styles.sm,
-    },
-    align: {
-      left: styles.left,
-      center: styles.center,
-      right: styles.right,
-    },
-    fontStyle: {
-      italic: styles.italic,
-    },
+const commonVariants = {
+  size: {
+    h1: styles.h1,
+    h2: styles.h2,
+    h3: styles.h3,
+    h4: styles.h4,
+    h5: styles.h5,
+    h6: styles.h6,
+    medium: styles.medium,
+    small: styles.small,
+    xl: styles.xl,
+    lg: styles.lg,
+    md: styles.md,
+    default: styles.default,
+    sm: styles.sm,
+    ml: styles.metaLarge,
+    meta: styles.meta,
+    nav: styles.nav,
   },
+  align: {
+    left: styles.left,
+    center: styles.center,
+    right: styles.right,
+  },
+  italic: {
+    true: styles.italic,
+  },
+  uppercase: {
+    true: styles.uppercase,
+  },
+  fontStyle: {
+    italic: styles.italic,
+  },
+  balanced: {
+    true: styles.balanced,
+  },
+  shrink: {
+    true: styles.shrink,
+  },
+};
+
+export const textVariants = cva(styles.text, {
+  variants: commonVariants,
   defaultVariants: {
-    variant: "default",
+    size: "default",
   },
 });
 
-export const titleVariants = cva(styles.title, {
+export const titleVariants = cva(styles.heading, {
   variants: {
     variant: {
-      default: styles.titleDefault,
       primary: styles.titlePrimary,
     },
-    size: {
-      xl: styles.titleXLarge,
-      lg: styles.titleLarge,
-      md: styles.titleMedium,
-      sm: styles.titleSmall,
-    },
-    align: {
-      left: styles.left,
-      center: styles.center,
-      right: styles.right,
-    },
-    fontStyle: {
-      italic: styles.italic,
-    },
     baseline: {
-      adjust: styles.adjustBaseline,
+      true: styles.adjustBaseline,
+    },
+    ...commonVariants,
+    defaultVariants: {
+      size: "default",
     },
   },
   compoundVariants: [
@@ -56,9 +68,6 @@ export const titleVariants = cva(styles.title, {
     { variant: "primary", size: "md", className: styles.titlePrimaryMedium },
     { variant: "primary", size: "sm", className: styles.titlePrimarySmall },
   ],
-  defaultVariants: {
-    variant: "default",
-  },
 });
 
 export type PropsParagraph = HTMLAttributes<"p" | "span"> &

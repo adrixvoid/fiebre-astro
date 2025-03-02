@@ -1,6 +1,9 @@
 .card {
-  background-color: hsl(var(--card));
   border-width: 0;
+}
+
+.primary {
+  background-color: hsl(var(--card));
 }
 
 .shadow {

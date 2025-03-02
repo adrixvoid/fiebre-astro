@@ -1,13 +1,58 @@
 .text {
   line-height: 1.52;
+  font-weight: 300;
 }
 
-.text strong {
-  font-weight: 700;
+.xl {
+  font-size: clamp(2rem, 2.25vw, 2.5rem);
+  font-size: 24px;
+  font-size: 1.5rem;
 }
 
-.textDefault {
-  font-size: inherit;
+.lg {
+  font-size: clamp(1.7rem, 1.75vw, 1.8rem);
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.md {
+  font-size: clamp(1.125rem, 1.5, 1.5rem);
+  font-size: 18px;
+  font-size: 1.12rem;
+}
+
+.default {
+  font-size: clamp(.9rem, 1.25vw, 1rem);
+  /* font-size: 16px;
+  font-size: 1rem; */
+  line-height: 1.7;
+}
+
+.sm {
+  font-size: clamp(.85rem, 1.1vw, .94rem);
+  line-height: 1.5;
+  /* font-size: 15px;
+  font-size: 0.94rem; */
+}
+
+.metaLarge {
+  font-size: clamp(.8rem, 1vw, .87rem);
+  /* font-size: 14px;
+  font-size: 0.87rem; */
+}
+
+.meta {
+  font-size: clamp(0.7rem, 1vw, 0.75rem);
+  /* font-size: 12px;
+  font-size: 0.75rem; */
+}
+
+.medium {
+  font-size: 96px;
+}
+
+.small {
+  font-size: 80px;
 }
 
 .left {
@@ -26,28 +71,82 @@
   font-style: italic;
 }
 
-.sm {
-  font-size: 1rem;
-  line-height: 1.5;
+.balanced {
+  text-wrap: balance;
 }
 
-.md {
-  font-size: 1.5rem;
-  font-size: clamp(1.125rem, 1.25vw, 1.5rem);
+.uppercase {
+  text-transform: uppercase;
 }
 
-.lg {
-  font-size: 1.8rem;
-  font-size: clamp(1.7rem, 1.75vw, 1.8rem);
+.strong {
+  font-weight: 700;
 }
 
-.xl {
-  font-size: 2.25rem;
-  font-size: clamp(2rem, 2.25vw, 2.5rem);
+.shrink {
+  letter-spacing: -.016em;
 }
 
+.nav {
+  font-size: clamp(.8rem, 1vw, .87rem);
+  letter-spacing: 0.5;
+}
 
 /* ----------- */
+
+.heading {
+  font-weight: 300;
+}
+
+.h1 {
+  font-size: clamp(3rem, 6.2vw, 4rem);
+}
+
+.h2 {
+  font-size: clamp(2.5rem, 5.5vw, 3rem);
+}
+
+.h3 {
+  font-size: clamp(1.8rem, 5vw, 2rem);
+}
+
+.h4 {
+  font-size: clamp(1.35rem, 3vw, 1.5rem);
+}
+
+.h5 {
+  font-size: clamp(1.25rem, 2.5vw, 1.38rem);
+}
+
+.h6 {
+  font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+.titlePrimary {
+  font-family: Morganite;
+  text-transform: uppercase;
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.titlePrimaryLarge {
+  font-size: 10rem;
+}
+
+.titlePrimaryMedium {
+  font-size: 8rem;
+}
+
+.titlePrimarySmall {
+  font-size: 6rem;
+}
+
+.adjustBaseline {
+  margin-bottom: -1.5rem;
+}
+
+/*
 
 .title {
   font-family: var(--font-family);
@@ -79,30 +178,4 @@
 .titleXLarge {
   font-size: 1.8rem;
   font-size: clamp(4.25rem, 5vw, 6.25rem);
-}
-
-/* ----------- */
-
-.titlePrimary {
-  font-family: Morganite;
-  text-transform: uppercase;
-  font-size: 6rem;
-  line-height: 1;
-}
-
-.titlePrimaryLarge {
-  font-size: 10rem;
-  font-weight: 700;
-}
-
-.titlePrimaryMedium {
-  font-size: 8rem;
-}
-
-.titlePrimarySmall {
-  font-size: 6rem;
-}
-
-.adjustBaseline {
-  margin-bottom: -1.5rem;
-}
+} */

@@ -10,7 +10,12 @@ export type WindowCardProps = HTMLAttributes<"div">;
 const { class: className = "", ...props } = Astro.props as WindowCardProps;
 ---
 
-<Card class:list={[className, styles.windowCard]} shadow={true} {...props}>
+<Card
+  variant="primary"
+  class:list={[className, styles.windowCard]}
+  shadow={true}
+  {...props}
+>
   <div class={styles.cardCustomHeader} aria-hidden="true">
     <WindowControllers class={styles.fakeWindowController} />
   </div>

@@ -73,14 +73,14 @@ a.button:hover {
 }
 
 .primary {
-    box-shadow: 2px 2px 0 2px hsl(var(--primary) / 0.6);
+    box-shadow: 2px 2px 0 2px hsl(var(--primary), 0.6);
     border-color: hsl(var(--primary));
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
 }
 
 .primary:hover {
-    background-color: hsl(var(--primary) / 0.8);
+    background-color: hsl(var(--primary), 0.8);
     box-shadow: none;
     transform: translate(2px, 2px) scaleX(1) scaleY(1);
 }
@@ -92,7 +92,7 @@ a.button:hover {
 }
 
 .secondary:hover {
-    background-color: hsl(var(--secondary) / .8);
+    background-color: hsl(var(--secondary), .8);
     box-shadow: none;
     transform: translate(2px, 2px) scaleX(1) scaleY(1);
 }
@@ -102,7 +102,7 @@ a.button:hover {
     color: hsl(var(--foreground));
     border-width: 1px;
     border-style: solid;
-    border-color: hsl(var(--foreground) / 0.8);
+    border-color: hsl(var(--foreground), 0.8);
     text-underline-offset: 4px;
     text-decoration: none;
     box-shadow: 2px 2px 0 2px hsla(0, 0%, 100%, 0.9);
@@ -122,7 +122,7 @@ a.button:hover {
 }
 
 .dashed:hover {
-    background-color: hsl(var(--button-foreground) / .05);
+    background-color: hsl(var(--button-foreground), .05);
     color: hsl(var(--button-foreground));
 }
 
@@ -182,7 +182,7 @@ a.button:hover {
 }
 
 .destructive:hover {
-    background-color: hsl(var(--destructive) / .9);
+    background-color: hsl(var(--destructive), .9);
     box-shadow: 0 2px 4px hsl(var(--shadow-color));
 }
 
@@ -257,7 +257,7 @@ a.button:hover {
 
 @media (prefers-color-scheme: dark) {
     .primary:hover {
-        background-color: hsl(var(--primary) / 0.8);
+        background-color: hsl(var(--primary), 0.8);
     }
 
     .outline {
@@ -305,7 +305,7 @@ a.button:hover {
             0 0 0 0 hsl(179, 100%, 76%),
             0 0 0 0 hsl(306 100% 83% / 0.9),
             0 0 0 0 hsl(76.45 100% 75.69% / 0.8),
-            0 0 0 0 hsl(var(--primary) / .6)
+            0 0 0 0 hsl(var(--primary), .6)
     }
 
     to {
@@ -313,7 +313,7 @@ a.button:hover {
             0 0 0 2px hsl(179, 100%, 76%),
             0 0 0 6px hsl(306 100% 83% / 0.9),
             0 0 0 10px hsl(76.45 100% 75.69% / 0.8),
-            0 0 0 15px hsl(var(--primary) / .6)
+            0 0 0 15px hsl(var(--primary), .6)
     }
 }
 
@@ -323,7 +323,7 @@ a.button:hover {
             0 0 0 0 hsl(179, 100%, 76%),
             0 0 0 0 hsl(306 100% 83% / 0.9),
             0 0 0 0 hsl(76.45 100% 75.69% / 0.8),
-            0 0 0 0 hsl(var(--primary) / .6)
+            0 0 0 0 hsl(var(--primary), .6)
     }
 
     10% {
@@ -331,7 +331,7 @@ a.button:hover {
             0 0 0 2px hsl(179, 100%, 76%),
             0 0 0 6px hsl(306 100% 83% / 0.9),
             0 0 0 10px hsl(76.45 100% 75.69% / 0.8),
-            0 0 0 15px hsl(var(--primary) / .6)
+            0 0 0 15px hsl(var(--primary), .6)
     }
 
     90% {
@@ -339,6 +339,6 @@ a.button:hover {
             0 0 0 0 hsl(179, 100%, 76%),
             0 0 0 0 hsl(306 100% 83% / 0.9),
             0 0 0 0 hsl(76.45 100% 75.69% / 0.8),
-            0 0 0 0 hsl(var(--primary) / .6)
+            0 0 0 0 hsl(var(--primary), .6)
     }
 }

@@ -1,5 +1,5 @@
 .skeleton {
-  --skeleton-background-color: hsl(var(--foreground) / .1);
+  --skeleton-background-color: hsl(var(--foreground), .1);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.footer a:hover {
+  color: hsl(var(--color-brand5)) !important;
+}
+
 .footer a {
   text-decoration: none;
 }
