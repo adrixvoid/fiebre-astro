@@ -9,7 +9,6 @@
 
 .columns {
   margin-inline: auto;
-  width: fit-content;
 }
 
 @media (width <960px) {

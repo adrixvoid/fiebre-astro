@@ -1,9 +1,14 @@
 .grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 4vw;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
 }
 
 @media screen and (min-width: 960px) {
+  .grid {
+    gap: 2vw;
+  }
+
   .two {
     grid-template-columns: 1fr 1fr;
   }

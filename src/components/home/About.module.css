@@ -1,10 +1,24 @@
 .about {
   background-color: hsl(266, 54%, 51%);
-  background: linear-gradient(180deg, #7A3FC6 38.5%, #FF4DD5 100%);
+  background: linear-gradient(0deg, hsl(314, 100%, 65%) 0%, hsl(266, 54%, 51%) 38%);
+  background-position: center top;
 
   padding-top: 5vh;
   padding-bottom: 14rem;
   position: relative;
+  animation-name: animateBackground;
+  animation-fill-mode: forwards;
+  animation-timeline: view(40%);
+}
+
+@keyframes animateBackground {
+  from {
+    background-size: 100% 400%;
+  }
+
+  to {
+    background-size: 100% 100%;
+  }
 }
 
 /* .title {
@@ -87,11 +101,27 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  translate: -50% 100%;
+  scale: 0.8;
   width: 40vw;
   max-width: 320px;
   user-select: none;
   pointer-events: none;
+  animation-name: animateSun;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+}
+
+@keyframes animateSun {
+  from {
+    transform: translateY(20%);
+    scale: 1;
+  }
+
+  to {
+    transform: translateY(-100%);
+    scale: 1.1;
+  }
 }
 
 .mountains {

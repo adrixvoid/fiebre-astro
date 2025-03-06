@@ -10,12 +10,3 @@
   background-color: black;
   transition: 200ms ease-in-out;
 }
-
-.grid:hover article:hover {
-  scale: 1.2;
-  z-index: 1;
-}
-
-.grid:hover article:not(:hover) a {
-  opacity: 0.7;
-}

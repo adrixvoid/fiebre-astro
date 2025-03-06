@@ -5,6 +5,7 @@
     url('/fonts/Morganite/Morganite-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
 }
 
 
@@ -15,6 +16,7 @@
     url('/fonts/Morganite/Morganite-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 /* @font-face {

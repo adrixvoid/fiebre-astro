@@ -40,7 +40,7 @@
   font-size: 2.8cqw;
 }
 
-.text-0 {
+.text1 {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
@@ -54,6 +54,14 @@
   color: #FFFFFF;
 
   display: block;
+}
+
+.text2 {
+  display: inline-block;
+}
+
+.text3 {
+  display: inline-block;
 }
 
 .headline {

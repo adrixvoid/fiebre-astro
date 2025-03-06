@@ -1,18 +1,15 @@
 ---
-import { cva, type VariantProps } from "class-variance-authority";
 import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
 import styles from "./Grid.module.css";
 
 const cvaVariants = cva(styles.grid, {
   variants: {
     columns: {
-      default: styles.three,
       two: styles.two,
+      three: styles.three,
       masonry: [styles.masonry],
     },
-  },
-  defaultVariants: {
-    columns: "default",
   },
 });
 

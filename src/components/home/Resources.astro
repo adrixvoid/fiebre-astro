@@ -12,9 +12,15 @@ import Container from "../ui/container/Container.astro";
 import Grid from "../ui/grid/Grid.astro";
 import Title from "../ui/text/Title.astro";
 
-import { t } from "~/i18n/translate";
+import { t, tObject } from "~/i18n/translate";
 import WindowCard from "../ui/card/components/WindowCard.astro";
 import styles from "./Resources.module.css";
+
+const data = [
+  tObject("RESOURCES.0"),
+  tObject("RESOURCES.1"),
+  tObject("RESOURCES.2"),
+];
 ---
 
 <div class={styles.descargables}>
@@ -27,93 +33,48 @@ import styles from "./Resources.module.css";
         as="h2"
         variant="primary"
         align="center"
+        style="margin-bottom:3.5rem"
       >
         {t("RESOURCES.TITLE")}
       </Title>
     </Center>
-    <Grid>
-      <WindowCard as="article" class={styles.card} shadow={true}>
-        <CardHeader aria-hidden="true">
-          <Center>
-            <CardImage aria-hidden="true" src={t("RESOURCES.0.image")} />
-          </Center>
-        </CardHeader>
-        <CardContent>
-          <CardTitle id="abrir-plantilla" aria-describedby="descargables">
-            {t("RESOURCES.0.title")}
-          </CardTitle>
-          <CardDescription>{t("RESOURCES.0.description")}</CardDescription>
-        </CardContent>
-        <CardFooter>
-          <Center>
-            <Button
-              asLink
-              href={t("RESOURCES.0.link.href")}
-              no-referrer="true"
-              target="_blank"
-              width="full-width"
-              size="md"
-              aria-describedby="abrir-plantilla"
-            >
-              {t("RESOURCES.0.link.title")}
-            </Button>
-          </Center>
-        </CardFooter>
-      </WindowCard>
-      <WindowCard as="article" class={styles.card} shadow={true}>
-        <CardHeader aria-hidden="true">
-          <Center>
-            <CardImage src={t("RESOURCES.1.image")} />
-          </Center>
-        </CardHeader>
-        <CardContent>
-          <CardTitle id="planner-anual">{t("RESOURCES.1.title")}</CardTitle>
-          <CardDescription>{t("RESOURCES.1.description")}.</CardDescription>
-        </CardContent>
-        <CardFooter>
-          <Center>
-            <Button
-              asLink
-              href={t("RESOURCES.1.link.href")}
-              no-referrer="true"
-              target="_blank"
-              width="full-width"
-              size="md"
-              aria-describedby="planner-anual"
-            >
-              {t("RESOURCES.1.link.title")}
-            </Button>
-          </Center>
-        </CardFooter>
-      </WindowCard>
-      <WindowCard as="article" class={styles.card} shadow={true}>
-        <CardHeader aria-hidden="true">
-          <Center>
-            <CardImage src={t("RESOURCES.2.image")} />
-          </Center>
-        </CardHeader>
-        <CardContent>
-          <CardTitle id="guia-color">{t("RESOURCES.2.title")}</CardTitle>
-          <CardDescription>
-            {t("RESOURCES.2.description")}
-          </CardDescription>
-        </CardContent>
-        <CardFooter>
-          <Center>
-            <Button
-              asLink
-              href={t("RESOURCES.2.link.href")}
-              no-referrer="true"
-              target="_blank"
-              width="full-width"
-              size="md"
-              aria-describedby="guia-color"
-            >
-              {t("RESOURCES.2.link.title")}
-            </Button>
-          </Center>
-        </CardFooter>
-      </WindowCard>
+    <Grid style="margin-bottom:2.5rem">
+      {
+        data.map((item) => (
+          <WindowCard as="article" class={styles.card} shadow={true}>
+            <CardHeader aria-hidden="true">
+              <Center>
+                <CardImage
+                  aria-hidden="true"
+                  src={item.image}
+                  fetchpriority="low"
+                />
+              </Center>
+            </CardHeader>
+            <CardContent style="margin-top: 1rem;margin-bottom:2em;">
+              <CardTitle id="abrir-plantilla" aria-describedby="descargables">
+                {item.title}
+              </CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </CardContent>
+            <CardFooter>
+              <Center>
+                <Button
+                  asLink
+                  href={item.link.href}
+                  no-referrer="true"
+                  target="_blank"
+                  width="full-width"
+                  size="md"
+                  aria-describedby="abrir-plantilla"
+                >
+                  {item.link.title}
+                </Button>
+              </Center>
+            </CardFooter>
+          </WindowCard>
+        ))
+      }
     </Grid>
   </Container>
 </div>
