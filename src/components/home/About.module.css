@@ -9,6 +9,7 @@
   animation-name: animateBackground;
   animation-fill-mode: forwards;
   animation-timeline: view(40%);
+  overflow-x: clip;
 }
 
 @keyframes animateBackground {
