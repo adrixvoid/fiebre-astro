@@ -1,0 +1,26 @@
+---
+import Button from "~/components/ui/button/Button.astro";
+import Center from "~/components/ui/center/Center.astro";
+import Container from "~/components/ui/container/Container.astro";
+import Flex from "~/components/ui/flex/Flex.astro";
+import Icon from "~/components/ui/icon/Icon.astro";
+import Text from "~/components/ui/text/Text.astro";
+import Title from "~/components/ui/text/Title.astro";
+import Layout from "~/layouts/MainLayout.astro";
+---
+
+<Layout style="padding-top: 8rem;">
+  <Container>
+    <Center variant="all">
+      <Flex direction="column">
+        <div>
+          <Title size="medium" bold>404</Title>
+          <Text size="h4">Página no encontrada</Text>
+        </div>
+        <Button variant="link" class="back" onclick="history.back()">
+          <Icon icon="back" size="24px" /> Volver
+        </Button>
+      </Flex>
+    </Center>
+  </Container>
+</Layout>

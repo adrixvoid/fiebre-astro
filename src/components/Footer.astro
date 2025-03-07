@@ -12,9 +12,11 @@ import Link from "./ui/link/Link.astro";
 import Text from "./ui/text/Text.astro";
 
 const today = new Date();
+
+const props = Astro.props;
 ---
 
-<footer class={styles.footer}>
+<footer class={styles.footer} {...props}>
   <Container>
     <div class={styles.grid}>
       {SITE_TITLE}

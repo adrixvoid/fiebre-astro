@@ -5,6 +5,7 @@ const {
   class: className = "",
   align,
   size,
+  bold,
   as: Component = "p",
   fontStyle,
   ...props
@@ -12,7 +13,7 @@ const {
 ---
 
 <Component
-  class={textVariants({ size, align, fontStyle, className })}
+  class={textVariants({ size, align, bold, fontStyle, className })}
   {...props}
 >
   <slot />

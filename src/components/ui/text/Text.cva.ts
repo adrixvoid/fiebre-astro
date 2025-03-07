@@ -41,6 +41,9 @@ const commonVariants = {
   shrink: {
     true: styles.shrink,
   },
+  bold: {
+    true: styles.bold,
+  },
 };
 
 export const textVariants = cva(styles.text, {

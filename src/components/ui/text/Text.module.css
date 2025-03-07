@@ -79,7 +79,7 @@
   text-transform: uppercase;
 }
 
-.strong {
+.bold {
   font-weight: 700;
 }
 
@@ -93,10 +93,6 @@
 }
 
 /* ----------- */
-
-.heading {
-  font-weight: 300;
-}
 
 .h1 {
   font-size: clamp(3rem, 6.2vw, 4rem);
