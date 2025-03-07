@@ -66,7 +66,7 @@ export const PORTFOLIO_FILTERS = [
   },
   {
     label: t("FILTERS.ALL"),
-    category: ".",
+    category: "",
     active: true,
   },
 ];
