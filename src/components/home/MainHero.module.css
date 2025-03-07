@@ -222,49 +222,37 @@
   transform: scale3d(1.2, 1.2, 1.5);
   animation: spin 90s linear infinite;
   transform-origin: center;
-  scale: 1.7;
   width: 100vw;
-  height: 100vw;
-  min-width: 100vh;
-  min-height: 100vh;
+  aspect-ratio: 1 / 1;
+  scale: 1.25;
 }
 
 .ondaEstelar2 {
   animation: spin-reverse 60s linear infinite;
   transform-origin: center;
-  width: 90vw;
-  height: 90vw;
-  min-width: 90vh;
-  min-height: 90vh;
+  width: 75vw;
+  aspect-ratio: 1 / 1;
+  /* scale: 0.8; */
 }
 
 .ondaEstelar3 {
   animation: spin 30s linear infinite;
   transform-origin: center;
-  width: 50vw;
-  height: 50vw;
-  min-width: 50vh;
-  min-height: 50vh;
+  width: 45vw;
+  aspect-ratio: 1 / 1;
+  /* scale: 0.75; */
 }
 
-@media screen and (min-width: 1280px) {
-  .ondaEstelar1 {
-    transform: scale(1.5);
-  }
-
+/* @media screen and (min-width: 1280px) {
   .ondaEstelar2 {
     width: 85vw;
-    height: 85vw;
-    min-width: 85vh;
-    min-height: 85vh;
   }
 
   .ondaEstelar3 {
     animation: spin 60s linear infinite;
     width: 70vw;
-    height: 70vh;
   }
-}
+} */
 
 @keyframes spin {
   100% {
