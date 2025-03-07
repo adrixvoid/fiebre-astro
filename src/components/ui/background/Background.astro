@@ -15,16 +15,15 @@ const {
   ...props
 } = Astro.props as BackgroundProps;
 
-const bgClassName = [
-  styles.background,
-  { [styles.repeat]: repeat, [styles["no-repeat"]]: !repeat },
-];
-
 const inlineStyle = typeof style === "object" ? style : null;
 ---
 
 <div
-  class:list={bgClassName}
+  class:list={[
+    styles.background,
+    { [styles.repeat]: repeat, [styles["no-repeat"]]: !repeat },
+    className,
+  ]}
   style={{ ...inlineStyle, backgroundImage: `url(${url})` }}
   {...props}
 >

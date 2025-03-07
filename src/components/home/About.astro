@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
 import Button from "~/components/ui/button/Button.astro";
 import Center from "~/components/ui/center/Center.astro";
 import Container from "~/components/ui/container/Container.astro";
@@ -13,11 +12,8 @@ import styles from "./About.module.css";
 import localSobreGrilla from "../../../public/home/sobre-grilla.svg";
 import localSobreMouse from "../../../public/home/sobre-mouse.svg";
 
-import Estrellas3SVG from "~/components/ui/svg/assets/Estrellas3.astro";
-import Estrellas4SVG from "~/components/ui/svg/assets/Estrellas4.astro";
 // import Nube1 from "~/components/ui/svg/assets/Nube1.astro";
 import NubesSVG from "~/components/ui/svg/assets/Nubes.astro";
-import Nubes2SVG from "~/components/ui/svg/assets/Nubes2.astro";
 import SunSVG from "~/components/ui/svg/assets/Sun.astro";
 import { t } from "~/i18n/translate";
 import localSobreFoto from "../../../public/home/sobre-foto.png";
@@ -26,125 +22,119 @@ import localSobreHerramientas from "../../../public/home/sobre-herramientas.png"
 import localSobreIdiomas from "../../../public/home/sobre-idiomas.png";
 import localSobrePaint from "../../../public/home/sobre-paint.png";
 import localSobreSkillset from "../../../public/home/sobre-skillset.png";
+import Background from "../ui/background/Background.astro";
 import MountainsSVG from "../ui/svg/assets/Mountains.astro";
 ---
 
 <div class={styles.about}>
   <NubesSVG class={styles.nubes} aria-hidden="true" />
-  <ElementAsBackground class={styles.mask} aria-hidden="true">
-    <Estrellas3SVG class:list={[styles.backgroundSVG, styles.estrellas3]} />
-    <Estrellas4SVG class:list={[styles.backgroundSVG, styles.estrellas4]} />
-    <!-- <Nube1 class:list={[styles.backgroundSVG, styles.nube1]} /> -->
-    <Nubes2SVG
-      class:list={[styles.backgroundSVG, styles.nubes2]}
-      aria-hidden="true"
-    />
-  </ElementAsBackground>
-  <article>
-    <Container
-      variant="narrow"
-      style={{ position: "relative", marginBlock: "4rem" }}
-    >
-      <Title
-        class={styles.title}
-        variant="primary"
-        as="h2"
-        size="sm"
-        align="center"
-        fontStyle="italic"
+  <Background class={styles.nubes2} url="/assets/nubes2.svg">
+    <article>
+      <Container
+        variant="narrow"
+        style={{ position: "relative", marginBlock: "4rem" }}
       >
-        {t("ABOUT.TITLE")}
-      </Title>
-    </Container>
-    <div class={styles.mask}>
-      <div style={{ position: "relative" }} aria-hidden="true">
-        <Center>
-          <div class={styles.images}>
-            <Image
-              class:list={[styles.absolute, styles.imgGrilla]}
-              src={localSobreGrilla}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgFoto3]}
-              src={localSobreFoto}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgFoto2]}
-              src={localSobreFoto}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgFoto2]}
-              src={localSobreFoto}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgPaint]}
-              src={localSobrePaint}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgSkillset]}
-              src={localSobreSkillset}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgGustos]}
-              src={localSobreGustos}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgHerramientas]}
-              src={localSobreHerramientas}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgIdiomas]}
-              src={localSobreIdiomas}
-              aria-hidden="true"
-              alt="about"
-            />
-            <Image
-              class:list={[styles.absolute, styles.imgMouse]}
-              src={localSobreMouse}
-              aria-hidden="true"
-              alt="about"
-            />
-          </div>
-        </Center>
-      </div>
-      <Container variant="narrow" style={{ position: "relative" }}>
-        <Center class={styles["about-text"]} variant="text">
-          <Text size="h3" as="div" set:html={t("ABOUT.DESCRIPTION")} />
-          <div class="sr-only">
-            <h4>{t("ABOUT.INTERESTS.TITLE")}</h4>
-            <Text as="div" set:html={t("ABOUT.INTERESTS.DESCRIPTION")} />
-          </div>
-          <Button
-            asLink
-            variant="outline"
-            size="xl"
-            style={{ margin: "2rem auto 0 auto" }}
-            href={t("ABOUT.LINK.HREF")}
-            no-referrer="true"
-            target="_blank"
-          >
-            {t("ABOUT.LINK.TITLE")}
-          </Button>
-        </Center>
+        <Title
+          class={styles.title}
+          variant="primary"
+          as="h2"
+          size="sm"
+          align="center"
+          fontStyle="italic"
+        >
+          {t("ABOUT.TITLE")}
+        </Title>
       </Container>
-    </div>
-  </article>
+      <div class={styles.mask}>
+        <div style={{ position: "relative" }} aria-hidden="true">
+          <Center>
+            <div class={styles.images}>
+              <Image
+                class:list={[styles.absolute, styles.imgGrilla]}
+                src={localSobreGrilla}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgFoto3]}
+                src={localSobreFoto}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgFoto2]}
+                src={localSobreFoto}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgFoto2]}
+                src={localSobreFoto}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgPaint]}
+                src={localSobrePaint}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgSkillset]}
+                src={localSobreSkillset}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgGustos]}
+                src={localSobreGustos}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgHerramientas]}
+                src={localSobreHerramientas}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgIdiomas]}
+                src={localSobreIdiomas}
+                aria-hidden="true"
+                alt="about"
+              />
+              <Image
+                class:list={[styles.absolute, styles.imgMouse]}
+                src={localSobreMouse}
+                aria-hidden="true"
+                alt="about"
+              />
+            </div>
+          </Center>
+        </div>
+        <Container variant="narrow" style={{ position: "relative" }}>
+          <Center class={styles["about-text"]} variant="text">
+            <Text size="h3" as="div" set:html={t("ABOUT.DESCRIPTION")} />
+            <div class="sr-only">
+              <h4>{t("ABOUT.INTERESTS.TITLE")}</h4>
+              <Text as="div" set:html={t("ABOUT.INTERESTS.DESCRIPTION")} />
+            </div>
+            <Button
+              asLink
+              variant="outline"
+              size="xl"
+              style={{ margin: "2rem auto 0 auto" }}
+              href={t("ABOUT.LINK.HREF")}
+              no-referrer="true"
+              target="_blank"
+            >
+              {t("ABOUT.LINK.TITLE")}
+            </Button>
+          </Center>
+        </Container>
+      </div>
+    </article>
+  </Background>
   <SunSVG class={styles.sun} aria-hidden="true" />
   <MountainsSVG class={styles.mountains} />
 </div>

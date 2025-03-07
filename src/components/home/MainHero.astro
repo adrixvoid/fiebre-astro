@@ -1,6 +1,5 @@
 ---
 import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
-import Center from "~/components/ui/center/Center.astro";
 import Viewport from "~/components/ui/viewport/Viewport.astro";
 
 import Estrella1SVG from "~/components/ui/svg/assets/Estrellas.astro";
@@ -23,31 +22,11 @@ import styles from "./MainHero.module.css";
   <div>
     <div class={styles.orbit}>
       <ElementAsBackground>
-        <Center variant="all">
-          <Estrella1SVG class={styles.estrella1} aria-hidden="true" />
-        </Center>
-      </ElementAsBackground>
-      <ElementAsBackground>
-        <Center variant="all">
-          <Estrella2SVG class={styles.estrella12} aria-hidden="true" />
-        </Center>
-      </ElementAsBackground>
-      <ElementAsBackground>
-        <Center variant="all">
-          <OndaEstelar1SVG class={styles.ondaEstelar1} aria-hidden="true" />
-        </Center>
-      </ElementAsBackground>
-      <ElementAsBackground>
-        <Center variant="all">
-          <OndaEstelar2SVG class={styles.ondaEstelar2} aria-hidden="true" />
-        </Center>
-      </ElementAsBackground>
-      <ElementAsBackground>
-        <Center variant="all">
-          <OndaEstelar3SVG class={styles.ondaEstelar3} aria-hidden="true" />
-        </Center>
-      </ElementAsBackground>
-      <ElementAsBackground>
+        <Estrella1SVG class={styles.estrella1} aria-hidden="true" />
+        <Estrella2SVG class={styles.estrella12} aria-hidden="true" />
+        <OndaEstelar1SVG class={styles.ondaEstelar1} aria-hidden="true" />
+        <OndaEstelar2SVG class={styles.ondaEstelar2} aria-hidden="true" />
+        <OndaEstelar3SVG class={styles.ondaEstelar3} aria-hidden="true" />
         <Planeta1SVG class={styles.planeta1} aria-hidden="true" />
         <Planeta2SVG class={styles.planeta2} aria-hidden="true" />
         <Planeta3SVG class={styles.planeta3} aria-hidden="true" />

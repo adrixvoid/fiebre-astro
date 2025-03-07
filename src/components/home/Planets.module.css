@@ -1,64 +1,199 @@
 .planets {
   padding-bottom: 28vh;
   background: linear-gradient(0deg, rgb(155 25 181 / 46%) 0%, transparent 30%);
+  width: 100dvw;
+  height: 100%;
+  min-height: 100dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
+.star1 {
+  height: 100%;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  animation-name: parallaxStar1;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes parallaxStar1 {
+  from {
+    background-size: 80% 80%;
+    background-position: 50% 0%;
+  }
+
+  to {
+    background-size: 150% 100%;
+    background-position: 50% 100%;
+  }
+}
+
+.star2 {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  animation-name: parallaxStar2;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes parallaxStar2 {
+  from {
+    background-size: 100% 0%;
+    background-position: 50% 0%;
+  }
+
+  to {
+    background-size: 100% 200%;
+    background-position: 90% 100%;
+  }
+}
+
 
 .planeta6 {
   max-width: 445px;
   max-height: 299px;
-  width: 20dvw;
-  height: 20dvw;
-  position: absolute;
-  right: -8dvw;
-  top: 16.33%;
+  width: 19dvw;
+  aspect-ratio: 1 / 1;
+  left: unset;
+  right: -18%;
+  top: 20%;
+
+  animation-name: parallax1;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes parallax1 {
+  from {
+    top: 20%;
+  }
+
+  to {
+    top: 26%;
+  }
 }
 
 .planeta7 {
   /* planeta 7 */
-  position: absolute;
+  left: unset;
   right: 6.63%;
-  bottom: 22.63%;
+  top: 50%;
+  animation-name: parallax2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes parallax2 {
+  from {
+    rotate: 0;
+  }
+
+  to {
+    rotate: 360deg;
+  }
 }
 
 
 .planeta8 {
   /* planeta 8 */
-  position: absolute;
-  width: 142.42px;
-  height: 91.62px;
-  left: 1%;
-  bottom: 26%;
-  transform: rotate(28.65deg);
+  width: 110px;
+  aspect-ratio: 1 /1;
+  left: 10%;
+  top: 55%;
+  scale: 2;
+
+  animation-name: parallax3;
+  animation-timeline: view();
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes parallax3 {
+  from {
+    top: 55%;
+  }
+
+  to {
+    top: 60%;
+  }
 }
 
 .planeta9 {
   /* planeta 9 */
-  position: absolute;
   width: 33px;
   height: 33px;
-  left: 11%;
-  top: 30%;
+  left: 0;
+  top: 5%;
+  animation-name: parallax4;
+  animation-timeline: view();
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
-@media (width < 768px) {
+@keyframes parallax4 {
+  from {
+    rotate: 0deg;
+    top: 5%;
+    left: 5%;
+  }
+
+  to {
+    rotate: 10deg;
+    top: 15%;
+    left: 7%;
+  }
+}
+
+/* @media (width < 768px) {
   .planeta6 {
     top: 40.33%;
   }
 
   .planeta7 {
+    left: unset;
     right: 2.63%;
     bottom: 20.63%;
   }
 
   .planeta8 {
-    left: auto;
+    left: unset;
     right: 0;
     bottom: 33%;
   }
 
   .planeta9 {
-    left: auto;
+    left: unset;
     right: 19%;
     top: 29%;
+  }
+} */
+
+@keyframes appear {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 5%;
+  }
+}
+
+@keyframes animateBackground {
+  from {
+    background-size: 100% 400%;
+  }
+
+  to {
+    background-size: 100% 100%;
   }
 }

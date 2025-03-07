@@ -1,61 +1,25 @@
 ---
-import { Image } from "astro:assets";
-
 import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
 import Background from "~/components/ui/background/Background.astro";
 
-import localPlaneta6 from "../../../public/assets/planeta6.svg";
-import localPlaneta7 from "../../../public/assets/planeta7.svg";
-import localPlaneta8 from "../../../public/assets/planeta8.svg";
-import localPlaneta9 from "../../../public/assets/planeta9.svg";
-
+import Planeta6SVG from "../ui/svg/assets/Planeta6.astro";
+import Planeta7SVG from "../ui/svg/assets/Planeta7.astro";
+import Planeta8SVG from "../ui/svg/assets/Planeta8.astro";
+import Planeta9SVG from "../ui/svg/assets/Planeta9.astro";
 import styles from "./Planets.module.css";
 ---
 
-<div class={styles.planets}>
-  <Background
-    url="/assets/estrellas3.svg"
-    style={{ backgroundSize: "contain", position: "relative" }}
-    repeat
-  >
-    <Background
-      url="/assets/estrellas4.svg"
-      style={{ backgroundSize: "contain", position: "relative" }}
-      repeat
-    >
-      <ElementAsBackground style={{ overflow: "hidden" }}>
-        <!--
-        <PlanetaSVG6 class={styles.planeta6} />
-        <PlanetaSVG7 class={styles.planeta7} />
-        <PlanetaSVG8 class={styles.planeta8} />
-        <PlanetaSVG9 class={styles.planeta9} />
-        -->
-        <Image
-          src={localPlaneta6}
-          class={styles.planeta6}
-          aria-hidden="true"
-          alt="planet"
-        />
-        <Image
-          src={localPlaneta7}
-          class={styles.planeta7}
-          aria-hidden="true"
-          alt="planet"
-        />
-        <Image
-          src={localPlaneta8}
-          class={styles.planeta8}
-          aria-hidden="true"
-          alt="planet"
-        />
-        <Image
-          src={localPlaneta9}
-          class={styles.planeta9}
-          aria-hidden="true"
-          alt="planet"
-        />
+<div id="planets" class={styles.planets}>
+  <Background class={styles.star1} url="/assets/estrellas3.svg">
+    <Background class={styles.star2} url="/assets/estrellas4.svg">
+      <ElementAsBackground>
+        <!-- <Estrellas3 class="estrella3" aria-hidden="true" />
+        <Estrellas4 class="estrella4" aria-hidden="true" /> -->
+        <Planeta6SVG class={styles.planeta6} aria-hidden="true" />
+        <Planeta7SVG class={styles.planeta7} aria-hidden="true" />
+        <Planeta8SVG class={styles.planeta8} aria-hidden="true" />
+        <Planeta9SVG class={styles.planeta9} aria-hidden="true" />
       </ElementAsBackground>
-      <slot />
     </Background>
   </Background>
 </div>

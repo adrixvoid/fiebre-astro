@@ -85,10 +85,11 @@
 
 .headlineText1 {
   font-size: 10.6em;
+  font-size: clamp(3.5rem, 12vw, 10.6rem);
 }
 
 .headlineText2 {
-  font-size: 9em;
+  font-size: clamp(4rem, 16vw, 9rem);
 }
 
 .rainbowSVG {
@@ -112,7 +113,7 @@
   .headline {
     display: flex;
     flex-direction: column;
-    line-height: 0.8;
+    padding-top: 0.25em;
   }
 }
 
@@ -156,65 +157,69 @@
   justify-content: center;
 }
 
+.orbit {
+  --spin-time: 30s;
+  animation: spin-reverse var(--spin-time) linear infinite;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
 .estrella1 {
   animation: spin 180s linear infinite;
   transform-origin: center;
 }
 
 .planeta1 {
-  position: absolute;
-  max-width: 202px;
-  max-height: 202px;
-  width: 20vh;
-  height: 20vh;
-  right: 10vw;
-  top: 0;
-  transform: translateY(-12vh);
-  animation: spin-reverse 60s linear infinite;
+  width: 6vw;
+  aspect-ratio: 1 / 1;
+  top: 5vh;
+  left: 70vw;
+  animation: spin 12s linear infinite;
 }
 
 .planeta2 {
-  position: absolute;
   width: 16px;
-  height: 16px;
-  right: 18%;
-  top: 20%;
+  aspect-ratio: 1 / 1;
+  top: 15vh;
+  left: 15vw;
 }
 
 .planeta3 {
-  position: absolute;
   width: 56.38px;
-  height: 36.35px;
-  right: 20%;
-  top: 30%;
+  aspect-ratio: 1 / 1;
+  top: 25vh;
+  left: 25vw;
   transform: rotate(-19.19deg);
-  animation: spin 360s linear infinite;
+  animation: spin 20s linear infinite;
 }
 
 .planeta4 {
-  position: absolute;
   width: 33px;
-  height: 33px;
-  right: 24vw;
-  bottom: 10vh;
-  animation: spin-reverse 180s linear infinite;
+  aspect-ratio: 1 / 1;
+  top: 75vh;
+  left: 65vw;
+  animation: spin 180s linear infinite;
   transform-origin: center;
 }
 
 .planeta5 {
   position: absolute;
-  width: 163.88px;
-  height: 95.17px;
-  left: 15cqw;
-  bottom: 0;
-  transform: rotate(21.47deg);
-  animation: spin 360s linear infinite;
+  width: 10vw;
+  aspect-ratio: 1 / 1;
+  top: 85vh;
+  left: 85vw;
+  transform: rotate(0);
+  animation: spin var(--spin-time) linear infinite;
   transform-origin: center;
 }
 
 .ondaEstelar1 {
   width: 100%;
-  /* transform: scale3d(1.2, 1.2, 1.5); */
+  transform: scale3d(1.2, 1.2, 1.5);
   animation: spin 90s linear infinite;
   transform-origin: center;
   scale: 1.7;
@@ -240,16 +245,6 @@
   height: 50vw;
   min-width: 50vh;
   min-height: 50vh;
-}
-
-.orbit {
-  animation: spin-reverse 360s linear infinite;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
 }
 
 @media screen and (min-width: 1280px) {

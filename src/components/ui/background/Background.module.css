@@ -1,6 +1,4 @@
 .asBackground {
-  position: absolute;
-  inset: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -8,10 +6,16 @@
   justify-content: center;
   user-select: none;
   pointer-events: none;
-  z-index: -1;
 }
 
-.asBackground svg {
+.asBackground>* {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.asBackground :is(img, svg) {
   user-select: none;
   pointer-events: none;
 }

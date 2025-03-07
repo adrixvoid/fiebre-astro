@@ -10,6 +10,7 @@ import styles from "./Services.module.css";
 
 import Flex from "../ui/flex/Flex.astro";
 import Viewport from "../ui/viewport/Viewport.astro";
+import Planets from "./Planets.astro";
 
 import { t } from "~/i18n/translate";
 import localAsesorias from "../../../public/home/asesorias.png";
@@ -17,175 +18,175 @@ import localCurso from "../../../public/home/curso.png";
 import localDiseno from "../../../public/home/ventana-diseno.png";
 ---
 
-<section class="services">
-  <Container variant="narrow" style={{ position: "relative" }}>
-    <div>
-      <Center id="design" class={styles.article}>
-        <Flex mobile="direction-column" class={styles.columns}>
-          <article class={styles.columns}>
-            <Title
-              as="h3"
-              variant="primary"
-              size="sm"
-              id="illustration"
-              baseline="adjust"
-            >
-              {t("SERVICES.PORTFOLIO.TITLE")}
-            </Title>
+<div style="position: relative;">
+  <Planets />
+  <section class={styles.services}>
+    <Container variant="narrow">
+      <div>
+        <Center id="design" class={styles.article}>
+          <Flex mobile="direction-column" class={styles.columns}>
+            <article class={styles.columns}>
+              <Title
+                as="h3"
+                variant="primary"
+                size="sm"
+                id="illustration"
+                baseline="adjust"
+              >
+                {t("SERVICES.PORTFOLIO.TITLE")}
+              </Title>
+              <Viewport
+                variant="desktop-hidden"
+                style={{
+                  flexShrink: 0,
+                  width: "100%",
+                  maxWidth: "430px",
+                  height: "auto",
+                }}
+              >
+                <Image src={localDiseno} aria-hidden="true" alt="Portafolio" />
+              </Viewport>
+              <p
+                class={styles.text}
+                set:html={t("SERVICES.PORTFOLIO.DESCRIPTION")}
+              />
+              <Button
+                asLink
+                variant="outline"
+                href={t("SERVICES.PORTFOLIO.LINK.HREF")}
+                no-referrer="true"
+                target="_blank"
+                asLink
+              >
+                {t("SERVICES.PORTFOLIO.LINK.TITLE")}
+              </Button>
+            </article>
             <Viewport
-              variant="desktop-hidden"
+              variant="desktop"
               style={{
                 flexShrink: 0,
                 width: "100%",
                 maxWidth: "430px",
                 height: "auto",
-                marginTop: "2.5rem",
               }}
             >
-              <Image src={localDiseno} aria-hidden="true" alt="Portafolio" />
+              <Image src={localDiseno} aria-hidden="true" alt="Diseño" />
             </Viewport>
-            <p
-              class={styles.text}
-              set:html={t("SERVICES.PORTFOLIO.DESCRIPTION")}
-            />
-            <Button
-              asLink
-              variant="outline"
-              href={t("SERVICES.PORTFOLIO.LINK.HREF")}
-              no-referrer="true"
-              target="_blank"
-              asLink
-            >
-              {t("SERVICES.PORTFOLIO.LINK.TITLE")}
-            </Button>
-          </article>
-          <Viewport
-            variant="desktop"
-            style={{
-              flexShrink: 0,
-              width: "100%",
-              maxWidth: "430px",
-              height: "auto",
-            }}
+          </Flex>
+        </Center>
+        <Center id="course" class={styles.article}>
+          <Flex
+            class:list={[styles.columns, styles.column2]}
+            mobile="direction-column"
           >
-            <Image src={localDiseno} aria-hidden="true" alt="Diseño" />
-          </Viewport>
-        </Flex>
-      </Center>
-      <Center id="course" class={styles.article}>
-        <Flex
-          class:list={[styles.columns, styles.column2]}
-          mobile="direction-column"
-        >
-          <Viewport
-            variant="desktop"
-            style={{
-              flexShrink: 0,
-              width: "100%",
-              maxWidth: "430px",
-              height: "auto",
-            }}
-          >
-            <Image src={localCurso} aria-hidden="true" alt="Curso" />
-          </Viewport>
-          <article class={styles.columns}>
-            <Title
-              as="h3"
-              variant="primary"
-              size="sm"
-              id="course"
-              baseline="adjust"
-            >
-              {t("SERVICES.COURSE.TITLE")}
-            </Title>
             <Viewport
-              variant="desktop-hidden"
+              variant="desktop"
               style={{
                 flexShrink: 0,
                 width: "100%",
                 maxWidth: "430px",
                 height: "auto",
-                marginTop: "2.5rem",
               }}
             >
               <Image src={localCurso} aria-hidden="true" alt="Curso" />
             </Viewport>
+            <article class={styles.columns}>
+              <Title
+                as="h3"
+                variant="primary"
+                size="sm"
+                id="course"
+                baseline="adjust"
+              >
+                {t("SERVICES.COURSE.TITLE")}
+              </Title>
+              <Viewport
+                variant="desktop-hidden"
+                style={{
+                  flexShrink: 0,
+                  width: "100%",
+                  maxWidth: "430px",
+                  height: "auto",
+                }}
+              >
+                <Image src={localCurso} aria-hidden="true" alt="Curso" />
+              </Viewport>
+              <p
+                class={styles.text}
+                set:html={t("SERVICES.COURSE.DESCRIPTION")}
+              />
+              <Flex direction="column">
+                <div>
+                  <Button
+                    asLink
+                    variant="outline"
+                    href={t("SERVICES.COURSE.LINK.0.HREF")}
+                    no-referrer="true"
+                    target="_blank">{t("SERVICES.COURSE.LINK.0.TITLE")}</Button
+                  >
+                </div>
+                <div>
+                  <Button
+                    asLink
+                    variant="primary"
+                    href={t("SERVICES.COURSE.LINK.1.HREF")}
+                    no-referrer="true"
+                    target="_blank">{t("SERVICES.COURSE.LINK.1.TITLE")}</Button
+                  >
+                </div>
+              </Flex>
+            </article>
+          </Flex>
+        </Center>
+      </div>
+      <div id="consultancies" class={styles.article}>
+        <Flex mobile="direction-column">
+          <article class={styles.columns}>
+            <Title
+              as="h3"
+              variant="primary"
+              size="sm"
+              id="consultants"
+              baseline="adjust"
+            >
+              {t("SERVICES.CONSULTANTS.TITLE")}
+            </Title>
+            <Viewport
+              variant="desktop-hidden"
+              style={{
+                flexShrink: 0,
+                width: "100%",
+                maxWidth: "430px",
+                height: "auto",
+              }}
+            >
+              <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
+            </Viewport>
             <p
               class={styles.text}
-              set:html={t("SERVICES.COURSE.DESCRIPTION")}
+              set:html={t("SERVICES.CONSULTANTS.DESCRIPTION")}
             />
-            <Flex direction="column">
-              <div>
-                <Button
-                  asLink
-                  variant="outline"
-                  href={t("SERVICES.COURSE.LINK.0.HREF")}
-                  no-referrer="true"
-                  target="_blank">{t("SERVICES.COURSE.LINK.0.TITLE")}</Button
-                >
-              </div>
-              <div>
-                <Button
-                  asLink
-                  variant="primary"
-                  href={t("SERVICES.COURSE.LINK.1.HREF")}
-                  no-referrer="true"
-                  target="_blank">{t("SERVICES.COURSE.LINK.1.TITLE")}</Button
-                >
-              </div>
-            </Flex>
+            <Button
+              asLink
+              variant="outline"
+              href={t("SERVICES.CONSULTANTS.LINK.HREF")}
+              no-referrer="true"
+              target="_blank">{t("SERVICES.CONSULTANTS.LINK.TITLE")}</Button
+            >
           </article>
-        </Flex>
-      </Center>
-    </div>
-    <div id="consultancies" class={styles.article}>
-      <Flex mobile="direction-column">
-        <article class={styles.columns}>
-          <Title
-            as="h3"
-            variant="primary"
-            size="sm"
-            id="consultants"
-            baseline="adjust"
-          >
-            {t("SERVICES.CONSULTANTS.TITLE")}
-          </Title>
           <Viewport
-            variant="desktop-hidden"
+            variant="desktop"
             style={{
               flexShrink: 0,
               width: "100%",
               maxWidth: "430px",
               height: "auto",
-              marginTop: "2.5rem",
             }}
           >
             <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
           </Viewport>
-          <p
-            class={styles.text}
-            set:html={t("SERVICES.CONSULTANTS.DESCRIPTION")}
-          />
-          <Button
-            asLink
-            variant="outline"
-            href={t("SERVICES.CONSULTANTS.LINK.HREF")}
-            no-referrer="true"
-            target="_blank">{t("SERVICES.CONSULTANTS.LINK.TITLE")}</Button
-          >
-        </article>
-        <Viewport
-          variant="desktop"
-          style={{
-            flexShrink: 0,
-            width: "100%",
-            maxWidth: "430px",
-            height: "auto",
-          }}
-        >
-          <Image src={localAsesorias} aria-hidden="true" alt="Asesorías" />
-        </Viewport>
-      </Flex>
-    </div>
-  </Container>
-</section>
+        </Flex>
+      </div>
+    </Container>
+  </section>
+</div>

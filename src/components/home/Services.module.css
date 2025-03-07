@@ -1,9 +1,10 @@
 .services {
-  overflow-x: hidden;
+  position: relative;
+  padding-bottom: 200px;
+  padding-top: 200px;
 }
 
 .article {
-  margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
@@ -19,14 +20,12 @@
 
 @media (width >=960px) {
   .article {
-    margin-top: 2.5rem;
     max-width: 90vw;
   }
 }
 
 @media (width >=1280px) {
   .article {
-    margin-top: 2.5rem;
     max-width: 85vw;
   }
 }
