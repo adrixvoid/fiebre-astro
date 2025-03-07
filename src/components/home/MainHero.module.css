@@ -40,6 +40,14 @@
   font-size: 2.8cqw;
 }
 
+.animationScale {
+  scale: 0;
+  animation-name: play-scale;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
 .text1 {
   font-family: var(--font-family);
   font-style: normal;
@@ -58,10 +66,22 @@
 
 .text2 {
   display: inline-block;
+  animation-delay: 250ms;
 }
 
 .text3 {
   display: inline-block;
+  animation-delay: 500ms;
+}
+
+@keyframes play-scale {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
 }
 
 .headline {

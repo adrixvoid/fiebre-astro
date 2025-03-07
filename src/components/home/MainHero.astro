@@ -39,9 +39,13 @@ import styles from "./MainHero.module.css";
     <hgroup>
       <Viewport variant="desktop">
         <h1 class={styles.title}>
-          <span class={styles["text1"]}>{t("HERO.TITLE.HEADLINE1")}</span>
-          <span class={styles.headline}>
-            <span class={styles.text2}>{t("HERO.TITLE.HEADLINE2")}</span>
+          <span class:list={[styles["text1"], styles.animationScale]}
+            >{t("HERO.TITLE.HEADLINE1")}</span
+          >
+          <span class:list={[styles.headline, styles.animationScale]}>
+            <span class:list={[styles.text2, styles.animationScale]}
+              >{t("HERO.TITLE.HEADLINE2")}</span
+            >
             <span>
               <Rainbow
                 src="/assets/rainbow.svg"
@@ -49,7 +53,9 @@ import styles from "./MainHero.module.css";
                 class={styles.rainbowSVG}
               />
             </span>
-            <span class={styles.text3}>{t("HERO.TITLE.HEADLINE3")}</span>
+            <span class:list={[styles.text3, styles.animationScale]}
+              >{t("HERO.TITLE.HEADLINE3")}</span
+            >
           </span>
         </h1>
       </Viewport>

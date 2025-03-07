@@ -156,6 +156,28 @@ body {
   white-space: nowrap;
 }
 
-.hidden {
-  display: none;
+.animation-hidden-right,
+.animation-hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.animation-hidden-right {
+  transform: translateX(100%);
+}
+
+@media(prefers-reduced-motion) {
+
+  .animation-hidden-right,
+  .animation-hidden {
+    transition: none;
+  }
+}
+
+.animation-show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }

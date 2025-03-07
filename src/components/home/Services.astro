@@ -23,7 +23,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
   <section class={styles.services}>
     <Container variant="narrow">
       <div>
-        <Center id="design" class={styles.article}>
+        <Center id="design" class:list={["animation-hidden", styles.article]}>
           <Flex mobile="direction-column" class={styles.columns}>
             <article class={styles.columns}>
               <Title
@@ -74,7 +74,10 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
             </Viewport>
           </Flex>
         </Center>
-        <Center id="course" class={styles.article}>
+        <Center
+          id="course"
+          class:list={["animation-hidden-right", styles.article]}
+        >
           <Flex
             class:list={[styles.columns, styles.column2]}
             mobile="direction-column"
@@ -139,7 +142,7 @@ import localDiseno from "../../../public/home/ventana-diseno.png";
           </Flex>
         </Center>
       </div>
-      <div id="consultancies" class={styles.article}>
+      <div id="consultancies" class:list={["animation-hidden", styles.article]}>
         <Flex mobile="direction-column">
           <article class={styles.columns}>
             <Title
