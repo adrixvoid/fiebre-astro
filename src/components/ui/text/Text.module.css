@@ -141,37 +141,3 @@
 .adjustBaseline {
   margin-bottom: -1.5rem;
 }
-
-/*
-
-.title {
-  font-family: var(--font-family);
-  margin: 0;
-  padding: 0;
-}
-
-.titleDefault {
-  font-weight: 700;
-  letter-spacing: -.04em;
-  line-height: 1;
-}
-
-.titleSmall {
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.titleMedium {
-  font-size: 1.5rem;
-  font-size: clamp(2.5rem, 2.5vw, 3rem);
-}
-
-.titleLarge {
-  font-size: 1.8rem;
-  font-size: clamp(3.5rem, 3.5vw, 4rem);
-}
-
-.titleXLarge {
-  font-size: 1.8rem;
-  font-size: clamp(4.25rem, 5vw, 6.25rem);
-} */

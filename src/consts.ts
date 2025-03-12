@@ -23,31 +23,35 @@ export const socialLinks: {
   rel?: string;
 }[] = [
   {
-    // label: "hello.fevercosmic@gmail.com",
+    label: "hello.fevercosmic@gmail.com",
     href: "mailto:hello.fevercosmic@gmail.com",
     icon: "paper-plane-tilt",
     title: "Contact me hello.fevercosmic@gmail.com",
     rel: "noopener noreferrer",
   },
   {
+    label: "in/desi-fiebre-creativa",
     title: "Linkedin",
     href: "https://www.linkedin.com/in/desi-fiebre-creativa/",
     icon: "linkedin-logo",
     rel: "noopener noreferrer",
   },
   {
+    label: "fiebrecreativa",
     title: "Pinterest",
     href: "https://ar.pinterest.com/fiebrecreativa/_created",
     icon: "pinterest-logo",
     rel: "noopener noreferrer",
   },
   {
+    label: "fever.cosmic",
     title: "My Fever-Cosmic Instagram",
     href: "https://www.instagram.com/fever.cosmic/",
     icon: "instagram-logo",
     rel: "noopener noreferrer",
   },
   {
+    label: "fevercosmic",
     title: "My Behance Fever-Cosmic portfolio",
     href: "https://www.behance.net/fevercosmic",
     rel: "noopener noreferrer",

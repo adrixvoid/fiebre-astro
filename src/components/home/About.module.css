@@ -40,7 +40,7 @@
 } */
 
 .mask {
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .backgroundSVG {

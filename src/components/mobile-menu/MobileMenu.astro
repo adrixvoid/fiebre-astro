@@ -83,8 +83,8 @@ const inlineStyle = typeof style === "object" ? style : null;
             {
               iconLinks.map(({ href, icon, label }) => (
                 <Link href={href} class="social">
-                  <span class="sr-only">{label}</span>
                   <Icon icon={icon} size="1.5rem" />
+                  {label}
                 </Link>
               ))
             }

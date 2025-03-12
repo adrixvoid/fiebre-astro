@@ -1,7 +1,7 @@
 ---
-import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
-import Viewport from "~/components/ui/viewport/Viewport.astro";
+import { Image } from "astro:assets";
 
+import ElementAsBackground from "~/components/ui/background/AsBackground.astro";
 import Estrella1SVG from "~/components/ui/svg/assets/Estrellas.astro";
 import Estrella2SVG from "~/components/ui/svg/assets/Estrellas2.astro";
 import OndaEstelar1SVG from "~/components/ui/svg/assets/OndaEstelar-1.astro";
@@ -12,9 +12,9 @@ import Planeta2SVG from "~/components/ui/svg/assets/Planeta2.astro";
 import Planeta3SVG from "~/components/ui/svg/assets/Planeta3.astro";
 import Planeta4SVG from "~/components/ui/svg/assets/Planeta4.astro";
 import Planeta5SVG from "~/components/ui/svg/assets/Planeta5.astro";
-import Rainbow from "~/components/ui/svg/Rainbow.astro";
 
-import { t } from "~/i18n/translate";
+import heroPng from "~/assets/hero/hero.png";
+
 import styles from "./MainHero.module.css";
 ---
 
@@ -36,47 +36,11 @@ import styles from "./MainHero.module.css";
     </div>
   </div>
   <div class={styles.content}>
-    <hgroup>
-      <Viewport variant="desktop">
-        <h1 class={styles.title}>
-          <span class:list={[styles["text1"], styles.animationScale]}
-            >{t("HERO.TITLE.HEADLINE1")}</span
-          >
-          <span class:list={[styles.headline, styles.animationScale]}>
-            <span class:list={[styles.text2, styles.animationScale]}
-              >{t("HERO.TITLE.HEADLINE2")}</span
-            >
-            <span>
-              <Rainbow
-                src="/assets/rainbow.svg"
-                aria-hidden="true"
-                class={styles.rainbowSVG}
-              />
-            </span>
-            <span class:list={[styles.text3, styles.animationScale]}
-              >{t("HERO.TITLE.HEADLINE3")}</span
-            >
-          </span>
-        </h1>
-      </Viewport>
-      <Viewport variant="desktop-hidden">
-        <span>
-          <Rainbow
-            src="/assets/rainbow.svg"
-            aria-hidden="true"
-            class={styles.rainbowSVG}
-          />
-        </span>
-        <h1 class={styles.title}>
-          <span class={styles["text-0"]}>{t("HERO.TITLE.HEADLINE1")}</span>
-          <span class={styles.headline}>
-            <span class={styles.headlineText1}>{t("HERO.TITLE.HEADLINE2")}</span
-            >
-            <span class={styles.headlineText2}>{t("HERO.TITLE.HEADLINE3")}</span
-            >
-          </span>
-        </h1>
-      </Viewport>
-    </hgroup>
+    <Image
+      class={styles.heroImageOr}
+      src={heroPng}
+      aria-hidden="true"
+      alt="hero"
+    />
   </div>
 </div>

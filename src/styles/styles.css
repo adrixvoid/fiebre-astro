@@ -127,7 +127,7 @@ html {
 body {
   scroll-snap-type: y proximity;
   scroll-snap-align: center;
-  min-width: 360px;
+  min-width: 100vw;
   line-height: 1.6;
   font-family: var(--font-family);
   font-size: 1.125rem;
@@ -180,4 +180,41 @@ body {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
+}
+
+
+/*
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint: 960px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  desktop: 1280
+  tablet: 1279 - 810
+  mobile: 809
+*/
+@media (width <=640px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (width >=640px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (width >=1279px) {
+  .desktop-hidden {
+    display: none;
+  }
+}
+
+@media (width <=1279px) {
+  .desktop-only {
+    display: none;
+  }
 }

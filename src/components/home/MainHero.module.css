@@ -32,12 +32,19 @@
 
 .content {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.title {
-  transition: font 0.3s ease;
-  will-change: font;
-  font-size: 2.8cqw;
+.heroImageOr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -46%;
+  width: 90vw;
+  max-width: 983px;
+  height: auto;
+  /* opacity: 0; */
 }
 
 .text1 {
@@ -54,69 +61,6 @@
   color: #FFFFFF;
 
   display: block;
-}
-
-.text2 {
-  display: inline-block;
-  animation-delay: 250ms;
-}
-
-.text3 {
-  display: inline-block;
-  animation-delay: 500ms;
-}
-
-.headline {
-  font-family: 'Morganite';
-  line-height: 1;
-  text-transform: uppercase;
-
-  /* magia suceda */
-
-  font-family: 'Morganite';
-  font-weight: 700;
-  line-height: 0.8;
-
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-
-  color: #FFFFFF;
-  transition: font-size 10ms ease-in-out;
-}
-
-.headlineText1 {
-  font-size: 10.6em;
-  font-size: clamp(3.5rem, 12vw, 10.6rem);
-}
-
-.headlineText2 {
-  font-size: clamp(4rem, 16vw, 9rem);
-}
-
-.rainbowSVG {
-  vertical-align: baseline;
-}
-
-@media screen and (width <960px) {
-  .title {
-    font-size: min(max(3cqw, 1.8rem), 2.5cqh);
-  }
-
-  .text-0 {
-    margin-bottom: 1em;
-  }
-
-  .rainbowSVG {
-    width: auto;
-    height: 19cqh;
-  }
-
-  .headline {
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.25em;
-  }
 }
 
 @media screen and (width >=960px) {
@@ -202,7 +146,7 @@
 .planeta4 {
   width: 33px;
   aspect-ratio: 1 / 1;
-  top: 75vh;
+  top: 90vh;
   left: 65vw;
   animation: spin 180s linear infinite;
   transform-origin: center;
@@ -220,41 +164,29 @@
 }
 
 .ondaEstelar1 {
-  width: 100%;
   transform: scale3d(1.2, 1.2, 1.5);
   animation: spin 90s linear infinite;
   transform-origin: center;
-  width: 100vw;
-  aspect-ratio: 1 / 1;
+  min-width: 100vw;
+  min-height: 100dvh;
   scale: 1.25;
 }
 
 .ondaEstelar2 {
   animation: spin-reverse 60s linear infinite;
   transform-origin: center;
-  width: 75vw;
-  aspect-ratio: 1 / 1;
-  /* scale: 0.8; */
+  min-width: 100vw;
+  min-height: 100dvh;
+  scale: 0.8;
 }
 
 .ondaEstelar3 {
   animation: spin 30s linear infinite;
   transform-origin: center;
-  width: 45vw;
-  aspect-ratio: 1 / 1;
-  /* scale: 0.75; */
+  min-width: 100vw;
+  min-height: 100dvh;
+  scale: 0.4;
 }
-
-/* @media screen and (min-width: 1280px) {
-  .ondaEstelar2 {
-    width: 85vw;
-  }
-
-  .ondaEstelar3 {
-    animation: spin 60s linear infinite;
-    width: 70vw;
-  }
-} */
 
 @keyframes spin {
   100% {
