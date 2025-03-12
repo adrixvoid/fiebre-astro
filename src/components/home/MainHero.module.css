@@ -1,5 +1,5 @@
 .hero {
-  height: 100vh;
+  height: 60vh;
   min-height: 500px;
   background-size: auto 115%;
   background-repeat: no-repeat;
@@ -18,6 +18,19 @@
 
   overflow-x: clip;
 }
+
+@media (width >=768px) {
+  .hero {
+    height: 80vh;
+  }
+}
+
+@media (width >=960px) {
+  .hero {
+    height: 100vh;
+  }
+}
+
 
 .backdrop {
   position: absolute;

@@ -12,6 +12,9 @@ import Container from "../ui/container/Container.astro";
 import Grid from "../ui/grid/Grid.astro";
 import Title from "../ui/text/Title.astro";
 
+import SunSVG from "~/components/ui/svg/assets/Sun.astro";
+import MountainsSVG from "../ui/svg/assets/Mountains.astro";
+
 import { t, tObject } from "~/i18n/translate";
 import WindowCard from "../ui/card/components/WindowCard.astro";
 import styles from "./Resources.module.css";
@@ -23,8 +26,12 @@ const data = [
 ];
 ---
 
+<div class={styles.mountainContainer}>
+  <SunSVG class={styles.sun} aria-hidden="true" />
+  <MountainsSVG class={styles.mountains} />
+</div>
 <div class={styles.descargables}>
-  <PalmGrid class={styles["palm-grid"]} aria-hidden={true} />
+  <PalmGrid class={styles.palmGrid} aria-hidden={true} />
   <Container>
     <Center variant="all">
       <Title

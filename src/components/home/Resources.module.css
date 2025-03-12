@@ -15,12 +15,76 @@
   }
 }
 
-.palm-grid {
+.mountainContainer {
+  position: relative;
+}
+
+.mountains {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+  /* animation: scaleMountain 2s ease-in-out forwards;
+  animation-timeline: view(); */
+}
+
+
+@keyframes scaleMountain {
+  from {
+    top: -15rem;
+    scale: 1.2;
+  }
+
+  to {
+    top: -13rem;
+    scale: 1;
+    transform: translateZ(1px);
+  }
+}
+
+.palmGrid {
   position: absolute;
   top: 0;
   width: 100%;
   user-select: none;
   pointer-events: none;
-  transform: translateY(-22%);
   max-height: 128%;
+  animation: movePalmGrid 2s ease-in-out forwards;
+  animation-timeline: view();
+}
+
+@keyframes movePalmGrid {
+  from {
+    transform: translateY(0 100dvh);
+  }
+
+  to {
+    transform: translateY(-22%);
+  }
+}
+
+.sun {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(70%) translateX(-50%);
+  scale: 1;
+  width: 40vw;
+  max-width: 320px;
+  user-select: none;
+  pointer-events: none;
+  animation-name: animateSun;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+}
+
+@keyframes animateSun {
+  from {
+    translate: 0 70%;
+  }
+
+  to {
+    translate: 0 -70%;
+  }
 }

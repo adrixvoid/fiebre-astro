@@ -14,7 +14,6 @@ import localSobreMouse from "../../../public/home/sobre-mouse.svg";
 
 // import Nube1 from "~/components/ui/svg/assets/Nube1.astro";
 import NubesSVG from "~/components/ui/svg/assets/Nubes.astro";
-import SunSVG from "~/components/ui/svg/assets/Sun.astro";
 import { t } from "~/i18n/translate";
 import localSobreFoto from "../../../public/home/sobre-foto.png";
 import localSobreGustos from "../../../public/home/sobre-gustos.png";
@@ -23,7 +22,6 @@ import localSobreIdiomas from "../../../public/home/sobre-idiomas.png";
 import localSobrePaint from "../../../public/home/sobre-paint.png";
 import localSobreSkillset from "../../../public/home/sobre-skillset.png";
 import Background from "../ui/background/Background.astro";
-import MountainsSVG from "../ui/svg/assets/Mountains.astro";
 ---
 
 <div class={styles.about}>
@@ -57,19 +55,19 @@ import MountainsSVG from "../ui/svg/assets/Mountains.astro";
               />
               <div>
                 <Image
-                  class:list={[styles.absolute, styles.imgFoto3]}
+                  class:list={[styles.absolute, styles.image, styles.imgFoto3]}
                   src={localSobreFoto}
                   aria-hidden="true"
                   alt="about"
                 />
                 <Image
-                  class:list={[styles.absolute, styles.imgFoto2]}
+                  class:list={[styles.absolute, styles.image, styles.imgFoto2]}
                   src={localSobreFoto}
                   aria-hidden="true"
                   alt="about"
                 />
                 <Image
-                  class:list={[styles.absolute, styles.imgFoto2]}
+                  class:list={[styles.absolute, styles.image, styles.imgFoto1]}
                   src={localSobreFoto}
                   aria-hidden="true"
                   alt="about"
@@ -161,6 +159,4 @@ import MountainsSVG from "../ui/svg/assets/Mountains.astro";
       </div>
     </article>
   </Background>
-  <SunSVG class={styles.sun} aria-hidden="true" />
-  <MountainsSVG class={styles.mountains} />
 </div>

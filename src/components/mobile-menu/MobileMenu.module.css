@@ -10,7 +10,7 @@
 
 .menu {
   min-height: 50dvh;
-  background-color: hsl(265.56 52.63% 38.53% / 0.97);
+  background-color: hsl(var(--background), 0.97);
   display: flex;
   flex-direction: column;
 }

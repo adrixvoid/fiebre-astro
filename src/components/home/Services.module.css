@@ -1,8 +1,13 @@
 .services {
   position: relative;
   padding-bottom: 200px;
-  padding-top: 200px;
   overflow-x: clip;
+}
+
+@media (width >=1280px) {
+  .services {
+    padding-top: 200px;
+  }
 }
 
 .article {
@@ -39,4 +44,8 @@
   .text {
     max-width: 14rem;
   }
+}
+
+.image {
+  max-width: 100%;
 }

@@ -9,7 +9,6 @@
   animation-name: animateBackground;
   animation-fill-mode: forwards;
   animation-timeline: view(40%);
-  overflow-x: clip;
 }
 
 @keyframes animateBackground {
@@ -21,23 +20,6 @@
     background-size: 100% 100%;
   }
 }
-
-/* .title {
-  animation: increase 1s ease-in-out;
-  animation-timeline: view();
-}
-
-@keyframes increase {
-  0% {
-    rotate: 360deg;
-    scale: 1;
-  }
-
-  20% {
-    rotate: 0;
-    scale: 2;
-  }
-} */
 
 .mask {
   overflow-x: clip;
@@ -118,40 +100,6 @@
   width: 100vw;
 }
 
-.sun {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  translate: -50% 100%;
-  scale: 0.8;
-  width: 40vw;
-  max-width: 320px;
-  user-select: none;
-  pointer-events: none;
-  animation-name: animateSun;
-  animation-fill-mode: forwards;
-  animation-timeline: view();
-}
-
-@keyframes animateSun {
-  from {
-    transform: translateY(20%);
-    scale: 1;
-  }
-
-  to {
-    transform: translateY(-100%);
-    scale: 1.1;
-  }
-}
-
-.mountains {
-  position: absolute;
-  bottom: -1px;
-  width: 100%;
-  user-select: none;
-  pointer-events: none;
-}
 
 .about-text {
   padding: min(max(2vw, 0.5rem), 4rem);
@@ -207,18 +155,52 @@
 }
 
 .imgGrilla {
-  left: -4em;
-  top: -1.5em;
+  translate: -2rem;
+  animation: moveGrilla 1s ease-in-out forwards;
+  animation-timeline: view();
 }
 
-.imgFoto2 {
+.image {
+  max-width: 100%;
+}
+
+.imgFoto1 {
   top: 1em;
   left: 1em;
 }
 
-.imgFoto3 {
+.imgFoto2 {
   top: 2em;
   left: 2em;
+  animation: moveFoto1 1s ease-in-out forwards;
+  animation-timeline: view();
+}
+
+.imgFoto3 {
+  top: 3em;
+  left: 3em;
+  animation: moveFoto2 1s ease-in-out forwards;
+  animation-timeline: view();
+}
+
+@keyframes moveFoto1 {
+  from {
+    translate: -1em -1em;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes moveFoto2 {
+  from {
+    translate: -2em -2em;
+  }
+
+  to {
+    rotate: 0 0;
+  }
 }
 
 .imgPaint {
@@ -297,5 +279,15 @@
     top: 0;
     left: -8em;
     width: 14em;
+  }
+}
+
+@keyframes moveGrilla {
+  from {
+    translate: -2rem;
+  }
+
+  to {
+    translate: 0;
   }
 }
