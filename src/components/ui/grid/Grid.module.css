@@ -1,24 +1,21 @@
 .grid {
+  --max-width: 250px;
   display: grid;
-  gap: 4vw;
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 2.5vw;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
 }
 
 @media screen and (min-width: 960px) {
   .grid {
     gap: 2vw;
+    --max-width: 250px;
   }
 
   .two {
-    grid-template-columns: 1fr 1fr;
+    --max-width: 320px;
   }
 
   .three {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .masonry {
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    --max-width: 268px;
   }
 }

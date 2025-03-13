@@ -1,5 +1,4 @@
 ---
-import PalmGrid from "~/components/ui/svg/assets/PalmGrid.astro";
 import Button from "../ui/button/Button.astro";
 import CardContent from "../ui/card/components/CardContent.astro";
 import CardDescription from "../ui/card/components/CardDescription.astro";
@@ -12,6 +11,7 @@ import Container from "../ui/container/Container.astro";
 import Grid from "../ui/grid/Grid.astro";
 import Title from "../ui/text/Title.astro";
 
+import PalmsSVG from "~/components/ui/svg/assets/Palms.astro";
 import SunSVG from "~/components/ui/svg/assets/Sun.astro";
 import MountainsSVG from "../ui/svg/assets/Mountains.astro";
 
@@ -30,22 +30,21 @@ const data = [
   <SunSVG class={styles.sun} aria-hidden="true" />
   <MountainsSVG class={styles.mountains} />
 </div>
-<div class={styles.descargables}>
-  <PalmGrid class={styles.palmGrid} aria-hidden={true} />
+<div class={styles.resources}>
   <Container>
-    <Center variant="all">
+    <Center variant="all" style="position:relative;margin-bottom:3.5rem">
+      <PalmsSVG class={styles.palm} aria-hidden={true} />
       <Title
-        id="descargables"
+        id="resources"
         class={styles.title}
         as="h2"
         variant="primary"
         align="center"
-        style="margin-bottom:3.5rem"
       >
         {t("RESOURCES.TITLE")}
       </Title>
     </Center>
-    <Grid style="margin-bottom:2.5rem">
+    <Grid columns="three" style="margin-bottom:2.5rem">
       {
         data.map((item) => (
           <WindowCard as="article" class={styles.card} shadow={true}>
@@ -59,7 +58,7 @@ const data = [
               </Center>
             </CardHeader>
             <CardContent style="margin-top: 1rem;margin-bottom:2em;">
-              <CardTitle id="abrir-plantilla" aria-describedby="descargables">
+              <CardTitle id="abrir-plantilla" aria-describedby="resources">
                 {item.title}
               </CardTitle>
               <CardDescription>{item.description}</CardDescription>

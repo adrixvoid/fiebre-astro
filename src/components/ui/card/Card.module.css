@@ -1,5 +1,6 @@
 .card {
   border-width: 0;
+  border-radius: .25rem;
 }
 
 .primary {
@@ -8,14 +9,15 @@
 
 .shadow {
   box-shadow:
-    3px 3px 0 3px hsl(266, 54%, 51%);
+    2px 2px 0 3px hsl(266, 54%, 51%),
+    -9px -9px 0 3px hsl(266, 54%, 51%, 0.5);
 }
 
 .header {
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
-  padding-inline: 1rem;
+  padding-inline: .5rem;
 }
 
 .title {

@@ -1,16 +1,48 @@
-.descargables {
+.resources {
   position: relative;
-  background-color: hsl(266, 61%, 31%);
   padding-bottom: 10vh;
   padding-top: 10vh;
+
+  background-color: hsl(266, 61%, 31%);
+  background-image: url('/assets/grid.svg');
+  background-size: contain;
+  background-position: 50% 0;
 }
 
-.descargables .title {
+@media (width >=768px) {
+  .resources {
+    animation: moveGrid 2s ease-in-out forwards;
+    animation-timeline: view();
+    will-change: background-position;
+    background-size: auto;
+    background-position: 50% -50%;
+    background-repeat: no-repeat;
+  }
+
+  @keyframes moveGrid {
+    from {
+      background-position: 50% -50%;
+    }
+
+    to {
+      background-position: 50% 0;
+    }
+  }
+}
+
+@media (width >=768px) {
+  .resources {
+    background-size: 100% auto;
+  }
+}
+
+
+.resources .title {
   font-size: 4rem;
 }
 
 @media (width >=768px) {
-  .descargables .title {
+  .resources .title {
     font-size: 6rem;
   }
 }
@@ -25,42 +57,28 @@
   width: 100%;
   user-select: none;
   pointer-events: none;
-  /* animation: scaleMountain 2s ease-in-out forwards;
-  animation-timeline: view(); */
 }
 
-
-@keyframes scaleMountain {
-  from {
-    top: -15rem;
-    scale: 1.2;
-  }
-
-  to {
-    top: -13rem;
-    scale: 1;
-    transform: translateZ(1px);
-  }
-}
-
-.palmGrid {
+.palm {
   position: absolute;
-  top: 0;
-  width: 100%;
+  width: 90vw;
+  bottom: 0;
   user-select: none;
   pointer-events: none;
-  max-height: 128%;
-  animation: movePalmGrid 2s ease-in-out forwards;
+  animation: movePalm 2s ease-in-out forwards;
   animation-timeline: view();
+  will-change: scale, translate;
 }
 
-@keyframes movePalmGrid {
+@keyframes movePalm {
   from {
-    transform: translateY(0 100dvh);
+    scale: 0.8;
+    translate: 0 15%;
   }
 
   to {
-    transform: translateY(-22%);
+    scale: 0.8;
+    translate: 0 0;
   }
 }
 

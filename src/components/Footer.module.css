@@ -2,6 +2,7 @@
   min-height: 20dvh;
   display: flex;
   align-items: center;
+  background-color: hsl(var(--background));
 }
 
 .footer a:hover {
